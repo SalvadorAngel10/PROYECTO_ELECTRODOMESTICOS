@@ -69,6 +69,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Producto\Producto.cs" />
+    <Compile Include="Producto\ProductoHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,6 +95,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PAGINAS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XML\XMLFile1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagen\electrodomesticos.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
