@@ -38,7 +38,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
                 }
                 else
                 {
-                    xmlCategoria = new XElement("Categoria", new XAttribute("idCategoria", p.Referencia /*category*/));
+                    xmlCategoria = new XElement("Categoria", new XAttribute("idCategoria", p.Referencia));
                     xmlModelo = new XElement("Marca", new XAttribute("nombre", producto.Clase));
                     isNewCategory = true;
                 }
@@ -62,17 +62,17 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
         private static void addModelo()
         {
             bool isNewModelo = true;
-            foreach (XAttribute modelo in xmlCategoria.Elements().Attributes("nombre"))
+            foreach (XAttribute marca in xmlCategoria.Elements().Attributes("nombre"))
             {
-                if (modelo.Value.Equals(producto.Clase))
+                if (marca.Value.Equals(producto.Clase))
                 {
-                    xmlModelo = modelo.Parent;
+                    xmlModelo = marca.Parent;
                     isNewModelo = false;
                     break;
                 }
                 else
                 {
-                    xmlModelo = new XElement("modelo", new XAttribute("nombre", producto.Clase));
+                    xmlModelo = new XElement("Marca", new XAttribute("nombre", producto.Clase));
                     isNewModelo = true;
                 }
             }
@@ -82,7 +82,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
         private static void crearProducto()
         {
             XElement xmlProducto = new XElement("Electrodomestico",new XAttribute("Referencia",producto.Referencia), 
-            new XAttribute("Precio", producto.Precio),new XAttribute("Stock", producto.stock), new XAttribute("Fecha", producto.fechaAlta));
+            new XAttribute("Precio", producto.Precio),new XAttribute("Clase",producto.Clase),new XAttribute("Stock", producto.stock), new XAttribute("Fecha", producto.fechaAlta));
             xmlModelo.Add(xmlProducto);
         }
 
@@ -108,16 +108,16 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
             return productiList;
         }
 
-        public static void RemoveProducto(String Precio)
+        public static void RemoveProducto(String Referencia)
         {
             LoadXMl();
-            var listaProductos = xml.Root.Elements("tipo").Elements("modelo").Elements("Producto").Attributes("Precio");
+            var listaProductos = xml.Root.Elements("Categoria").Elements("Marca").Elements("Electrodomenticos").Attributes("Referencia");
 
-            foreach (XAttribute precio in listaProductos)
+            foreach (XAttribute referencia in listaProductos)
             {
-                if (Precio == precio.Value)
+                if (Referencia == referencia.Value)
                 {
-                    precio.Parent.Remove();
+                    referencia.Parent.Remove();
                     break;
                 }
             }
@@ -127,13 +127,13 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
         public static void editarProducto(Producto p)
         {
             LoadXMl();
-            var listaProductos = xml.Root.Elements("Categoria").Elements("Marca").Elements("Electrodomestico").Attributes("Precio");
+            var listaProductos = xml.Root.Elements("Categoria").Elements("Marca").Elements("Electrodomestico").Attributes("Referencia");
 
-            foreach (XAttribute precio in listaProductos)
+            foreach (XAttribute Referencia in listaProductos)
             {
-                if (p.Precio.ToString() == precio.Value)
+                if (p.Referencia == Referencia.Value)
                 {
-                    precio.Parent.Remove();
+                    Referencia.Parent.Remove();
                     break;
                 }
             }

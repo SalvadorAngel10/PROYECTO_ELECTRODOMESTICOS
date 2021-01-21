@@ -55,6 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PAGINAS\NewOrModifyProducto.xaml.cs">
+      <DependentUpon>NewOrModifyProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PAGINAS\ProductoGrid.xaml.cs">
+      <DependentUpon>ProductoGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PAGINAS\ProductoShow.xaml.cs">
+      <DependentUpon>ProductoShow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XML\Class1.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -68,6 +77,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PAGINAS\NewOrModifyProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PAGINAS\ProductoGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PAGINAS\ProductoShow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Productos\Producto.cs" />
@@ -97,9 +118,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PAGINAS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="XML\XMLFile1.xml" />
   </ItemGroup>
