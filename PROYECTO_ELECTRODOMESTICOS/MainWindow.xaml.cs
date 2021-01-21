@@ -20,10 +20,14 @@ namespace PROYECTO_ELECTRODOMESTICOS
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Frame myNavigationFrame;
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+    
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

@@ -1,27 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Almacen>
 	<Categoria idCategoria="Secadora">
-		<modelo nombre="bosh"/>
-		<modelo nombre="balay"/>
-		<modelo nombre="fagor"/>
-		<modelo nombre="siemens"/>
+		<Marca nombre="bosh"/>
+		<Marca  nombre="balay"/>
+		<Marca  nombre="fagor"/>
+		<Marca  nombre="siemens"/>
 	</Categoria>
 	<Categoria idCategoria="Nevera">
-		<modelo nombre="LG"/>
-		<modelo nombre="samsung"/>
-		<modelo nombre="philips"/>
-		<modelo nombre="siemens"/>
+		<Marca  nombre="LG"/>
+		<Marca  nombre="samsung"/>
+		<Marca  nombre="philips"/>
+		<Marca  nombre="siemens"/>
 	</Categoria>
 	<Categoria idCategoria="Estufa">
-		<modelo nombre="samsung"/>
-		<modelo nombre="LG"/>
-		<modelo nombre="balay"/>
-		<modelo nombre="fagor"/>
+		<Marca  nombre="samsung"/>
+		<Marca  nombre="LG"/>
+		<Marca  nombre="balay"/>
+		<Marca  nombre="fagor"/>
 	</Categoria>
 	<Categoria idCategoria="Horno">
-		<modelo nombre="samsung"/>
-		<modelo nombre="bosh"/>
-		<modelo nombre="philips"/>
-		<modelo nombre="balay"/>
+		<Marca  nombre="samsung"/>
+		<Marca  nombre="bosh"/>
+		<Marca  nombre="philips"/>
+		<Marca  nombre="balay"/>
 	</Categoria>
 </Almacen>
