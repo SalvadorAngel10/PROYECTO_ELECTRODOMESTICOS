@@ -13,12 +13,13 @@
 
         <StackPanel  Orientation="Horizontal" Margin="0" HorizontalAlignment="Center">
             <Button Content="ELECTRODOMESTICOS" Click="Button_Click" Margin="0,0,75,0" Background="LightGoldenrodYellow" />
-            <Button Content="NUEV0"  Click="Button_Click_1" Margin="0,0,75,0" Background="LightGoldenrodYellow"/>
+            <StackPanel x:Name="Botones" Orientation="Horizontal" Visibility="Hidden">
+            <Button Content="NUEVO"  Click="Button_Click_1" Margin="0,0,75,0" Background="LightGoldenrodYellow"/>
             <Button Content="BUSCAR" Click="Button_Click_2"  Margin="0,0,75,0" Background="LightGoldenrodYellow"/>
             <Button Content="REGISTRO" Click="Button_Click_3" Margin="0,0,75,0" Background="LightGoldenrodYellow"/>
-           
+            </StackPanel>
         </StackPanel>
-        <Frame x:Name="myFrame" Margin="5" NavigationUIVisibility="Visible" Width="570" Height="330" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+        <Frame x:Name="myFrame" Margin="5" NavigationUIVisibility="Visible" Width="570" Height="360" ScrollViewer.HorizontalScrollBarVisibility="Visible">
             <Frame.Background>
                 <ImageBrush ImageSource="imagen/electrodomesticos.jpg"/>
 

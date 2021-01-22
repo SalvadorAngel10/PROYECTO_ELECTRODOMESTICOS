@@ -6,9 +6,46 @@
       xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS.PAGINAS"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductoGrid"  Width="570" Height="330" Background="Orange">
+      Title="ProductoGrid"  Width="570" Height="360" Background="Orange">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <TextBlock Text="CONSULTA PRODUCTOS" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="22" FontWeight="Bold"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Categoria"/>
+            <ComboBox x:Name="categoryCombo" Width="200" SelectionChanged="categoryCombo_SelectionChanged"/>
+            <TextBlock Text="Busqueda"/>
+            <TextBox x:Name="busquedaTextBox" Width="171" TextChanged="TextBox_TextChanged"/>
+            <Button Content="Actualizar" Click="Button_Click_2"/>
+        </StackPanel>
+        <DataGrid x:Name="myDataGrid" Margin="5,30,5,0" Height="250" ColumnWidth="*" IsReadOnly="True"
+                  CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Referencia" Binding="{Binding Path=Referencia}"/>
+                <DataGridTextColumn Header="Categoria" Binding="{Binding Path=Categoria}"/>
+                <DataGridTextColumn Header="Marca" Binding="{Binding Path=Marca}"/>
+                <DataGridTextColumn Header="Clase" Binding="{Binding Path=Clase}"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding Path=Precio}"/>
+                <DataGridTextColumn Header="Stock" Binding="{Binding Path=stock}"/>
+                <DataGridTextColumn Header="Fecha" Binding="{Binding Path=fechaAlta}"/>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Editar" Background="GreenYellow" Click="Button_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Borrar" Background="Red" Click="Button_Click_1"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </StackPanel>
 </Page>

@@ -10,7 +10,6 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
     {
 
         public String Referencia{set; get; }
-        public String Descripcion { set; get; }
         public String Categoria { set; get; }
         public String Marca { set; get; }
         public String Clase { set; get; }
@@ -18,11 +17,10 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
         public int stock { set; get; }
         public DateTime fechaAlta { set; get; }
 
-        public Producto(string Referencia, string Descripcion,string Categoria,string Marca, string CLase,float Precio ,int stock, DateTime fechaAlta)
+        public Producto(string Referencia,string Categoria,string Marca, string Clase,float Precio ,int stock, DateTime fechaAlta)
         {
 
             this.Referencia = Referencia;
-            this.Descripcion= Descripcion;
             this.Categoria = Categoria;
             this.Marca = Marca;
             this.Clase = Clase;
@@ -34,7 +32,6 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
         public Producto()
         {
             this.Referencia = "";
-            this.Descripcion = "";
             this.Categoria = "";
             this.Marca = "";
             this.Clase = "";
@@ -55,7 +52,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
 
         public String GetAllValues()
         {
-            return Referencia + " " + Descripcion +""+Categoria+""+Marca+""+Clase+ " " + Precio + " " + stock + " " + fechaAlta;
+            return Referencia +""+Categoria+""+Marca+""+Clase+ " " + Precio + " " + stock + " " + fechaAlta;
         }
     }
 }
