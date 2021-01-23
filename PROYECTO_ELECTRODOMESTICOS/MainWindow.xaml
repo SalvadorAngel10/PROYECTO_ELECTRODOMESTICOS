@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="610" Width="700" Background="Orange">
+        Title="MainWindow" Height="610" Width="700" Background="LightBlue">
 
 
     <StackPanel>
         <Label Content="ELECTRODOMÉSTICOS SALVADOR" HorizontalAlignment="Center" FontSize="36" FontStyle="Italic" FontWeight="Bold"/>
 
-        <StackPanel  Orientation="Horizontal" Margin="0" HorizontalAlignment="Center">
-            <Button Content="ELECTRODOMESTICOS" Click="Button_Click" Margin="0,0,75,0" Background="LightGoldenrodYellow" />
+        <StackPanel  Orientation="Horizontal" Margin="5,10,0,20" HorizontalAlignment="Center">
+            <Button Content="ELECTRODOMÉSTICOS" Click="Button_Click" Margin="0,0,5,0" Width="140" Height="50"  Foreground="LightBlue"  Background="Black" />
             <StackPanel x:Name="Botones" Orientation="Horizontal" Visibility="Hidden">
-            <Button Content="NUEVO"  Click="Button_Click_1" Margin="0,0,75,0" Background="LightGoldenrodYellow"/>
-            <Button Content="BUSCAR" Click="Button_Click_2"  Margin="0,0,75,0" Background="LightGoldenrodYellow"/>
-            <Button Content="REGISTRO" Click="Button_Click_3" Margin="0,0,75,0" Background="LightGoldenrodYellow"/>
+                <Button Content="NUEVO"  Click="Button_Click_1" Margin="0,0,5,0"  Foreground="LightBlue"  Background="Black" Width="140" Height="50"/>
+                <Button Content="BUSCAR" Click="Button_Click_2"  Margin="0,0,5,0"  Foreground="LightBlue"  Background="Black" Width="140" Height="50"/>
+                <Button Content="REGISTRO" Click="Button_Click_3" Margin="0,0,5,0" Foreground="LightBlue"  Background="Black" Width="140" Height="50"/>
             </StackPanel>
         </StackPanel>
-        <Frame x:Name="myFrame" Margin="5" NavigationUIVisibility="Visible" Width="570" Height="360" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+        <Frame x:Name="myFrame" NavigationUIVisibility="Hidden" Width="600" Height="360" ScrollViewer.HorizontalScrollBarVisibility="Visible">
             <Frame.Background>
                 <ImageBrush ImageSource="imagen/electrodomesticos.jpg"/>
 
@@ -28,8 +28,8 @@
 
         </Frame>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="VOLVER" Click="Button_Click_4" Background="LightGoldenrodYellow"/>
-            <Button Content="SALIR" Click="Button_Click_5" Background="LightGoldenrodYellow" Margin="300,0,0,0"/>
+            <Button Content="VOLVER" Click="Button_Click_4"  Foreground="LightBlue"  Background="Black" Margin="0,10,100,0" Width="100" Height="40"/>
+            <Button Content="SALIR" Click="Button_Click_5"  Foreground="LightBlue"  Background="Black"   Margin="0,10,0,0" Width="100" Height="40"/>
         </StackPanel>
 
     </StackPanel>

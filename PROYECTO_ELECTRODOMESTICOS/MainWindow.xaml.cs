@@ -42,7 +42,7 @@ namespace PROYECTO_ELECTRODOMESTICOS
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("NUEVO ELECTRODOMESTICO",productoHandler));
+            myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("NUEVO ELECTRODOMÉSTICO",productoHandler));
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

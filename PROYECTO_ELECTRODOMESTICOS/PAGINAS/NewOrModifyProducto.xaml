@@ -6,11 +6,11 @@
       xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS.PAGINAS"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="NewOrModifyProducto" Width="570" Height="360" Background="Orange">
+      Title="NewOrModifyProducto" Width="600" Height="360" Background="LightBlue">
 
     <StackPanel>
-        <TextBlock x:Name="productoNM" Text="NUEVO ELECTRODOMESTICO" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="22" FontWeight="Bold"/>
-    <Grid x:Name="productGrid" Margin="0,10,0,0" Width="350" Background="Orange" Visibility="Visible" >
+        <TextBlock x:Name="productoNM" Text="NUEVO ELECTRODOMÉSTICO" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="22" FontWeight="Bold"/>
+    <Grid x:Name="productGrid" Margin="0,10,0,0" Width="350" Background="LightBlue" Visibility="Visible" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -31,7 +31,7 @@
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Marca:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="9.8,5,10.4,0"/>
             <TextBlock Grid.Row="3" Grid.Column="0" Text="Clase:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="9.8,5,10.4,0"/>
             <TextBlock Grid.Row="4" Grid.Column="0" Text="precio:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="9.8,5,10.4,0"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="stcok:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="9.8,5,10.4,0"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="stock:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="9.8,5,10.4,0"/>
             <TextBlock Grid.Row="6" Grid.Column="0" Text="Fecha de alta:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="9.8,5,10.4,0"/>
 
         <TextBox x:Name="tReferencia" Text="{Binding Path=Referencia}" Margin="10,5" Grid.Row="0"  Grid.Column="1" VerticalContentAlignment="Center"/>
@@ -54,8 +54,8 @@
         <CheckBox x:Name="checkMarca"  Grid.Row="2" Grid.Column="3" Margin="5,10,0,0" Click="checkMarca_Click" />
 
     </Grid>
-        <Label x:Name="label" Margin="0,5,0,0" HorizontalAlignment="Center" Foreground="#FFF30C0C"  Background="Orange" Visibility="Hidden"/>
-        <Button Margin="0,5,0,0" Width="150" Height="35" Content="ACEPTAR" Click="Button_Click"  Background="LightGoldenrodYellow"/>
+        <Label x:Name="label" Margin="0,5,0,0" HorizontalAlignment="Center" Foreground="#FFF30C0C"  Background="LightBlue" Visibility="Hidden"/>
+        <Button Margin="0,5,0,0" Width="150" Height="35" Content="ACEPTAR" Click="Button_Click" Foreground="LightBlue"  Background="Black"/>
     </StackPanel>
 
 

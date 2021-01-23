@@ -5,6 +5,9 @@
     <Marca nombre="balay" />
     <Marca nombre="fagor" />
     <Marca nombre="siemens" />
+    <Marca nombre="" />
+    <Marca nombre="SARTEN" />
+    <Marca nombre="hacendado" />
   </Categoria>
   <Categoria idCategoria="Nevera">
     <Marca nombre="LG" />
@@ -23,5 +26,8 @@
     <Marca nombre="bosh" />
     <Marca nombre="philips" />
     <Marca nombre="balay" />
+  </Categoria>
+  <Categoria idCategoria="salva">
+    <Marca nombre="nike" />
   </Categoria>
 </Almacen>

@@ -6,18 +6,18 @@
       xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS.PAGINAS"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductoGrid"  Width="570" Height="360" Background="Orange">
+      Title="ProductoGrid"  Width="600" Height="360" Background="LightBlue">
 
     <StackPanel>
         <TextBlock Text="CONSULTA PRODUCTOS" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="22" FontWeight="Bold"/>
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Categoria"/>
+            <TextBlock Text="Categoria: "/>
             <ComboBox x:Name="categoryCombo" Width="200" SelectionChanged="categoryCombo_SelectionChanged"/>
-            <TextBlock Text="Busqueda"/>
+            <TextBlock Text="  Busqueda: "/>
             <TextBox x:Name="busquedaTextBox" Width="171" TextChanged="TextBox_TextChanged"/>
             <Button Content="Actualizar" Click="Button_Click_2"/>
         </StackPanel>
-        <DataGrid x:Name="myDataGrid" Margin="0,20,0,0" Height="260" ColumnWidth="*" IsReadOnly="True"
+        <DataGrid x:Name="myDataGrid" Margin="0,20,0,0" Height="270" Width="590" ColumnWidth="*" IsReadOnly="True"
                   CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
@@ -39,7 +39,7 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Borrar" Background="Red" Click="Button_Click_1"/>
+                            <Button Content="Borrar" Background="OrangeRed" Click="Button_Click_1"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

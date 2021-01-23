@@ -79,6 +79,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
             this.producto = producto;
             this.productGrid.DataContext = producto;
             this.verify = true;
+            tReferencia.IsEnabled = false;
 
         }
 
@@ -137,7 +138,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                     "Precio:" +Precio + "\n" +
                     "Stock: " + stock + "\n" +
                     "Fecha de alta: " + fechaAlta + "\n\n" +
-                    "¿ESTOS DATOS SON CORRECTOS?",
+                    "¿ESTE ES SU ELECTRODOMÉSTICO?",
                     "registro usuarios",
                     MessageBoxButton.YesNoCancel,
                     MessageBoxImage.Question);
@@ -145,7 +146,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                     switch (resultado)
                     {
                         case MessageBoxResult.Yes:
-                            MessageBox.Show("se ha refistrado bien");
+                            MessageBox.Show("Se ha registrado bien.");
                             Producto producto = new Producto(Referencia,Categoria ,Marca,Clase ,Precio, stock, fechaAlta);
                             Class1.addXMLProduct(producto);
                             MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
