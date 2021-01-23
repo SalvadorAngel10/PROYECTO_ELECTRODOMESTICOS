@@ -17,9 +17,7 @@ using System.Windows.Shapes;
 
 namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 {
-    /// <summary>
-    /// Lógica de interacción para ProductoShow.xaml
-    /// </summary>
+   
     public partial class ProductoShow : Page
     {
         public ProductoHandler ProductoHandler;
@@ -37,7 +35,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Class1.editarProducto(producto);
-            MainWindow.myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("Modificar usuario", ProductoHandler, (Producto)producto.Clone()));
+            MainWindow.myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("MODIFICAR USUARIO", ProductoHandler, (Producto)producto.Clone()));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

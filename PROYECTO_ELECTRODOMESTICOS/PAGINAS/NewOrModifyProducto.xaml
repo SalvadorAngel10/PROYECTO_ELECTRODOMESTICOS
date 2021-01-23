@@ -36,24 +36,26 @@
 
         <TextBox x:Name="tReferencia" Text="{Binding Path=Referencia}" Margin="10,5" Grid.Row="0"  Grid.Column="1" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="ComboCategoria" Text="{Binding Path=Categoria}" Margin="9.8,5,10.4,0" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Height="22" VerticalAlignment="Top" SelectionChanged="txt_tipo_SelectionChanged"/>
-            <TextBox x:Name="tCategoria" Text="{Binding Path=Categoria}" Margin="10,5" Grid.Row="1" Grid.Column="1" Visibility="Hidden" VerticalContentAlignment="Center"/>
-            <ComboBox x:Name="ComboClase" Grid.Row="3" Grid.Column="1" Margin="10,5" Text="{Binding Path=Clase}">
+        <TextBox x:Name="tCategoria" Text="{Binding Path=Categoria}" Margin="10,5" Grid.Row="1" Grid.Column="1" Visibility="Hidden" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="ComboMarca" Text="{Binding Path=Marca}" Margin="10,5" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tMarca" Text="{Binding Path=Marca}" Margin="10,5" Grid.Row="2" Visibility="Hidden" Grid.Column="1" VerticalContentAlignment="Center"/>
+        <ComboBox x:Name="ComboClase" Grid.Row="3" Grid.Column="1" Margin="10,5" Text="{Binding Path=Clase}">
                 <ComboBoxItem Content="A++" IsSelected="True"/>
                 <ComboBoxItem Content="A+" />
                 <ComboBoxItem Content="A" />
                 <ComboBoxItem Content="B" />
-            </ComboBox>
-        <ComboBox x:Name="ComboMarca" Text="{Binding Path=Marca}" Margin="10,5" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="tMarca" Text="{Binding Path=Marca}" Margin="10,5" Grid.Row="2" Visibility="Hidden" Grid.Column="1" VerticalContentAlignment="Center"/>
+        </ComboBox>
         <TextBox x:Name="tPrecio" Text="{Binding Path=Precio}" Margin="10,5" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center"/>
         <TextBox x:Name="tStock" Text="{Binding Path=stock}" Margin="10,5" Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center"/>
         <DatePicker x:Name="tFecha" SelectedDate="{Binding Path=fechaAlta}" Margin="10,5" Grid.Row="6" Grid.Column="1"/>
+        
+        
         <CheckBox x:Name="checkCategoria" Grid.Row="1" Grid.Column="3" Margin="5,10,0,0" Click="checkCategoria_Click"/>
         <CheckBox x:Name="checkMarca"  Grid.Row="2" Grid.Column="3" Margin="5,10,0,0" Click="checkMarca_Click" />
 
     </Grid>
-        <Label x:Name="label" Margin="0,20,0,0" HorizontalAlignment="Center" Foreground="#FFF30C0C"  Background="White" Visibility="Hidden"/>
-        <Button Margin="0,10,0,0" Width="150" Height="35" Content="ACEPTAR" Click="Button_Click"  Background="LightGoldenrodYellow"/>
+        <Label x:Name="label" Margin="0,5,0,0" HorizontalAlignment="Center" Foreground="#FFF30C0C"  Background="Orange" Visibility="Hidden"/>
+        <Button Margin="0,5,0,0" Width="150" Height="35" Content="ACEPTAR" Click="Button_Click"  Background="LightGoldenrodYellow"/>
     </StackPanel>
 
 

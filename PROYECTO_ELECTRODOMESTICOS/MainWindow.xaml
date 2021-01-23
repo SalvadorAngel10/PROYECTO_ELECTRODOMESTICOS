@@ -9,7 +9,7 @@
 
 
     <StackPanel>
-        <Label Content="ELECTRODOMESTICOS SALVADOR" HorizontalAlignment="Center" FontSize="36" FontStyle="Italic" FontWeight="Bold"/>
+        <Label Content="ELECTRODOMÉSTICOS SALVADOR" HorizontalAlignment="Center" FontSize="36" FontStyle="Italic" FontWeight="Bold"/>
 
         <StackPanel  Orientation="Horizontal" Margin="0" HorizontalAlignment="Center">
             <Button Content="ELECTRODOMESTICOS" Click="Button_Click" Margin="0,0,75,0" Background="LightGoldenrodYellow" />

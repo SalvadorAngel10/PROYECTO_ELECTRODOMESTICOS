@@ -111,7 +111,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
         public static void RemoveProducto(Producto p)
         {
             LoadXMl();
-            var listaProductos = xml.Root.Elements("Categoria").Elements("Marca").Elements("Electrodomentico").Attributes("Referencia");
+            var listaProductos = xml.Root.Elements("Categoria").Elements("Marca").Elements("Electrodomestico").Attributes("Referencia");
 
             foreach (XAttribute referencia in listaProductos)
             {

@@ -17,11 +17,11 @@
             <TextBox x:Name="busquedaTextBox" Width="171" TextChanged="TextBox_TextChanged"/>
             <Button Content="Actualizar" Click="Button_Click_2"/>
         </StackPanel>
-        <DataGrid x:Name="myDataGrid" Margin="5,30,5,0" Height="250" ColumnWidth="*" IsReadOnly="True"
+        <DataGrid x:Name="myDataGrid" Margin="0,20,0,0" Height="260" ColumnWidth="*" IsReadOnly="True"
                   CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Referencia" Binding="{Binding Path=Referencia}"/>
+                <DataGridTextColumn Header="Referencia" Binding="{Binding Path=Referencia}" />
                 <DataGridTextColumn Header="Categoria" Binding="{Binding Path=Categoria}"/>
                 <DataGridTextColumn Header="Marca" Binding="{Binding Path=Marca}"/>
                 <DataGridTextColumn Header="Clase" Binding="{Binding Path=Clase}"/>

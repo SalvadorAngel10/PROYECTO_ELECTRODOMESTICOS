@@ -52,7 +52,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
 
         public String GetAllValues()
         {
-            return Referencia +""+Categoria+""+Marca+""+Clase+ " " + Precio + " " + stock + " " + fechaAlta;
+            return Referencia +" "+Categoria+" "+Marca+""+Clase+ " " + Precio + " " + stock + " " + fechaAlta;
         }
     }
 }

@@ -2,9 +2,7 @@
 <Almacen>
   <Categoria idCategoria="Secadora">
     <Marca nombre="bosh" />
-    <Marca nombre="balay">
-      <Electrodomestico Referencia="123" Precio="1223" Clase="A++" Stock="123" Fecha="2021-01-22T00:00:00" />
-    </Marca>
+    <Marca nombre="balay" />
     <Marca nombre="fagor" />
     <Marca nombre="siemens" />
   </Categoria>
@@ -17,7 +15,7 @@
   <Categoria idCategoria="Estufa">
     <Marca nombre="samsung" />
     <Marca nombre="LG" />
-    <Marca nombre="balay" />
+    <Marca nombre="balay"></Marca>
     <Marca nombre="fagor" />
   </Categoria>
   <Categoria idCategoria="Horno">

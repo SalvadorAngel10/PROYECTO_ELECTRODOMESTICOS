@@ -118,7 +118,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Producto product = (Producto)myDataGrid.SelectedItem;
-            MainWindow.myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("Modificar usuario", ProductoHandler, product));
+            
+            MainWindow.myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("MODIFICAR USUARIO", ProductoHandler, product));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

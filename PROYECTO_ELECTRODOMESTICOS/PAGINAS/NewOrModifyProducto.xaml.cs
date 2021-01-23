@@ -18,9 +18,7 @@ using System.Xml.Linq;
 
 namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 {
-    /// <summary>
-    /// Lógica de interacción para NewOrModifyProducto.xaml
-    /// </summary>
+   
     public partial class NewOrModifyProducto : Page
     {
 
@@ -59,8 +57,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
             }
 
             return validate;
-        } //validacion
-        //constructor de nuevo
+        }
         public NewOrModifyProducto(string title, ProductoHandler productoHandler)
         {
             InitializeComponent();
@@ -72,7 +69,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
             this.productGrid.DataContext = producto;
         }
 
-        //constructor de modificar
+        // modificar
         public NewOrModifyProducto(string title, ProductoHandler productoHandler, Producto producto)
         {
             InitializeComponent();
@@ -112,7 +109,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
         {
             if (verify)
             {
-                //productoHandler.Modifyproduct(producto, pos);
+               
                 Class1.editarProducto(producto);
                 MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
 
@@ -152,8 +149,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                             Producto producto = new Producto(Referencia,Categoria ,Marca,Clase ,Precio, stock, fechaAlta);
                             Class1.addXMLProduct(producto);
                             MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
-                            //MostrarUsuario mostrarUsuario = new MostrarUsuario(usuario);
-                            //mostrarUsuario.Show();
+                           
                             break;
                         case MessageBoxResult.No:
                             break;
