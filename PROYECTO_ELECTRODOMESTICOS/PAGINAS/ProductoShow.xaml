@@ -51,8 +51,8 @@
         </Grid>
 
         <StackPanel  x:Name="buttonsPanel" Visibility="Visible" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="MODIFICAR" Background="GreenYellow" Click="Button_Click" Margin="0,0,19,5"/>
-            <Button Content="  BORRAR " Background="OrangeRed" Click="Button_Click_1" Margin="0,0,5,5"/>
+            <Button Content="MODIFICAR" Background="GreenYellow" Click="Button_Click" Margin="0,0,19,5" Width="100" Height="40"/>
+            <Button Content="  BORRAR " Background="OrangeRed" Click="Button_Click_1" Margin="0,0,5,5" Width="100" Height="40"/>
         </StackPanel>
     </StackPanel>
 </Page>

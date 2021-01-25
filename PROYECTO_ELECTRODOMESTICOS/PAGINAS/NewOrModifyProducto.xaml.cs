@@ -1,4 +1,5 @@
-﻿using PROYECTO_ELECTRODOMESTICOS.Productos;
+﻿using PROYECTO_ELECTRODOMESTICOS.imagen;
+using PROYECTO_ELECTRODOMESTICOS.Productos;
 using PROYECTO_ELECTRODOMESTICOS.XML;
 using System;
 using System.Collections.Generic;
@@ -205,6 +206,9 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         }
 
-        
+        private void imagebtn_Click(object sender, RoutedEventArgs e)
+        {
+            Image.Source = imagenHandler.GetBitmapImage();
+        }
     }
 }

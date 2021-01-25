@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="610" Width="700" Background="LightBlue">
+        Title="MainWindow" Height="610" Width="700">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF18727F" Offset="0"/>
+            <GradientStop Color="#FF13BDD6" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
 
 
     <StackPanel>
@@ -21,7 +27,7 @@
         </StackPanel>
         <Frame x:Name="myFrame" NavigationUIVisibility="Hidden" Width="600" Height="360" ScrollViewer.HorizontalScrollBarVisibility="Visible">
             <Frame.Background>
-                <ImageBrush ImageSource="imagen/electrodomesticos.jpg"/>
+                <ImageBrush ImageSource="imagen/almacen.jpg"/>
 
             </Frame.Background>
 
