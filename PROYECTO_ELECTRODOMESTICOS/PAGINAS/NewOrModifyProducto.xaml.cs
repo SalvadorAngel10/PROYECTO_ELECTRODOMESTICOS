@@ -27,6 +27,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
         public ProductoHandler productoHandler;
         public Producto producto;
         public bool verify;
+        bool nuevaImagen = false;
+
         public NewOrModifyProducto(ProductoHandler productoHandler)
         {
             this.productoHandler = productoHandler;
@@ -68,6 +70,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
             this.verify = false;
             producto = new Producto();
             this.productGrid.DataContext = producto;
+            myImage.Source = imagenHandler.LoadDefaultImage();
         }
 
         // modificar
@@ -75,6 +78,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
         {
             InitializeComponent();
             Combo();
+            myImage.Source = imagenHandler.GetImage(producto.Referencia);
             productoNM.Text = title;
             this.productoHandler = productoHandler;
             this.producto = producto;
@@ -150,6 +154,10 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                             MessageBox.Show("Se ha registrado bien.");
                             Producto producto = new Producto(Referencia,Categoria ,Marca,Clase ,Precio, stock, fechaAlta);
                             Class1.addXMLProduct(producto);
+                            if (nuevaImagen)
+                            {
+                                imagenHandler.AddImage(producto.Referencia, (BitmapImage)myImage.Source);
+                            }
                             MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
                            
                             break;
@@ -208,7 +216,12 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void imagebtn_Click(object sender, RoutedEventArgs e)
         {
-            Image.Source = imagenHandler.GetBitmapImage();
+            BitmapImage bitmapImage = imagenHandler.GetBitmapImage();
+            if (bitmapImage != null)
+            {
+                myImage.Source = bitmapImage;
+                nuevaImagen = true;
+            }
         }
     }
 }
