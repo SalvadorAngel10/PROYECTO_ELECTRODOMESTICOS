@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS.PAGINAS"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductoShow"  Width="600" Height="360" Background="LightBlue">
+      Title="ProductoShow"  Width="800" Height="360" Background="LightBlue">
 
     <StackPanel>
 

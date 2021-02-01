@@ -50,8 +50,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d" />
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,15 +71,27 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ProjectoDB\MySQLData\pruebaDataSEt\mydbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectoDB\SQLData\LocalImages\LocalImagesDataSet\DataSet_Local_Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Local_Images.xsd</DependentUpon>
+    </Compile>
     <Compile Include="imagen\imagenHandler.cs" />
     <Compile Include="PAGINAS\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -84,11 +106,6 @@
       <DependentUpon>ProductoShow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProjectoDB\SQLData\LocalImages\LocalImageDBHandler.cs" />
-    <Compile Include="ProjectoDB\SQLData\LocalImages\LocalImagesDataSet\DataSet_Local_Images.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet_Local_Images.xsd</DependentUpon>
-    </Compile>
     <Compile Include="XML\Class1.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -139,13 +156,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ProjectoDB\MySQLData\pruebaDataSEt\mydbDataSet.xsc">
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectoDB\MySQLData\pruebaDataSEt\mydbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mydbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectoDB\MySQLData\pruebaDataSEt\mydbDataSet.xss">
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ProjectoDB\SQLData\LocalImages\LocalImagesDataSet\DataSet_Local_Images.xsc">
       <DependentUpon>DataSet_Local_Images.xsd</DependentUpon>
     </None>
     <None Include="ProjectoDB\SQLData\LocalImages\LocalImagesDataSet\DataSet_Local_Images.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet_Local_Images.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="ProjectoDB\SQLData\LocalImages\LocalImagesDataSet\DataSet_Local_Images.xss">
       <DependentUpon>DataSet_Local_Images.xsd</DependentUpon>
@@ -193,5 +221,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

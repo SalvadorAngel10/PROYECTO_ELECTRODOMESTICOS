@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesDataSet {
+namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.MySQLData.pruebaDataSEt {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet_Local_Images")]
+    [global::System.Xml.Serialization.XmlRootAttribute("mydbDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet_Local_Images : global::System.Data.DataSet {
+    public partial class mydbDataSet : global::System.Data.DataSet {
         
-        private ImagesDataTable tableImages;
+        private imagenesDataTable tableimagenes;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DataSet_Local_Images() {
+        public mydbDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DataSet_Local_Images(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected mydbDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Images"] != null)) {
-                    base.Tables.Add(new ImagesDataTable(ds.Tables["Images"]));
+                if ((ds.Tables["imagenes"] != null)) {
+                    base.Tables.Add(new imagenesDataTable(ds.Tables["imagenes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ImagesDataTable Images {
+        public imagenesDataTable imagenes {
             get {
-                return this.tableImages;
+                return this.tableimagenes;
             }
         }
         
@@ -127,7 +127,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet_Local_Images cln = ((DataSet_Local_Images)(base.Clone()));
+            mydbDataSet cln = ((mydbDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Images"] != null)) {
-                    base.Tables.Add(new ImagesDataTable(ds.Tables["Images"]));
+                if ((ds.Tables["imagenes"] != null)) {
+                    base.Tables.Add(new imagenesDataTable(ds.Tables["imagenes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableImages = ((ImagesDataTable)(base.Tables["Images"]));
+            this.tableimagenes = ((imagenesDataTable)(base.Tables["imagenes"]));
             if ((initTable == true)) {
-                if ((this.tableImages != null)) {
-                    this.tableImages.InitVars();
+                if ((this.tableimagenes != null)) {
+                    this.tableimagenes.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet_Local_Images";
+            this.DataSetName = "mydbDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet_Local_Images.xsd";
+            this.Namespace = "http://tempuri.org/mydbDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableImages = new ImagesDataTable();
-            base.Tables.Add(this.tableImages);
+            this.tableimagenes = new imagenesDataTable();
+            base.Tables.Add(this.tableimagenes);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeImages() {
+        private bool ShouldSerializeimagenes() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet_Local_Images ds = new DataSet_Local_Images();
+            mydbDataSet ds = new mydbDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,35 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ImagesRowChangeEventHandler(object sender, ImagesRowChangeEvent e);
+        public delegate void imagenesRowChangeEventHandler(object sender, imagenesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ImagesDataTable : global::System.Data.TypedTableBase<ImagesRow> {
+        public partial class imagenesDataTable : global::System.Data.TypedTableBase<imagenesRow> {
             
-            private global::System.Data.DataColumn columnIdIMgae;
+            private global::System.Data.DataColumn columnReferencia;
             
-            private global::System.Data.DataColumn columnproductImage;
+            private global::System.Data.DataColumn columnCategoria;
+            
+            private global::System.Data.DataColumn columnMarca;
+            
+            private global::System.Data.DataColumn columnClase;
+            
+            private global::System.Data.DataColumn columnPrecio;
+            
+            private global::System.Data.DataColumn columnStock;
+            
+            private global::System.Data.DataColumn columnFechaAlta;
+            
+            private global::System.Data.DataColumn columnImagen;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ImagesDataTable() {
-                this.TableName = "Images";
+            public imagenesDataTable() {
+                this.TableName = "imagenes";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +306,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ImagesDataTable(global::System.Data.DataTable table) {
+            internal imagenesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +323,72 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ImagesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected imagenesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IdIMgaeColumn {
+            public global::System.Data.DataColumn ReferenciaColumn {
                 get {
-                    return this.columnIdIMgae;
+                    return this.columnReferencia;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn productImageColumn {
+            public global::System.Data.DataColumn CategoriaColumn {
                 get {
-                    return this.columnproductImage;
+                    return this.columnCategoria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MarcaColumn {
+                get {
+                    return this.columnMarca;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClaseColumn {
+                get {
+                    return this.columnClase;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PrecioColumn {
+                get {
+                    return this.columnPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StockColumn {
+                get {
+                    return this.columnStock;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FechaAltaColumn {
+                get {
+                    return this.columnFechaAlta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ImagenColumn {
+                get {
+                    return this.columnImagen;
                 }
             }
             
@@ -343,53 +403,59 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ImagesRow this[int index] {
+            public imagenesRow this[int index] {
                 get {
-                    return ((ImagesRow)(this.Rows[index]));
+                    return ((imagenesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ImagesRowChangeEventHandler ImagesRowChanging;
+            public event imagenesRowChangeEventHandler imagenesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ImagesRowChangeEventHandler ImagesRowChanged;
+            public event imagenesRowChangeEventHandler imagenesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ImagesRowChangeEventHandler ImagesRowDeleting;
+            public event imagenesRowChangeEventHandler imagenesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ImagesRowChangeEventHandler ImagesRowDeleted;
+            public event imagenesRowChangeEventHandler imagenesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddImagesRow(ImagesRow row) {
+            public void AddimagenesRow(imagenesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ImagesRow AddImagesRow(string IdIMgae, byte[] productImage) {
-                ImagesRow rowImagesRow = ((ImagesRow)(this.NewRow()));
+            public imagenesRow AddimagenesRow(string Referencia, string Categoria, string Marca, string Clase, float Precio, int Stock, System.DateTime FechaAlta, byte[] Imagen) {
+                imagenesRow rowimagenesRow = ((imagenesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IdIMgae,
-                        productImage};
-                rowImagesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowImagesRow);
-                return rowImagesRow;
+                        Referencia,
+                        Categoria,
+                        Marca,
+                        Clase,
+                        Precio,
+                        Stock,
+                        FechaAlta,
+                        Imagen};
+                rowimagenesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowimagenesRow);
+                return rowimagenesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ImagesRow FindByIdIMgae(string IdIMgae) {
-                return ((ImagesRow)(this.Rows.Find(new object[] {
-                            IdIMgae})));
+            public imagenesRow FindByReferencia(string Referencia) {
+                return ((imagenesRow)(this.Rows.Find(new object[] {
+                            Referencia})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ImagesDataTable cln = ((ImagesDataTable)(base.Clone()));
+                imagenesDataTable cln = ((imagenesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,55 +463,75 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ImagesDataTable();
+                return new imagenesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnIdIMgae = base.Columns["IdIMgae"];
-                this.columnproductImage = base.Columns["productImage"];
+                this.columnReferencia = base.Columns["Referencia"];
+                this.columnCategoria = base.Columns["Categoria"];
+                this.columnMarca = base.Columns["Marca"];
+                this.columnClase = base.Columns["Clase"];
+                this.columnPrecio = base.Columns["Precio"];
+                this.columnStock = base.Columns["Stock"];
+                this.columnFechaAlta = base.Columns["FechaAlta"];
+                this.columnImagen = base.Columns["Imagen"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnIdIMgae = new global::System.Data.DataColumn("IdIMgae", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdIMgae);
-                this.columnproductImage = new global::System.Data.DataColumn("productImage", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproductImage);
+                this.columnReferencia = new global::System.Data.DataColumn("Referencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReferencia);
+                this.columnCategoria = new global::System.Data.DataColumn("Categoria", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoria);
+                this.columnMarca = new global::System.Data.DataColumn("Marca", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMarca);
+                this.columnClase = new global::System.Data.DataColumn("Clase", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClase);
+                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrecio);
+                this.columnStock = new global::System.Data.DataColumn("Stock", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStock);
+                this.columnFechaAlta = new global::System.Data.DataColumn("FechaAlta", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaAlta);
+                this.columnImagen = new global::System.Data.DataColumn("Imagen", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImagen);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIdIMgae}, true));
-                this.columnIdIMgae.AllowDBNull = false;
-                this.columnIdIMgae.Unique = true;
-                this.columnIdIMgae.MaxLength = 100;
-                this.columnproductImage.AllowDBNull = false;
+                                this.columnReferencia}, true));
+                this.columnReferencia.AllowDBNull = false;
+                this.columnReferencia.Unique = true;
+                this.columnReferencia.MaxLength = 50;
+                this.columnCategoria.MaxLength = 45;
+                this.columnMarca.MaxLength = 45;
+                this.columnClase.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ImagesRow NewImagesRow() {
-                return ((ImagesRow)(this.NewRow()));
+            public imagenesRow NewimagenesRow() {
+                return ((imagenesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ImagesRow(builder);
+                return new imagenesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ImagesRow);
+                return typeof(imagenesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ImagesRowChanged != null)) {
-                    this.ImagesRowChanged(this, new ImagesRowChangeEvent(((ImagesRow)(e.Row)), e.Action));
+                if ((this.imagenesRowChanged != null)) {
+                    this.imagenesRowChanged(this, new imagenesRowChangeEvent(((imagenesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -453,8 +539,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ImagesRowChanging != null)) {
-                    this.ImagesRowChanging(this, new ImagesRowChangeEvent(((ImagesRow)(e.Row)), e.Action));
+                if ((this.imagenesRowChanging != null)) {
+                    this.imagenesRowChanging(this, new imagenesRowChangeEvent(((imagenesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -462,8 +548,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ImagesRowDeleted != null)) {
-                    this.ImagesRowDeleted(this, new ImagesRowChangeEvent(((ImagesRow)(e.Row)), e.Action));
+                if ((this.imagenesRowDeleted != null)) {
+                    this.imagenesRowDeleted(this, new imagenesRowChangeEvent(((imagenesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -471,14 +557,14 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ImagesRowDeleting != null)) {
-                    this.ImagesRowDeleting(this, new ImagesRowChangeEvent(((ImagesRow)(e.Row)), e.Action));
+                if ((this.imagenesRowDeleting != null)) {
+                    this.imagenesRowDeleting(this, new imagenesRowChangeEvent(((imagenesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveImagesRow(ImagesRow row) {
+            public void RemoveimagenesRow(imagenesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -487,7 +573,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet_Local_Images ds = new DataSet_Local_Images();
+                mydbDataSet ds = new mydbDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -505,7 +591,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ImagesDataTable";
+                attribute2.FixedValue = "imagenesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -549,37 +635,222 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ImagesRow : global::System.Data.DataRow {
+        public partial class imagenesRow : global::System.Data.DataRow {
             
-            private ImagesDataTable tableImages;
+            private imagenesDataTable tableimagenes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ImagesRow(global::System.Data.DataRowBuilder rb) : 
+            internal imagenesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableImages = ((ImagesDataTable)(this.Table));
+                this.tableimagenes = ((imagenesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string IdIMgae {
+            public string Referencia {
                 get {
-                    return ((string)(this[this.tableImages.IdIMgaeColumn]));
+                    return ((string)(this[this.tableimagenes.ReferenciaColumn]));
                 }
                 set {
-                    this[this.tableImages.IdIMgaeColumn] = value;
+                    this[this.tableimagenes.ReferenciaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public byte[] productImage {
+            public string Categoria {
                 get {
-                    return ((byte[])(this[this.tableImages.productImageColumn]));
+                    try {
+                        return ((string)(this[this.tableimagenes.CategoriaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Categoria\' de la tabla \'imagenes\' es DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableImages.productImageColumn] = value;
+                    this[this.tableimagenes.CategoriaColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Marca {
+                get {
+                    try {
+                        return ((string)(this[this.tableimagenes.MarcaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Marca\' de la tabla \'imagenes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableimagenes.MarcaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Clase {
+                get {
+                    try {
+                        return ((string)(this[this.tableimagenes.ClaseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Clase\' de la tabla \'imagenes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableimagenes.ClaseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public float Precio {
+                get {
+                    try {
+                        return ((float)(this[this.tableimagenes.PrecioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Precio\' de la tabla \'imagenes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableimagenes.PrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Stock {
+                get {
+                    try {
+                        return ((int)(this[this.tableimagenes.StockColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Stock\' de la tabla \'imagenes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableimagenes.StockColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime FechaAlta {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableimagenes.FechaAltaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaAlta\' de la tabla \'imagenes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableimagenes.FechaAltaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public byte[] Imagen {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableimagenes.ImagenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Imagen\' de la tabla \'imagenes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableimagenes.ImagenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCategoriaNull() {
+                return this.IsNull(this.tableimagenes.CategoriaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCategoriaNull() {
+                this[this.tableimagenes.CategoriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMarcaNull() {
+                return this.IsNull(this.tableimagenes.MarcaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMarcaNull() {
+                this[this.tableimagenes.MarcaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClaseNull() {
+                return this.IsNull(this.tableimagenes.ClaseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClaseNull() {
+                this[this.tableimagenes.ClaseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPrecioNull() {
+                return this.IsNull(this.tableimagenes.PrecioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPrecioNull() {
+                this[this.tableimagenes.PrecioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStockNull() {
+                return this.IsNull(this.tableimagenes.StockColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStockNull() {
+                this[this.tableimagenes.StockColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFechaAltaNull() {
+                return this.IsNull(this.tableimagenes.FechaAltaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFechaAltaNull() {
+                this[this.tableimagenes.FechaAltaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsImagenNull() {
+                return this.IsNull(this.tableimagenes.ImagenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetImagenNull() {
+                this[this.tableimagenes.ImagenColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -587,22 +858,22 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ImagesRowChangeEvent : global::System.EventArgs {
+        public class imagenesRowChangeEvent : global::System.EventArgs {
             
-            private ImagesRow eventRow;
+            private imagenesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ImagesRowChangeEvent(ImagesRow row, global::System.Data.DataRowAction action) {
+            public imagenesRowChangeEvent(imagenesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ImagesRow Row {
+            public imagenesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -618,7 +889,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         }
     }
 }
-namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesDataSet.DataSet_Local_ImagesTableAdapters {
+namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.MySQLData.pruebaDataSEt.mydbDataSetTableAdapters {
     
     
     /// <summary>
@@ -630,27 +901,27 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ImagesTableAdapter : global::System.ComponentModel.Component {
+    public partial class imagenesTableAdapter : global::System.ComponentModel.Component {
         
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
         
-        private global::System.Data.SqlClient.SqlConnection _connection;
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
         
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
         
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
         
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ImagesTableAdapter() {
+        public imagenesTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
             get {
                 if ((this._adapter == null)) {
                     this.InitAdapter();
@@ -661,7 +932,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -681,7 +952,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
                 }
                 for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
                     if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
                     }
                 }
             }
@@ -689,7 +960,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
             get {
                 return this._transaction;
             }
@@ -715,7 +986,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
             get {
                 if ((this._commandCollection == null)) {
                     this.InitCommandCollection();
@@ -738,70 +1009,405 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Images";
-            tableMapping.ColumnMappings.Add("IdIMgae", "IdIMgae");
-            tableMapping.ColumnMappings.Add("productImage", "productImage");
+            tableMapping.DataSetTable = "imagenes";
+            tableMapping.ColumnMappings.Add("Referencia", "Referencia");
+            tableMapping.ColumnMappings.Add("Categoria", "Categoria");
+            tableMapping.ColumnMappings.Add("Marca", "Marca");
+            tableMapping.ColumnMappings.Add("Clase", "Clase");
+            tableMapping.ColumnMappings.Add("Precio", "Precio");
+            tableMapping.ColumnMappings.Add("Stock", "Stock");
+            tableMapping.ColumnMappings.Add("FechaAlta", "FechaAlta");
+            tableMapping.ColumnMappings.Add("Imagen", "Imagen");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Images] WHERE (([IdIMgae] = @Original_IdIMgae))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `imagenes` WHERE ((`Referencia` = @p1) AND ((@p2 = 1 AND `Categoria` IS NULL) OR (`Categoria` = @p3)) AND ((@p4 = 1 AND `Marca` IS NULL) OR (`Marca` = @p5)) AND ((@p6 = 1 AND `Clase` IS NULL) OR (`Clase` = @p7)) AND ((@p8 = 1 AND `Precio` IS NULL) OR (`Precio` = @p9)) AND ((@p10 = 1 AND `Stock` IS NULL) OR (`Stock` = @p11)) AND ((@p12 = 1 AND `FechaAlta` IS NULL) OR (`FechaAlta` = @p13)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdIMgae", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdIMgae", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Referencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Categoria";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Categoria";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Marca";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Marca";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Clase";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Clase";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Precio";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.Single;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Float;
+            param.IsNullable = true;
+            param.SourceColumn = "Precio";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Stock";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Stock";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p12";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "FechaAlta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p13";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "FechaAlta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Images] ([IdIMgae], [productImage]) VALUES (@IdIMgae, @product" +
-                "Image);\r\nSELECT IdIMgae, productImage FROM Images WHERE (IdIMgae = @IdIMgae)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `imagenes` (`Referencia`, `Categoria`, `Marca`, `Clase`, `Precio`, `S" +
+                "tock`, `FechaAlta`, `Imagen`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdIMgae", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdIMgae", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productImage", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Referencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Categoria";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Marca";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Clase";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Single;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Float;
+            param.IsNullable = true;
+            param.SourceColumn = "Precio";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Stock";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "FechaAlta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Blob;
+            param.IsNullable = true;
+            param.SourceColumn = "Imagen";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Images] SET [IdIMgae] = @IdIMgae, [productImage] = @productImage WH" +
-                "ERE (([IdIMgae] = @Original_IdIMgae));\r\nSELECT IdIMgae, productImage FROM Images" +
-                " WHERE (IdIMgae = @IdIMgae)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `imagenes` SET `Referencia` = @p1, `Categoria` = @p2, `Marca` = @p3, `Clase` = @p4, `Precio` = @p5, `Stock` = @p6, `FechaAlta` = @p7, `Imagen` = @p8 WHERE ((`Referencia` = @p9) AND ((@p10 = 1 AND `Categoria` IS NULL) OR (`Categoria` = @p11)) AND ((@p12 = 1 AND `Marca` IS NULL) OR (`Marca` = @p13)) AND ((@p14 = 1 AND `Clase` IS NULL) OR (`Clase` = @p15)) AND ((@p16 = 1 AND `Precio` IS NULL) OR (`Precio` = @p17)) AND ((@p18 = 1 AND `Stock` IS NULL) OR (`Stock` = @p19)) AND ((@p20 = 1 AND `FechaAlta` IS NULL) OR (`FechaAlta` = @p21)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdIMgae", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdIMgae", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productImage", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "productImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdIMgae", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdIMgae", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Referencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Categoria";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Marca";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Clase";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Single;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Float;
+            param.IsNullable = true;
+            param.SourceColumn = "Precio";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Stock";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "FechaAlta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.Object;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Blob;
+            param.IsNullable = true;
+            param.SourceColumn = "Imagen";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Referencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Categoria";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Categoria";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p12";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Marca";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p13";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Marca";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p14";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Clase";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p15";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Clase";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p16";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Precio";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p17";
+            param.DbType = global::System.Data.DbType.Single;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Float;
+            param.IsNullable = true;
+            param.SourceColumn = "Precio";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p18";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Stock";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p19";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Stock";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p20";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "FechaAlta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p21";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "FechaAlta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PROYECTO_ELECTRODOMESTICOS.Properties.Settings.Default.DB_Local_ImagesConnectionString;
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::PROYECTO_ELECTRODOMESTICOS.Properties.Settings.Default.mydbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdIMgae, productImage FROM dbo.Images";
+            this._commandCollection[0].CommandText = "SELECT `Referencia`, `Categoria`, `Marca`, `Clase`, `Precio`, `Stock`, `FechaAlta" +
+                "`, `Imagen` FROM `imagenes`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT IdIMgae, productImage\r\nFROM     Images\r\nWHERE  (IdIMgae = @IdIMgae)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdIMgae", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "IdIMgae", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE Images\r\nSET          productImage = @productImage\r\nWHERE  (IdIMgae = @IdIM" +
-                "gae); \r\nSELECT IdIMgae, productImage FROM Images WHERE (IdIMgae = @IdIMgae)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productImage", global::System.Data.SqlDbType.Image, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "productImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdIMgae", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "IdIMgae", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet_Local_Images.ImagesDataTable dataTable) {
+        public virtual int Fill(mydbDataSet.imagenesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -814,9 +1420,9 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet_Local_Images.ImagesDataTable GetData() {
+        public virtual mydbDataSet.imagenesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet_Local_Images.ImagesDataTable dataTable = new DataSet_Local_Images.ImagesDataTable();
+            mydbDataSet.imagenesDataTable dataTable = new mydbDataSet.imagenesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -824,51 +1430,15 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DataSet_Local_Images.ImagesDataTable dataTable, string IdIMgae) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((IdIMgae == null)) {
-                throw new global::System.ArgumentNullException("IdIMgae");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(IdIMgae));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet_Local_Images.ImagesDataTable GetImage(string IdIMgae) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((IdIMgae == null)) {
-                throw new global::System.ArgumentNullException("IdIMgae");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(IdIMgae));
-            }
-            DataSet_Local_Images.ImagesDataTable dataTable = new DataSet_Local_Images.ImagesDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet_Local_Images.ImagesDataTable dataTable) {
+        public virtual int Update(mydbDataSet.imagenesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet_Local_Images dataSet) {
-            return this.Adapter.Update(dataSet, "Images");
+        public virtual int Update(mydbDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "imagenes");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -890,12 +1460,60 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_IdIMgae) {
-            if ((Original_IdIMgae == null)) {
-                throw new global::System.ArgumentNullException("Original_IdIMgae");
+        public virtual int Delete(string p1, string p3, string p5, string p7, global::System.Nullable<float> p9, global::System.Nullable<int> p11, global::System.Nullable<global::System.DateTime> p13) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_IdIMgae));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p3 == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p5 == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(p5));
+            }
+            if ((p7 == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(p7));
+            }
+            if ((p9.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((float)(p9.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((p11.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(p11.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((p13.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(p13.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -917,18 +1535,54 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string IdIMgae, byte[] productImage) {
-            if ((IdIMgae == null)) {
-                throw new global::System.ArgumentNullException("IdIMgae");
+        public virtual int Insert(string p1, string p2, string p3, string p4, global::System.Nullable<float> p5, global::System.Nullable<int> p6, global::System.Nullable<global::System.DateTime> p7, object p8) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(IdIMgae));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
             }
-            if ((productImage == null)) {
-                throw new global::System.ArgumentNullException("productImage");
+            if ((p2 == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(productImage));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
+            }
+            if ((p3 == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p4 == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+            }
+            if ((p5.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((float)(p5.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((p6.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(p6.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((p7.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(p7.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((p8 == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((object)(p8));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -950,24 +1604,108 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string IdIMgae, byte[] productImage, string Original_IdIMgae) {
-            if ((IdIMgae == null)) {
-                throw new global::System.ArgumentNullException("IdIMgae");
+        public virtual int Update(string p1, string p2, string p3, string p4, global::System.Nullable<float> p5, global::System.Nullable<int> p6, global::System.Nullable<global::System.DateTime> p7, object p8, string p9, string p11, string p13, string p15, global::System.Nullable<float> p17, global::System.Nullable<int> p19, global::System.Nullable<global::System.DateTime> p21) {
+            if ((p1 == null)) {
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(IdIMgae));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
             }
-            if ((productImage == null)) {
-                throw new global::System.ArgumentNullException("productImage");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(productImage));
-            }
-            if ((Original_IdIMgae == null)) {
-                throw new global::System.ArgumentNullException("Original_IdIMgae");
+            if ((p2 == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_IdIMgae));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
+            }
+            if ((p3 == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p3));
+            }
+            if ((p4 == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p4));
+            }
+            if ((p5.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((float)(p5.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((p6.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((p7.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(p7.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((p8 == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(p8));
+            }
+            if ((p9 == null)) {
+                throw new global::System.ArgumentNullException("p9");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(p9));
+            }
+            if ((p11 == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(p11));
+            }
+            if ((p13 == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(p13));
+            }
+            if ((p15 == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(p15));
+            }
+            if ((p17.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((float)(p17.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((p19.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(p19.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((p21.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(p21.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -989,43 +1727,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(byte[] productImage, string Original_IdIMgae) {
-            return this.Update(Original_IdIMgae, productImage, Original_IdIMgae);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateData(byte[] productImage, string IdIMgae) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((productImage == null)) {
-                throw new global::System.ArgumentNullException("productImage");
-            }
-            else {
-                command.Parameters[0].Value = ((byte[])(productImage));
-            }
-            if ((IdIMgae == null)) {
-                throw new global::System.ArgumentNullException("IdIMgae");
-            }
-            else {
-                command.Parameters[1].Value = ((string)(IdIMgae));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
+        public virtual int Update(string p2, string p3, string p4, global::System.Nullable<float> p5, global::System.Nullable<int> p6, global::System.Nullable<global::System.DateTime> p7, object p8, string p9, string p11, string p13, string p15, global::System.Nullable<float> p17, global::System.Nullable<int> p19, global::System.Nullable<global::System.DateTime> p21) {
+            return this.Update(p9, p2, p3, p4, p5, p6, p7, p8, p9, p11, p13, p15, p17, p19, p21);
         }
     }
     
@@ -1041,7 +1744,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         
         private UpdateOrderOption _updateOrder;
         
-        private ImagesTableAdapter _imagesTableAdapter;
+        private imagenesTableAdapter _imagenesTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1063,12 +1766,12 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ImagesTableAdapter ImagesTableAdapter {
+        public imagenesTableAdapter imagenesTableAdapter {
             get {
-                return this._imagesTableAdapter;
+                return this._imagenesTableAdapter;
             }
             set {
-                this._imagesTableAdapter = value;
+                this._imagenesTableAdapter = value;
             }
         }
         
@@ -1091,9 +1794,9 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._imagesTableAdapter != null) 
-                            && (this._imagesTableAdapter.Connection != null))) {
-                    return this._imagesTableAdapter.Connection;
+                if (((this._imagenesTableAdapter != null) 
+                            && (this._imagenesTableAdapter.Connection != null))) {
+                    return this._imagenesTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1108,7 +1811,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._imagesTableAdapter != null)) {
+                if ((this._imagenesTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1120,14 +1823,14 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DataSet_Local_Images dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(mydbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._imagesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Images.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._imagenesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.imagenes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._imagesTableAdapter.Update(updatedRows));
+                    result = (result + this._imagenesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1139,13 +1842,13 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DataSet_Local_Images dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(mydbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._imagesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Images.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._imagenesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.imagenes.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._imagesTableAdapter.Update(addedRows));
+                    result = (result + this._imagenesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1157,13 +1860,13 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DataSet_Local_Images dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(mydbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._imagesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Images.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._imagenesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.imagenes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._imagesTableAdapter.Update(deletedRows));
+                    result = (result + this._imagenesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1199,15 +1902,15 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DataSet_Local_Images dataSet) {
+        public virtual int UpdateAll(mydbDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._imagesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._imagesTableAdapter.Connection) == false))) {
+            if (((this._imagenesTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._imagenesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1243,13 +1946,13 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._imagesTableAdapter != null)) {
-                    revertConnections.Add(this._imagesTableAdapter, this._imagesTableAdapter.Connection);
-                    this._imagesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._imagesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._imagesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._imagesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._imagesTableAdapter.Adapter);
+                if ((this._imagenesTableAdapter != null)) {
+                    revertConnections.Add(this._imagenesTableAdapter, this._imagenesTableAdapter.Connection);
+                    this._imagenesTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
+                    this._imagenesTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
+                    if (this._imagenesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._imagenesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._imagenesTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1310,9 +2013,9 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages.LocalImagesD
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._imagesTableAdapter != null)) {
-                    this._imagesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._imagesTableAdapter]));
-                    this._imagesTableAdapter.Transaction = null;
+                if ((this._imagenesTableAdapter != null)) {
+                    this._imagenesTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._imagenesTableAdapter]));
+                    this._imagenesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -50,6 +50,12 @@ namespace PROYECTO_ELECTRODOMESTICOS.imagen
             return bitmapImage;
         }
 
+
+        public static void modifyImage(string Referencia,BitmapImage bitmapImage) 
+        {
+            LocalImageDBHandler.UpdateDataFromDB(Referencia,EncodeImage(bitmapImage));
+        }
+
         public static BitmapImage LoadDefaultImage() 
         {
             BitmapImage bitmapImage = new BitmapImage();

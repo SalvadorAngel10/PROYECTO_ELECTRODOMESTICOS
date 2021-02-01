@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS.PAGINAS"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductoGrid"  Width="600" Height="360" Background="LightBlue">
+      Title="ProductoGrid"  Width="800" Height="360" Background="LightBlue">
 
     <StackPanel>
         <TextBlock Text="CONSULTA PRODUCTOS" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="22" FontWeight="Bold"/>
@@ -17,10 +17,17 @@
             <TextBox x:Name="busquedaTextBox" Width="171" TextChanged="TextBox_TextChanged"/>
             <Button Content="Actualizar" Click="Button_Click_2"/>
         </StackPanel>
-        <DataGrid x:Name="myDataGrid" Margin="0,20,0,0" Height="270" Width="590" ColumnWidth="*" IsReadOnly="True"
+        <DataGrid x:Name="myDataGrid" Margin="0,20,0,0" Height="270" Width="790" ColumnWidth="*" IsReadOnly="True"
                   CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Imagen"  >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image x:Name="myProductImage" Width="30" Height="30" Source="{Binding Path=imagen}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Referencia" Binding="{Binding Path=Referencia}" />
                 <DataGridTextColumn Header="Categoria" Binding="{Binding Path=Categoria}"/>
                 <DataGridTextColumn Header="Marca" Binding="{Binding Path=Marca}"/>
@@ -28,6 +35,7 @@
                 <DataGridTextColumn Header="Precio" Binding="{Binding Path=Precio}"/>
                 <DataGridTextColumn Header="Stock" Binding="{Binding Path=stock}"/>
                 <DataGridTextColumn Header="Fecha" Binding="{Binding Path=fechaAlta}"/>
+      
 
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -43,6 +51,28 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Publicar" Background="Black" Foreground="LightBlue" Click="Button_Click_3"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="30">
+                    <DataGridTemplateColumn.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell }">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding publish}" Value="true">
+                                    <Setter Property="Background" Value="#FF50E824" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding publish}" Value="false">
+                                    <Setter Property="Background" Value="Gray" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTemplateColumn.CellStyle>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
 
         </DataGrid>

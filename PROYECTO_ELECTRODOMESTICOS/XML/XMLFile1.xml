@@ -6,6 +6,7 @@
       <Electrodomestico Referencia="1111111111111111111111111111" Precio="0" Clase="A++" Stock="122222222" Fecha="2021-01-31T00:00:00" />
       <Electrodomestico Referencia="12345" Precio="0" Clase="A++" Stock="0" Fecha="2021-01-27T21:05:14.4465198+01:00" />
       <Electrodomestico Referencia="66666666666" Precio="0" Clase="A++" Stock="0" Fecha="2021-01-27T21:21:09.9628822+01:00" />
+      <Electrodomestico Referencia="77777777" Precio="0" Clase="A++" Stock="0" Fecha="2021-01-28T21:10:34.4617334+01:00" />
     </Marca>
     <Marca nombre="balay" />
     <Marca nombre="fagor">
@@ -19,6 +20,8 @@
   <Categoria idCategoria="Nevera">
     <Marca nombre="LG">
       <Electrodomestico Referencia="333" Precio="0" Clase="A++" Stock="0" Fecha="2021-01-27T21:08:28.7777124+01:00" />
+      <Electrodomestico Referencia="4444" Precio="0" Clase="A++" Stock="0" Fecha="2021-01-28T19:00:32.7001848+01:00" />
+      <Electrodomestico Referencia="55555" Precio="0" Clase="A++" Stock="0" Fecha="2021-01-28T19:21:38.0988369+01:00" />
     </Marca>
     <Marca nombre="samsung" />
     <Marca nombre="philips" />

@@ -1,4 +1,5 @@
-﻿using PROYECTO_ELECTRODOMESTICOS.XML;
+﻿using PROYECTO_ELECTRODOMESTICOS.imagen;
+using PROYECTO_ELECTRODOMESTICOS.XML;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -35,6 +36,10 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
         public void Actualizarxml()
         {
             this.ProductList = Class1.LoadProductos();
+            foreach (Producto producto in ProductList) 
+            {
+                producto.imagen = imagenHandler.GetImage(producto.Referencia);
+            }
         }
     }
 }

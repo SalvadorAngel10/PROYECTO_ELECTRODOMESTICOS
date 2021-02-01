@@ -118,6 +118,10 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                
                 Class1.editarProducto(producto);
                 MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
+                if (nuevaImagen) 
+                {
+                    imagenHandler.modifyImage(producto.Referencia,(BitmapImage)myImage.Source);
+                }
 
             }
             else

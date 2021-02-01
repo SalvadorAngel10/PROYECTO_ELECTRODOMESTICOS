@@ -1,4 +1,5 @@
 ﻿using PROYECTO_ELECTRODOMESTICOS.Productos;
+using PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages;
 using PROYECTO_ELECTRODOMESTICOS.XML;
 using System;
 using System.Collections.Generic;
@@ -127,11 +128,17 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
             Producto product = (Producto)myDataGrid.SelectedItem;
             Class1.RemoveProducto(product);
             UpdateProductList();
+            LocalImageDBHandler.RemoveData(product.Referencia);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             UpdateProductList();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

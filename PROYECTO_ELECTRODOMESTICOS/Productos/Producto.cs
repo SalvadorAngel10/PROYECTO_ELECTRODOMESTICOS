@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace PROYECTO_ELECTRODOMESTICOS.Productos
 {
@@ -16,6 +17,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
         public float Precio { set; get; }
         public int stock { set; get; }
         public DateTime fechaAlta { set; get; }
+        public BitmapImage imagen { set; get; }
 
         public Producto(string Referencia,string Categoria,string Marca, string Clase,float Precio ,int stock, DateTime fechaAlta)
         {
