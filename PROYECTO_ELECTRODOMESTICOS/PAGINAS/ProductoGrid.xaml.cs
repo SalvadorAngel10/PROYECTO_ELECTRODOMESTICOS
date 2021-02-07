@@ -57,14 +57,14 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void UpdateProductList()
         {
-
+            ProductoHandler.Actualizarxml();
             categoryCombo.SelectedIndex = 0;
             busquedaTextBox.Text = "";
             listaFiltrada = new ObservableCollection<Producto>(ProductoHandler.ProductList);
             myDataGrid.ItemsSource = ProductoHandler.ProductList;
             myDataGrid.DataContext = ProductoHandler.ProductList;
             myDataGrid.Items.Refresh();
-            ProductoHandler.Actualizarxml();
+           
         }
 
         private void categoryCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)

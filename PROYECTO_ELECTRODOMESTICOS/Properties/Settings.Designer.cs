@@ -46,5 +46,16 @@ namespace PROYECTO_ELECTRODOMESTICOS.Properties {
                 return ((string)(this["mydbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;persistsecurityinfo=True;database=mydb;allowuservar" +
+            "iables=True")]
+        public string mydbConnectionString1 {
+            get {
+                return ((string)(this["mydbConnectionString1"]));
+            }
+        }
     }
 }

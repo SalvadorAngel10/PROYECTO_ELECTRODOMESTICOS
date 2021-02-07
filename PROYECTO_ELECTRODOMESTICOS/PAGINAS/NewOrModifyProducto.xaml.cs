@@ -189,6 +189,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                 tCategoria.Visibility = Visibility.Visible;
                 tMarca.Visibility = Visibility.Visible;
                 checkCategoria.IsEnabled = true;
+                checkMarca.IsEnabled = false;
             }
             else
             {
@@ -196,7 +197,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                 ComboMarca.Visibility = Visibility.Visible;
                 tCategoria.Visibility = Visibility.Hidden;
                 tMarca.Visibility = Visibility.Hidden;
-                checkCategoria.IsEnabled = false;
+                checkCategoria.IsEnabled = true;
+                checkMarca.IsEnabled = true;
             }
         }
         private void checkMarca_Click(object sender, RoutedEventArgs e)
@@ -208,12 +210,15 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
                 tMarca.Visibility = Visibility.Visible;
                 checkMarca.IsEnabled = true;
+                checkCategoria.IsEnabled = false;
             }
             else
             {
 
                 ComboMarca.Visibility = Visibility.Visible;
-                checkMarca.IsEnabled = false;
+                tMarca.Visibility = Visibility.Hidden;
+                checkMarca.IsEnabled = true;
+                checkCategoria.IsEnabled = true;
             }
 
         }
