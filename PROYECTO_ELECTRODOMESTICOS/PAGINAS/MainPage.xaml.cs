@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 {
-    /// <summary>
-    /// Lógica de interacción para MainPage.xaml
-    /// </summary>
     public partial class MainPage : Page
     {
         public MainPage()

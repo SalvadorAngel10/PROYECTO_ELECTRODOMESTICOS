@@ -176,6 +176,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                 {
                     label.Content = "INTRODUZCA BIEN LA INFORMACION DEL PRODUCTO";
                     label.Visibility = Visibility.Visible;
+                   
                 }
             }
         }

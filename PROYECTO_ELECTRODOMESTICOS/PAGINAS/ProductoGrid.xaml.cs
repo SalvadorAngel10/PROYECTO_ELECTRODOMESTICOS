@@ -21,9 +21,7 @@ using System.Xml.Linq;
 
 namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 {
-    /// <summary>
-    /// Lógica de interacción para ProductoGrid.xaml
-    /// </summary>
+    
     public partial class ProductoGrid : Page
     {
         ProductoHandler ProductoHandler;
@@ -144,19 +142,23 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
             {
 
                 ImageDBHandler.addElectrodomestico(producto);
-                Class1.editarProducto(producto);
-                //producto.publish = true;
-                UpdateProductList();
+               
+                producto.publish = true;
+                
 
             }
             else
             {
                 
                 ImageDBHandler.deleteElectrodomestico(producto);
-               // producto.publish =false;
-                Class1.editarProducto(producto);
-                UpdateProductList();
+                producto.publish =false;
+                
+                
             }
+            Class1.editarProducto(producto);
+            UpdateProductList();
+
+
         }
     }
 }

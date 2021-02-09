@@ -53,8 +53,8 @@
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="publico" Content="Publicar" Background="Black" Foreground="LightBlue" Click="Button_Click_3"/>
+                        <DataTemplate >
+                            <Button x:Name="publicar" Content="Publicar" Background="Black" Foreground="LightBlue" Click="Button_Click_3"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
