@@ -142,14 +142,19 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
             Producto producto = (Producto)myDataGrid.SelectedItem;
             if (producto.publish == false)
             {
+
                 ImageDBHandler.addElectrodomestico(producto);
-                
+                Class1.editarProducto(producto);
+                //producto.publish = true;
                 UpdateProductList();
 
             }
             else
             {
+                
                 ImageDBHandler.deleteElectrodomestico(producto);
+               // producto.publish =false;
+                Class1.editarProducto(producto);
                 UpdateProductList();
             }
         }

@@ -82,7 +82,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
         public static void crearProducto()
         {
             XElement xmlProducto = new XElement("Electrodomestico",new XAttribute("Referencia",producto.Referencia), 
-            new XAttribute("Precio", producto.Precio),new XAttribute("Clase",producto.Clase),new XAttribute("Stock", producto.stock), new XAttribute("Fecha", producto.fechaAlta));
+            new XAttribute("Precio", producto.Precio),new XAttribute("Clase",producto.Clase),new XAttribute("Stock", producto.stock), new XAttribute("Fecha", producto.fechaAlta),new XAttribute("publish",producto.publish));
             xmlModelo.Add(xmlProducto);
         }
 
@@ -102,6 +102,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
                 producto.Precio=float.Parse( productoxml.Attribute("Precio").Value);
                 producto.stock =int.Parse( productoxml.Attribute("Stock").Value);
                 producto.fechaAlta =DateTime.Parse(productoxml.Attribute("Fecha").Value);
+                producto.publish = bool.Parse(productoxml.Attribute("publish").Value);
+
                 productiList.Add(producto);
 
             }

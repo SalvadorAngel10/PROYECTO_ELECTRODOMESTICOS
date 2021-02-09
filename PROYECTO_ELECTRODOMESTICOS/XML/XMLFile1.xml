@@ -2,22 +2,20 @@
 <Almacen>
   <Categoria idCategoria="Lavadora">
     <Marca nombre="bosh">
-      <Electrodomestico Referencia="123" Precio="0" Clase="A++" Stock="0" Fecha="2021-02-09T18:35:58.4219577+01:00" />
+      <Electrodomestico Referencia="123" Precio="0" Clase="A++" Stock="0" Fecha="2021-02-09T19:36:00.244929+01:00" publish="false" />
     </Marca>
     <Marca nombre="balay" />
     <Marca nombre="fagor" />
     <Marca nombre="siemens" />
   </Categoria>
   <Categoria idCategoria="Lavabajillas">
-    <Marca nombre="LG" />
-    <Marca nombre="samsung">
-      <Electrodomestico Referencia="10" Precio="0" Clase="A" Stock="0" Fecha="2021-02-09T18:55:53.9631096+01:00" />
-    </Marca>
+    <Marca nombre="LG"></Marca>
+    <Marca nombre="samsung" />
     <Marca nombre="philips" />
     <Marca nombre="siemens" />
   </Categoria>
   <Categoria idCategoria="Microhondas">
-    <Marca nombre="samsung" />
+    <Marca nombre="samsung"></Marca>
     <Marca nombre="LG" />
     <Marca nombre="balay" />
     <Marca nombre="fagor" />
@@ -25,9 +23,7 @@
   <Categoria idCategoria="Secador">
     <Marca nombre="samsung" />
     <Marca nombre="bosh" />
-    <Marca nombre="philips">
-      <Electrodomestico Referencia="22222" Precio="0" Clase="A++" Stock="0" Fecha="2021-02-09T19:00:02.3468538+01:00" />
-    </Marca>
+    <Marca nombre="philips" />
     <Marca nombre="balay" />
   </Categoria>
 </Almacen>
