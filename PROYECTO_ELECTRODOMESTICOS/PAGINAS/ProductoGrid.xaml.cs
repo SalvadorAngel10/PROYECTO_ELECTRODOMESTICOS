@@ -1,4 +1,5 @@
 ﻿using PROYECTO_ELECTRODOMESTICOS.Productos;
+using PROYECTO_ELECTRODOMESTICOS.ProjectoDB.MySQLData;
 using PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages;
 using PROYECTO_ELECTRODOMESTICOS.XML;
 using System;
@@ -138,7 +139,19 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            Producto producto = (Producto)myDataGrid.SelectedItem;
+            if (producto.publish == false)
+            {
+                ImageDBHandler.addElectrodomestico(producto);
+                
+                UpdateProductList();
 
+            }
+            else
+            {
+                ImageDBHandler.deleteElectrodomestico(producto);
+                UpdateProductList();
+            }
         }
     }
 }

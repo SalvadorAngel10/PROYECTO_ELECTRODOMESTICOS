@@ -72,7 +72,8 @@
                             </Style.Triggers>
                         </Style>
                     </DataGridTemplateColumn.CellStyle>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
 
         </DataGrid>

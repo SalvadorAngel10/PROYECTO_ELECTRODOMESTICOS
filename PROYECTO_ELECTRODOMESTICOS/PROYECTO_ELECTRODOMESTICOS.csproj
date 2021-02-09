@@ -85,6 +85,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ProjectoDB\MySQLData\ImageDBHandler.cs" />
+    <Compile Include="ProjectoDB\MySQLData\pruebaDataSEt\mydbDataSet.cs">
+      <DependentUpon>mydbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProjectoDB\MySQLData\pruebaDataSEt\mydbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,8 +227,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ProjectoDB\MySQLData\LocalIMagesDB\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

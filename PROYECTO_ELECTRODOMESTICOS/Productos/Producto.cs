@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROYECTO_ELECTRODOMESTICOS.ProjectoDB.MySQLData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
         public int stock { set; get; }
         public DateTime fechaAlta { set; get; }
         public BitmapImage imagen { set; get; }
+        public bool publish { get; set; }
+
 
         public Producto(string Referencia,string Categoria,string Marca, string Clase,float Precio ,int stock, DateTime fechaAlta)
         {
@@ -29,6 +32,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
             this.Precio = Precio;
             this.stock = stock;
             this.fechaAlta = DateTime.Now;
+            this.publish = false;
 
         }
         public Producto()
@@ -40,6 +44,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
             this.Precio = 0;
             this.stock = 0;
             this.fechaAlta = DateTime.Now;
+            this.publish = false;
         }
 
         public override string ToString()
