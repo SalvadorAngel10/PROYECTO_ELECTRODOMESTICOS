@@ -47,7 +47,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.LocalImages
                 
                 dataImage= imagesTableAdapter.GetImage(idImage).ElementAt(0).productImage;
             }
-            catch(Exception ex) { }
+            catch(Exception e) { }
 
             return dataImage;
         }

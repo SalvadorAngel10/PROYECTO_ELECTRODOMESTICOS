@@ -21,12 +21,12 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
     /// </summary>
     public partial class Informe : Page
     {
-        public static ProductoHandler productoHandler;
+         ProductoHandler productoHandler;
 
         public Informe(ProductoHandler productoHandler)
         {
             InitializeComponent();
-            productoHandler = new ProductoHandler();
+            this.productoHandler = productoHandler;
 
         }
 

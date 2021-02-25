@@ -22,14 +22,22 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
     /// </summary>
     public partial class Facturas : Page
     {
-        public static ProductoHandler productoHandler;
-        ObservableCollection<Producto> listaproductos;
+        ProductoHandler productoHandler;
+        public Producto producto;
+        ObservableCollection<Producto> listaproductosF;
 
         public Facturas(ProductoHandler productoHandler)
         {
+          
             InitializeComponent();
-            
+            this.productoHandler = productoHandler;
+            this.comboProductos.ItemsSource = productoHandler.ProductList;
+            listaproductosF = new ObservableCollection<Producto>();
+            tablaProductos.ItemsSource = listaproductosF;
+
         }
+    
+
 
         private void productosCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -38,6 +46,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Producto producto = (Producto)comboProductos.SelectedItem;
+            listaproductosF.Add(producto);
 
         }
 

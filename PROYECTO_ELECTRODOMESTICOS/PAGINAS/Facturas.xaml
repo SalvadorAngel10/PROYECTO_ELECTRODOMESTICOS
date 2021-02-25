@@ -19,7 +19,7 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="20" Margin="0,10,0,0">
             <TextBlock Text="PRODUCTOS: "/>
-            <ComboBox x:Name="productosCombo" Width="200" SelectionChanged="productosCombo_SelectionChanged"/>
+            <ComboBox x:Name="comboProductos" Width="200" SelectionChanged="productosCombo_SelectionChanged"/>
             <Button Content="CREAR" Click="Button_Click"/>
         </StackPanel>
         <DataGrid x:Name="tablaProductos" Margin="5,20,5,0" Height="178" Width="790" ColumnWidth="*" IsReadOnly="True"
