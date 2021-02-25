@@ -1,5 +1,6 @@
 ﻿using PROYECTO_ELECTRODOMESTICOS.imagen;
 using PROYECTO_ELECTRODOMESTICOS.Productos;
+using PROYECTO_ELECTRODOMESTICOS.ProjectoDB.MySQLData;
 using PROYECTO_ELECTRODOMESTICOS.XML;
 using System;
 using System.Collections.Generic;
@@ -115,7 +116,13 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
         {
             if (verify)
             {
-               
+
+                if (producto.publish)
+                {
+                    producto.imagen = (BitmapImage)myImage.Source;
+                    ImageDBHandler.updateElectrodomestico(producto);
+                }
+
                 Class1.editarProducto(producto);
                 MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
                 if (nuevaImagen) 

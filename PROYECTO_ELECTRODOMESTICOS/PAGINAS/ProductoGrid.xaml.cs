@@ -127,6 +127,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
             Producto product = (Producto)myDataGrid.SelectedItem;
             Class1.RemoveProducto(product);
             UpdateProductList();
+            ImageDBHandler.deleteElectrodomestico(product);
             LocalImageDBHandler.RemoveData(product.Referencia);
         }
 

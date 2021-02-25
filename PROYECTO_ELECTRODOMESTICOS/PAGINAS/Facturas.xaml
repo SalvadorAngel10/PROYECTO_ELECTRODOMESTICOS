@@ -1,0 +1,46 @@
+﻿<Page x:Class="PROYECTO_ELECTRODOMESTICOS.PAGINAS.Facturas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS.PAGINAS"
+      mc:Ignorable="d" 
+      d:DesignHeight="360" d:DesignWidth="800" Background="LightBlue"
+      Title="Facturas">
+    <StackPanel>
+        <TextBlock Text="CREAR FACTURA" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="22" FontWeight="Bold"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="CIF: "/>
+            <TextBox x:Name="cif" Width="150"/>
+            <TextBlock Text="  NOMBRE: "/>
+            <TextBox x:Name="nombre" Width="171"/>
+            <TextBlock Text="  DIRECCION: "/>
+            <TextBox x:Name="direccion" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="20" Margin="0,10,0,0">
+            <TextBlock Text="PRODUCTOS: "/>
+            <ComboBox x:Name="productosCombo" Width="200" SelectionChanged="productosCombo_SelectionChanged"/>
+            <Button Content="CREAR" Click="Button_Click"/>
+        </StackPanel>
+        <DataGrid x:Name="tablaProductos" Margin="5,20,5,0" Height="178" Width="790" ColumnWidth="*" IsReadOnly="True"
+                  CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="tablaProductos_SelectionChanged">
+            <DataGrid.Columns>
+               
+                <DataGridTextColumn Header="Referencia" Binding="{Binding Path=Referencia}" />
+                <DataGridTextColumn Header="Marca" Binding="{Binding Path=Marca}"/>
+                <DataGridTemplateColumn Header="Cantidad">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Precio" Binding="{Binding Path=Precio}"/>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </StackPanel>
+</Page>

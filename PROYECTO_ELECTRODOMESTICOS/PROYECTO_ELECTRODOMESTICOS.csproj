@@ -84,6 +84,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PAGINAS\Facturas.xaml.cs">
+      <DependentUpon>Facturas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PAGINAS\Informe.xaml.cs">
+      <DependentUpon>Informe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProjectoDB\MySQLData\ImageDBHandler.cs" />
     <Compile Include="ProjectoDB\MySQLData\pruebaDataSEt\mydbDataSet.cs">
       <DependentUpon>mydbDataSet.xsd</DependentUpon>
@@ -125,6 +131,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PAGINAS\Facturas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PAGINAS\Informe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PAGINAS\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -18,7 +18,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.MySQLData
 
         public static void addElectrodomestico(Producto productos) 
         {
-            imagenesTableAdapter.Insert(productos.Referencia,productos.Categoria,productos.Marca,productos.Clase,productos.Precio,productos.stock,productos.fechaAlta,productos.imagen);
+            byte[] imagen = imagenHandler.EncodeImage(productos.imagen);
+            imagenesTableAdapter.Insert(productos.Referencia,productos.Categoria,productos.Marca,productos.Clase,productos.Precio,productos.stock,productos.fechaAlta,imagenHandler.EncodeImage(productos.imagen));
             imagenesTableAdapter.Update(dataset);
         }
         public static void deleteElectrodomestico(Producto productos)
@@ -32,7 +33,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.MySQLData
             byte[] imagen = imagenHandler.EncodeImage(productos.imagen);
             float precio = productos.Precio;
             decimal Precio = Convert.ToDecimal(precio);
-            imagenesTableAdapter.ActualizarElectrodomesticos(productos.Referencia,productos.Categoria,productos.Marca,productos.Clase,Precio,productos.stock,productos.fechaAlta,imagen);
+            imagenesTableAdapter.ActualizarElectrodomesticos(productos.Referencia,productos.Categoria,productos.Marca,productos.Clase,Precio,productos.stock,productos.fechaAlta,imagenHandler.EncodeImage(productos.imagen));
             
         }
 

@@ -1,5 +1,4 @@
-﻿using PROYECTO_ELECTRODOMESTICOS.PAGINAS;
-using PROYECTO_ELECTRODOMESTICOS.Productos;
+﻿using PROYECTO_ELECTRODOMESTICOS.Productos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,61 +14,76 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PROYECTO_ELECTRODOMESTICOS
+namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Lógica de interacción para Informe.xaml
+    /// </summary>
+    public partial class Informe : Page
     {
-        public static Frame myNavigationFrame;
         public static ProductoHandler productoHandler;
 
-        public MainWindow()
+        public Informe(ProductoHandler productoHandler)
         {
             InitializeComponent();
-            myNavigationFrame = myFrame;
             productoHandler = new ProductoHandler();
-        }
 
-    
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Botones.IsVisible)
+            if (Butons.IsVisible)
             {
-                Botones.Visibility = Visibility.Hidden;
+                Butons.Visibility = Visibility.Hidden;
             }
-            else { Botones.Visibility = Visibility.Visible; }
+            else { Butons.Visibility = Visibility.Visible; }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("NUEVO ELECTRODOMÉSTICO",productoHandler));
+            if (dni.IsVisible)
+            {
+                dni.Visibility = Visibility.Hidden;
+            }
+            else { dni.Visibility = Visibility.Visible; }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            productoHandler.Actualizarxml();
-            myNavigationFrame.NavigationService.Navigate(new ProductoShow(productoHandler));
+            if (fechas.IsVisible)
+            {
+                fechas.Visibility = Visibility.Hidden;
+            }
+            else { fechas.Visibility = Visibility.Visible; }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            myNavigationFrame.NavigationService.Navigate(new ProductoGrid(productoHandler));
-
+            if (factura.IsVisible)
+            {
+                factura.Visibility = Visibility.Hidden;
+            }
+            else { factura.Visibility = Visibility.Visible; }
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            myNavigationFrame.NavigationService.Navigate(new MainPage());
+            MainWindow.myNavigationFrame.NavigationService.Navigate(new Facturas(productoHandler));
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            this.Close();
+
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            myNavigationFrame.NavigationService.Navigate(new Informe(productoHandler));
+
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
