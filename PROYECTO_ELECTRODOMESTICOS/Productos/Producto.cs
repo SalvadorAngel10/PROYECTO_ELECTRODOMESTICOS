@@ -51,7 +51,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
 
         public override string ToString()
         {
-            return Referencia;
+            return "Referencia: "+Referencia+" Electrodomestico: "+Categoria+" Precio: "+Precio;
         }
 
         public object Clone()

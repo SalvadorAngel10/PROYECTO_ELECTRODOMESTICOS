@@ -1,0 +1,16 @@
+﻿<Window x:Class="PROYECTO_ELECTRODOMESTICOS.ReportsData.ReportPreview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS.ReportsData"
+        mc:Ignorable="d"
+        Title="ReportPreview" Height="450" Width="800">
+    <Grid>
+        <WindowsFormsHost HorizontalAlignment="Left" Height="417" Margin="1,2,-0.4,0" VerticalAlignment="Top" Width="793">
+            <rv:ReportViewer x:Name="myReportView"/>
+        </WindowsFormsHost>
+
+    </Grid>
+</Window>

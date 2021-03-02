@@ -30,7 +30,13 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
         
         private producto_facturaDataTable tableproducto_factura;
         
-        private DataTable1DataTable tableDataTable1;
+        private InformeDataTable tableInforme;
+        
+        private global::System.Data.DataRelation relationFK_factura_Cliente;
+        
+        private global::System.Data.DataRelation relationFK_producto_factura_Factura;
+        
+        private global::System.Data.DataRelation relationFK_factura_Cliente1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -69,8 +75,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 if ((ds.Tables["producto_factura"] != null)) {
                     base.Tables.Add(new producto_facturaDataTable(ds.Tables["producto_factura"]));
                 }
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["Informe"] != null)) {
+                    base.Tables.Add(new InformeDataTable(ds.Tables["Informe"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -124,9 +130,9 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable1DataTable DataTable1 {
+        public InformeDataTable Informe {
             get {
-                return this.tableDataTable1;
+                return this.tableInforme;
             }
         }
         
@@ -206,8 +212,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 if ((ds.Tables["producto_factura"] != null)) {
                     base.Tables.Add(new producto_facturaDataTable(ds.Tables["producto_factura"]));
                 }
-                if ((ds.Tables["DataTable1"] != null)) {
-                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
+                if ((ds.Tables["Informe"] != null)) {
+                    base.Tables.Add(new InformeDataTable(ds.Tables["Informe"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -260,12 +266,15 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                     this.tableproducto_factura.InitVars();
                 }
             }
-            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
+            this.tableInforme = ((InformeDataTable)(base.Tables["Informe"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable1 != null)) {
-                    this.tableDataTable1.InitVars();
+                if ((this.tableInforme != null)) {
+                    this.tableInforme.InitVars();
                 }
             }
+            this.relationFK_factura_Cliente = this.Relations["FK_factura_Cliente"];
+            this.relationFK_producto_factura_Factura = this.Relations["FK_producto_factura_Factura"];
+            this.relationFK_factura_Cliente1 = this.Relations["FK_factura_Cliente1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -282,8 +291,20 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             base.Tables.Add(this.tablefactura);
             this.tableproducto_factura = new producto_facturaDataTable();
             base.Tables.Add(this.tableproducto_factura);
-            this.tableDataTable1 = new DataTable1DataTable();
-            base.Tables.Add(this.tableDataTable1);
+            this.tableInforme = new InformeDataTable();
+            base.Tables.Add(this.tableInforme);
+            this.relationFK_factura_Cliente = new global::System.Data.DataRelation("FK_factura_Cliente", new global::System.Data.DataColumn[] {
+                        this.tableCliente.cifColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefactura.cif1Column}, false);
+            this.Relations.Add(this.relationFK_factura_Cliente);
+            this.relationFK_producto_factura_Factura = new global::System.Data.DataRelation("FK_producto_factura_Factura", new global::System.Data.DataColumn[] {
+                        this.tablefactura.refFacturaColumn}, new global::System.Data.DataColumn[] {
+                        this.tableproducto_factura.refFactura1Column}, false);
+            this.Relations.Add(this.relationFK_producto_factura_Factura);
+            this.relationFK_factura_Cliente1 = new global::System.Data.DataRelation("FK_factura_Cliente1", new global::System.Data.DataColumn[] {
+                        this.tableInforme.cifColumn}, new global::System.Data.DataColumn[] {
+                        this.tablefactura.cif1Column}, false);
+            this.Relations.Add(this.relationFK_factura_Cliente1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -306,7 +327,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeDataTable1() {
+        private bool ShouldSerializeInforme() {
             return false;
         }
         
@@ -375,7 +396,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
         public delegate void producto_facturaRowChangeEventHandler(object sender, producto_facturaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
+        public delegate void InformeRowChangeEventHandler(object sender, InformeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -677,7 +698,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             private global::System.Data.DataColumn columncif1;
             
-            private global::System.Data.DataColumn columncantidad;
+            private global::System.Data.DataColumn columnfecha;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -730,9 +751,9 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn cantidadColumn {
+            public global::System.Data.DataColumn fechaColumn {
                 get {
-                    return this.columncantidad;
+                    return this.columnfecha;
                 }
             }
             
@@ -773,12 +794,15 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public facturaRow AddfacturaRow(string refFactura, string cif1, int cantidad) {
+            public facturaRow AddfacturaRow(string refFactura, ClienteRow parentClienteRowByFK_factura_Cliente, System.DateTime fecha) {
                 facturaRow rowfacturaRow = ((facturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         refFactura,
-                        cif1,
-                        cantidad};
+                        null,
+                        fecha};
+                if ((parentClienteRowByFK_factura_Cliente != null)) {
+                    columnValuesArray[1] = parentClienteRowByFK_factura_Cliente[0];
+                }
                 rowfacturaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfacturaRow);
                 return rowfacturaRow;
@@ -810,7 +834,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             internal void InitVars() {
                 this.columnrefFactura = base.Columns["refFactura"];
                 this.columncif1 = base.Columns["cif1"];
-                this.columncantidad = base.Columns["cantidad"];
+                this.columnfecha = base.Columns["fecha"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -820,8 +844,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 base.Columns.Add(this.columnrefFactura);
                 this.columncif1 = new global::System.Data.DataColumn("cif1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncif1);
-                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncantidad);
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnrefFactura}, true));
                 this.columnrefFactura.AllowDBNull = false;
@@ -1081,14 +1105,17 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public producto_facturaRow Addproducto_facturaRow(string refProducto1, string refFactura1, string Marca, int cantidad, string precio) {
+            public producto_facturaRow Addproducto_facturaRow(string refProducto1, facturaRow parentfacturaRowByFK_producto_factura_Factura, string Marca, int cantidad, double precio) {
                 producto_facturaRow rowproducto_facturaRow = ((producto_facturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         refProducto1,
-                        refFactura1,
+                        null,
                         Marca,
                         cantidad,
                         precio};
+                if ((parentfacturaRowByFK_producto_factura_Factura != null)) {
+                    columnValuesArray[1] = parentfacturaRowByFK_producto_factura_Factura[0];
+                }
                 rowproducto_facturaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowproducto_facturaRow);
                 return rowproducto_facturaRow;
@@ -1136,7 +1163,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 base.Columns.Add(this.columnMarca);
                 this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncantidad);
-                this.columnprecio = new global::System.Data.DataColumn("precio", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnprecio = new global::System.Data.DataColumn("precio", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprecio);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnrefProducto1}, true));
@@ -1145,7 +1172,6 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 this.columnrefProducto1.MaxLength = 100;
                 this.columnrefFactura1.MaxLength = 100;
                 this.columnMarca.MaxLength = 200;
-                this.columnprecio.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1277,7 +1303,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
+        public partial class InformeDataTable : global::System.Data.TypedTableBase<InformeRow> {
             
             private global::System.Data.DataColumn columncif;
             
@@ -1287,18 +1313,20 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             private global::System.Data.DataColumn columnrefFactura;
             
-            private global::System.Data.DataColumn columncantidad;
+            private global::System.Data.DataColumn columnfecha;
+            
+            private global::System.Data.DataColumn columnrefProducto1;
             
             private global::System.Data.DataColumn columnMarca;
             
-            private global::System.Data.DataColumn columnExpr1;
+            private global::System.Data.DataColumn columncantidad;
             
             private global::System.Data.DataColumn columnprecio;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1DataTable() {
-                this.TableName = "DataTable1";
+            public InformeDataTable() {
+                this.TableName = "Informe";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1306,7 +1334,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DataTable1DataTable(global::System.Data.DataTable table) {
+            internal InformeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1323,7 +1351,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected InformeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1362,9 +1390,17 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn cantidadColumn {
+            public global::System.Data.DataColumn fechaColumn {
                 get {
-                    return this.columncantidad;
+                    return this.columnfecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn refProducto1Column {
+                get {
+                    return this.columnrefProducto1;
                 }
             }
             
@@ -1378,9 +1414,9 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
+            public global::System.Data.DataColumn cantidadColumn {
                 get {
-                    return this.columnExpr1;
+                    return this.columncantidad;
                 }
             }
             
@@ -1403,52 +1439,62 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row this[int index] {
+            public InformeRow this[int index] {
                 get {
-                    return ((DataTable1Row)(this.Rows[index]));
+                    return ((InformeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
+            public event InformeRowChangeEventHandler InformeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
+            public event InformeRowChangeEventHandler InformeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
+            public event InformeRowChangeEventHandler InformeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
+            public event InformeRowChangeEventHandler InformeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddDataTable1Row(DataTable1Row row) {
+            public void AddInformeRow(InformeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string cif, string nombre, string direccion, string refFactura, int cantidad, string Marca, int Expr1, string precio) {
-                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
+            public InformeRow AddInformeRow(string cif, string nombre, string direccion, string refFactura, System.DateTime fecha, string refProducto1, string Marca, int cantidad, double precio) {
+                InformeRow rowInformeRow = ((InformeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         cif,
                         nombre,
                         direccion,
                         refFactura,
-                        cantidad,
+                        fecha,
+                        refProducto1,
                         Marca,
-                        Expr1,
+                        cantidad,
                         precio};
-                rowDataTable1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable1Row);
-                return rowDataTable1Row;
+                rowInformeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowInformeRow);
+                return rowInformeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InformeRow FindBycifrefFacturarefProducto1(string cif, string refFactura, string refProducto1) {
+                return ((InformeRow)(this.Rows.Find(new object[] {
+                            cif,
+                            refFactura,
+                            refProducto1})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
+                InformeDataTable cln = ((InformeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1456,7 +1502,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable1DataTable();
+                return new InformeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1466,9 +1512,10 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 this.columnnombre = base.Columns["nombre"];
                 this.columndireccion = base.Columns["direccion"];
                 this.columnrefFactura = base.Columns["refFactura"];
-                this.columncantidad = base.Columns["cantidad"];
+                this.columnfecha = base.Columns["fecha"];
+                this.columnrefProducto1 = base.Columns["refProducto1"];
                 this.columnMarca = base.Columns["Marca"];
-                this.columnExpr1 = base.Columns["Expr1"];
+                this.columncantidad = base.Columns["cantidad"];
                 this.columnprecio = base.Columns["precio"];
             }
             
@@ -1483,48 +1530,55 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 base.Columns.Add(this.columndireccion);
                 this.columnrefFactura = new global::System.Data.DataColumn("refFactura", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrefFactura);
-                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncantidad);
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha);
+                this.columnrefProducto1 = new global::System.Data.DataColumn("refProducto1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrefProducto1);
                 this.columnMarca = new global::System.Data.DataColumn("Marca", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMarca);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
-                this.columnprecio = new global::System.Data.DataColumn("precio", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
+                this.columnprecio = new global::System.Data.DataColumn("precio", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprecio);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columncif,
+                                this.columnrefFactura,
+                                this.columnrefProducto1}, true));
                 this.columncif.AllowDBNull = false;
                 this.columncif.MaxLength = 100;
                 this.columnnombre.MaxLength = 200;
                 this.columndireccion.MaxLength = 200;
                 this.columnrefFactura.AllowDBNull = false;
                 this.columnrefFactura.MaxLength = 100;
+                this.columnrefProducto1.AllowDBNull = false;
+                this.columnrefProducto1.MaxLength = 100;
                 this.columnMarca.MaxLength = 200;
-                this.columnprecio.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row NewDataTable1Row() {
-                return ((DataTable1Row)(this.NewRow()));
+            public InformeRow NewInformeRow() {
+                return ((InformeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable1Row(builder);
+                return new InformeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable1Row);
+                return typeof(InformeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable1RowChanged != null)) {
-                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.InformeRowChanged != null)) {
+                    this.InformeRowChanged(this, new InformeRowChangeEvent(((InformeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1532,8 +1586,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable1RowChanging != null)) {
-                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.InformeRowChanging != null)) {
+                    this.InformeRowChanging(this, new InformeRowChangeEvent(((InformeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1541,8 +1595,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable1RowDeleted != null)) {
-                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.InformeRowDeleted != null)) {
+                    this.InformeRowDeleted(this, new InformeRowChangeEvent(((InformeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1550,14 +1604,14 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable1RowDeleting != null)) {
-                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
+                if ((this.InformeRowDeleting != null)) {
+                    this.InformeRowDeleting(this, new InformeRowChangeEvent(((InformeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveDataTable1Row(DataTable1Row row) {
+            public void RemoveInformeRow(InformeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1584,7 +1638,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable1DataTable";
+                attribute2.FixedValue = "InformeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1705,6 +1759,17 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             public void SetdireccionNull() {
                 this[this.tableCliente.direccionColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public facturaRow[] GetfacturaRows() {
+                if ((this.Table.ChildRelations["FK_factura_Cliente"] == null)) {
+                    return new facturaRow[0];
+                }
+                else {
+                    return ((facturaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_factura_Cliente"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1750,17 +1815,39 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int cantidad {
+            public System.DateTime fecha {
                 get {
                     try {
-                        return ((int)(this[this.tablefactura.cantidadColumn]));
+                        return ((global::System.DateTime)(this[this.tablefactura.fechaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'factura\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha\' de la tabla \'factura\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablefactura.cantidadColumn] = value;
+                    this[this.tablefactura.fechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ClienteRow ClienteRow {
+                get {
+                    return ((ClienteRow)(this.GetParentRow(this.Table.ParentRelations["FK_factura_Cliente"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_factura_Cliente"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InformeRow InformeRow {
+                get {
+                    return ((InformeRow)(this.GetParentRow(this.Table.ParentRelations["FK_factura_Cliente1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_factura_Cliente1"]);
                 }
             }
             
@@ -1778,14 +1865,25 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscantidadNull() {
-                return this.IsNull(this.tablefactura.cantidadColumn);
+            public bool IsfechaNull() {
+                return this.IsNull(this.tablefactura.fechaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcantidadNull() {
-                this[this.tablefactura.cantidadColumn] = global::System.Convert.DBNull;
+            public void SetfechaNull() {
+                this[this.tablefactura.fechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public producto_facturaRow[] Getproducto_facturaRows() {
+                if ((this.Table.ChildRelations["FK_producto_factura_Factura"] == null)) {
+                    return new producto_facturaRow[0];
+                }
+                else {
+                    return ((producto_facturaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_producto_factura_Factura"])));
+                }
             }
         }
         
@@ -1864,10 +1962,10 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string precio {
+            public double precio {
                 get {
                     try {
-                        return ((string)(this[this.tableproducto_factura.precioColumn]));
+                        return ((double)(this[this.tableproducto_factura.precioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'precio\' de la tabla \'producto_factura\' es DBNull.", e);
@@ -1875,6 +1973,17 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 }
                 set {
                     this[this.tableproducto_factura.precioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public facturaRow facturaRow {
+                get {
+                    return ((facturaRow)(this.GetParentRow(this.Table.ParentRelations["FK_producto_factura_Factura"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_producto_factura_Factura"]);
                 }
             }
             
@@ -1930,25 +2039,25 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable1Row : global::System.Data.DataRow {
+        public partial class InformeRow : global::System.Data.DataRow {
             
-            private DataTable1DataTable tableDataTable1;
+            private InformeDataTable tableInforme;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
+            internal InformeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+                this.tableInforme = ((InformeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string cif {
                 get {
-                    return ((string)(this[this.tableDataTable1.cifColumn]));
+                    return ((string)(this[this.tableInforme.cifColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.cifColumn] = value;
+                    this[this.tableInforme.cifColumn] = value;
                 }
             }
             
@@ -1957,14 +2066,14 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             public string nombre {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.nombreColumn]));
+                        return ((string)(this[this.tableInforme.nombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'Informe\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.nombreColumn] = value;
+                    this[this.tableInforme.nombreColumn] = value;
                 }
             }
             
@@ -1973,14 +2082,14 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             public string direccion {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.direccionColumn]));
+                        return ((string)(this[this.tableInforme.direccionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'direccion\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'direccion\' de la tabla \'Informe\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.direccionColumn] = value;
+                    this[this.tableInforme.direccionColumn] = value;
                 }
             }
             
@@ -1988,26 +2097,37 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string refFactura {
                 get {
-                    return ((string)(this[this.tableDataTable1.refFacturaColumn]));
+                    return ((string)(this[this.tableInforme.refFacturaColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.refFacturaColumn] = value;
+                    this[this.tableInforme.refFacturaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int cantidad {
+            public System.DateTime fecha {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable1.cantidadColumn]));
+                        return ((global::System.DateTime)(this[this.tableInforme.fechaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha\' de la tabla \'Informe\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.cantidadColumn] = value;
+                    this[this.tableInforme.fechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string refProducto1 {
+                get {
+                    return ((string)(this[this.tableInforme.refProducto1Column]));
+                }
+                set {
+                    this[this.tableInforme.refProducto1Column] = value;
                 }
             }
             
@@ -2016,119 +2136,130 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             public string Marca {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.MarcaColumn]));
+                        return ((string)(this[this.tableInforme.MarcaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Marca\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Marca\' de la tabla \'Informe\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.MarcaColumn] = value;
+                    this[this.tableInforme.MarcaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Expr1 {
+            public int cantidad {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable1.Expr1Column]));
+                        return ((int)(this[this.tableInforme.cantidadColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr1\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'Informe\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.Expr1Column] = value;
+                    this[this.tableInforme.cantidadColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string precio {
+            public double precio {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.precioColumn]));
+                        return ((double)(this[this.tableInforme.precioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'precio\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'precio\' de la tabla \'Informe\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.precioColumn] = value;
+                    this[this.tableInforme.precioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnombreNull() {
-                return this.IsNull(this.tableDataTable1.nombreColumn);
+                return this.IsNull(this.tableInforme.nombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetnombreNull() {
-                this[this.tableDataTable1.nombreColumn] = global::System.Convert.DBNull;
+                this[this.tableInforme.nombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsdireccionNull() {
-                return this.IsNull(this.tableDataTable1.direccionColumn);
+                return this.IsNull(this.tableInforme.direccionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetdireccionNull() {
-                this[this.tableDataTable1.direccionColumn] = global::System.Convert.DBNull;
+                this[this.tableInforme.direccionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscantidadNull() {
-                return this.IsNull(this.tableDataTable1.cantidadColumn);
+            public bool IsfechaNull() {
+                return this.IsNull(this.tableInforme.fechaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcantidadNull() {
-                this[this.tableDataTable1.cantidadColumn] = global::System.Convert.DBNull;
+            public void SetfechaNull() {
+                this[this.tableInforme.fechaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsMarcaNull() {
-                return this.IsNull(this.tableDataTable1.MarcaColumn);
+                return this.IsNull(this.tableInforme.MarcaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetMarcaNull() {
-                this[this.tableDataTable1.MarcaColumn] = global::System.Convert.DBNull;
+                this[this.tableInforme.MarcaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsExpr1Null() {
-                return this.IsNull(this.tableDataTable1.Expr1Column);
+            public bool IscantidadNull() {
+                return this.IsNull(this.tableInforme.cantidadColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetExpr1Null() {
-                this[this.tableDataTable1.Expr1Column] = global::System.Convert.DBNull;
+            public void SetcantidadNull() {
+                this[this.tableInforme.cantidadColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsprecioNull() {
-                return this.IsNull(this.tableDataTable1.precioColumn);
+                return this.IsNull(this.tableInforme.precioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetprecioNull() {
-                this[this.tableDataTable1.precioColumn] = global::System.Convert.DBNull;
+                this[this.tableInforme.precioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public facturaRow[] GetfacturaRows() {
+                if ((this.Table.ChildRelations["FK_factura_Cliente1"] == null)) {
+                    return new facturaRow[0];
+                }
+                else {
+                    return ((facturaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_factura_Cliente1"])));
+                }
             }
         }
         
@@ -2238,22 +2369,22 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class DataTable1RowChangeEvent : global::System.EventArgs {
+        public class InformeRowChangeEvent : global::System.EventArgs {
             
-            private DataTable1Row eventRow;
+            private InformeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
+            public InformeRowChangeEvent(InformeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row Row {
+            public InformeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2776,41 +2907,41 @@ SELECT cif, nombre, direccion FROM Cliente WHERE (cif = @cif)";
             tableMapping.DataSetTable = "factura";
             tableMapping.ColumnMappings.Add("refFactura", "refFactura");
             tableMapping.ColumnMappings.Add("cif1", "cif1");
-            tableMapping.ColumnMappings.Add("cantidad", "cantidad");
+            tableMapping.ColumnMappings.Add("fecha", "fecha");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[factura] WHERE (([refFactura] = @Original_refFactura) AND ((@I" +
-                "sNull_cif1 = 1 AND [cif1] IS NULL) OR ([cif1] = @Original_cif1)) AND ((@IsNull_c" +
-                "antidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)))";
+                "sNull_cif1 = 1 AND [cif1] IS NULL) OR ([cif1] = @Original_cif1)) AND ((@IsNull_f" +
+                "echa = 1 AND [fecha] IS NULL) OR ([fecha] = @Original_fecha)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_refFactura", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "refFactura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cif1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cif1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cif1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cif1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fecha", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[factura] ([refFactura], [cif1], [cantidad]) VALUES (@refFactur" +
-                "a, @cif1, @cantidad);\r\nSELECT refFactura, cif1, cantidad FROM factura WHERE (ref" +
-                "Factura = @refFactura)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[factura] ([refFactura], [cif1], [fecha]) VALUES (@refFactura, " +
+                "@cif1, @fecha);\r\nSELECT refFactura, cif1, fecha FROM factura WHERE (refFactura =" +
+                " @refFactura)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@refFactura", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "refFactura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cif1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cif1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[factura] SET [refFactura] = @refFactura, [cif1] = @cif1, [cantidad] = @cantidad WHERE (([refFactura] = @Original_refFactura) AND ((@IsNull_cif1 = 1 AND [cif1] IS NULL) OR ([cif1] = @Original_cif1)) AND ((@IsNull_cantidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)));
-SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[factura] SET [refFactura] = @refFactura, [cif1] = @cif1, [fecha] = @fecha WHERE (([refFactura] = @Original_refFactura) AND ((@IsNull_cif1 = 1 AND [cif1] IS NULL) OR ([cif1] = @Original_cif1)) AND ((@IsNull_fecha = 1 AND [fecha] IS NULL) OR ([fecha] = @Original_fecha)));
+SELECT refFactura, cif1, fecha FROM factura WHERE (refFactura = @refFactura)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@refFactura", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "refFactura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cif1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cif1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_refFactura", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "refFactura", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cif1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cif1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cif1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cif1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fecha", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fecha", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2826,7 +2957,7 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT refFactura, cif1, cantidad FROM dbo.factura";
+            this._commandCollection[0].CommandText = "SELECT refFactura, cif1, fecha FROM dbo.factura";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2887,7 +3018,7 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_refFactura, string Original_cif1, global::System.Nullable<int> Original_cantidad) {
+        public virtual int Delete(string Original_refFactura, string Original_cif1, global::System.Nullable<global::System.DateTime> Original_fecha) {
             if ((Original_refFactura == null)) {
                 throw new global::System.ArgumentNullException("Original_refFactura");
             }
@@ -2902,9 +3033,9 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_cif1));
             }
-            if ((Original_cantidad.HasValue == true)) {
+            if ((Original_fecha.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_cantidad.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_fecha.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
@@ -2930,7 +3061,7 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string refFactura, string cif1, global::System.Nullable<int> cantidad) {
+        public virtual int Insert(string refFactura, string cif1, global::System.Nullable<global::System.DateTime> fecha) {
             if ((refFactura == null)) {
                 throw new global::System.ArgumentNullException("refFactura");
             }
@@ -2943,8 +3074,8 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(cif1));
             }
-            if ((cantidad.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(cantidad.Value));
+            if ((fecha.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(fecha.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -2969,7 +3100,7 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string refFactura, string cif1, global::System.Nullable<int> cantidad, string Original_refFactura, string Original_cif1, global::System.Nullable<int> Original_cantidad) {
+        public virtual int Update(string refFactura, string cif1, global::System.Nullable<global::System.DateTime> fecha, string Original_refFactura, string Original_cif1, global::System.Nullable<global::System.DateTime> Original_fecha) {
             if ((refFactura == null)) {
                 throw new global::System.ArgumentNullException("refFactura");
             }
@@ -2982,8 +3113,8 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(cif1));
             }
-            if ((cantidad.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(cantidad.Value));
+            if ((fecha.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(fecha.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -3002,9 +3133,9 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_cif1));
             }
-            if ((Original_cantidad.HasValue == true)) {
+            if ((Original_fecha.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_cantidad.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_fecha.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
@@ -3030,8 +3161,8 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string cif1, global::System.Nullable<int> cantidad, string Original_refFactura, string Original_cif1, global::System.Nullable<int> Original_cantidad) {
-            return this.Update(Original_refFactura, cif1, cantidad, Original_refFactura, Original_cif1, Original_cantidad);
+        public virtual int Update(string cif1, global::System.Nullable<global::System.DateTime> fecha, string Original_refFactura, string Original_cif1, global::System.Nullable<global::System.DateTime> Original_fecha) {
+            return this.Update(Original_refFactura, cif1, fecha, Original_refFactura, Original_cif1, Original_fecha);
         }
     }
     
@@ -3174,7 +3305,7 @@ SELECT refFactura, cif1, cantidad FROM factura WHERE (refFactura = @refFactura)"
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_precio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_precio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_precio", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[producto_factura] ([refProducto1], [refFactura1], [Marca], [cantidad], [precio]) VALUES (@refProducto1, @refFactura1, @Marca, @cantidad, @precio);
@@ -3184,7 +3315,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@refFactura1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "refFactura1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precio", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[producto_factura] SET [refProducto1] = @refProducto1, [refFactura1] = @refFactura1, [Marca] = @Marca, [cantidad] = @cantidad, [precio] = @precio WHERE (([refProducto1] = @Original_refProducto1) AND ((@IsNull_refFactura1 = 1 AND [refFactura1] IS NULL) OR ([refFactura1] = @Original_refFactura1)) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_cantidad = 1 AND [cantidad] IS NULL) OR ([cantidad] = @Original_cantidad)) AND ((@IsNull_precio = 1 AND [precio] IS NULL) OR ([precio] = @Original_precio)));
@@ -3194,7 +3325,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@refFactura1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "refFactura1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precio", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_refProducto1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "refProducto1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_refFactura1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "refFactura1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_refFactura1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "refFactura1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3203,7 +3334,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cantidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cantidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_precio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_precio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_precio", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3281,7 +3412,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_refProducto1, string Original_refFactura1, string Original_Marca, global::System.Nullable<int> Original_cantidad, string Original_precio) {
+        public virtual int Delete(string Original_refProducto1, string Original_refFactura1, string Original_Marca, global::System.Nullable<int> Original_cantidad, global::System.Nullable<double> Original_precio) {
             if ((Original_refProducto1 == null)) {
                 throw new global::System.ArgumentNullException("Original_refProducto1");
             }
@@ -3312,13 +3443,13 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_precio == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            if ((Original_precio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_precio.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_precio));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3340,7 +3471,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string refProducto1, string refFactura1, string Marca, global::System.Nullable<int> cantidad, string precio) {
+        public virtual int Insert(string refProducto1, string refFactura1, string Marca, global::System.Nullable<int> cantidad, global::System.Nullable<double> precio) {
             if ((refProducto1 == null)) {
                 throw new global::System.ArgumentNullException("refProducto1");
             }
@@ -3365,11 +3496,11 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((precio == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((precio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(precio.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(precio));
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3391,7 +3522,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string refProducto1, string refFactura1, string Marca, global::System.Nullable<int> cantidad, string precio, string Original_refProducto1, string Original_refFactura1, string Original_Marca, global::System.Nullable<int> Original_cantidad, string Original_precio) {
+        public virtual int Update(string refProducto1, string refFactura1, string Marca, global::System.Nullable<int> cantidad, global::System.Nullable<double> precio, string Original_refProducto1, string Original_refFactura1, string Original_Marca, global::System.Nullable<int> Original_cantidad, global::System.Nullable<double> Original_precio) {
             if ((refProducto1 == null)) {
                 throw new global::System.ArgumentNullException("refProducto1");
             }
@@ -3416,11 +3547,11 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((precio == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((precio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(precio.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(precio));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((Original_refProducto1 == null)) {
                 throw new global::System.ArgumentNullException("Original_refProducto1");
@@ -3452,13 +3583,13 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_precio == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            if ((Original_precio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Original_precio.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_precio));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3480,7 +3611,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string refFactura1, string Marca, global::System.Nullable<int> cantidad, string precio, string Original_refProducto1, string Original_refFactura1, string Original_Marca, global::System.Nullable<int> Original_cantidad, string Original_precio) {
+        public virtual int Update(string refFactura1, string Marca, global::System.Nullable<int> cantidad, global::System.Nullable<double> precio, string Original_refProducto1, string Original_refFactura1, string Original_Marca, global::System.Nullable<int> Original_cantidad, global::System.Nullable<double> Original_precio) {
             return this.Update(Original_refProducto1, refFactura1, Marca, cantidad, precio, Original_refProducto1, Original_refFactura1, Original_Marca, Original_cantidad, Original_precio);
         }
     }
@@ -3494,7 +3625,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DataTable1TableAdapter : global::System.ComponentModel.Component {
+    public partial class InformeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3508,7 +3639,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DataTable1TableAdapter() {
+        public InformeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3605,14 +3736,15 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "DataTable1";
+            tableMapping.DataSetTable = "Informe";
             tableMapping.ColumnMappings.Add("cif", "cif");
             tableMapping.ColumnMappings.Add("nombre", "nombre");
             tableMapping.ColumnMappings.Add("direccion", "direccion");
             tableMapping.ColumnMappings.Add("refFactura", "refFactura");
-            tableMapping.ColumnMappings.Add("cantidad", "cantidad");
+            tableMapping.ColumnMappings.Add("fecha", "fecha");
+            tableMapping.ColumnMappings.Add("refProducto1", "refProducto1");
             tableMapping.ColumnMappings.Add("Marca", "Marca");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("cantidad", "cantidad");
             tableMapping.ColumnMappings.Add("precio", "precio");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -3627,21 +3759,40 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Cliente.cif, Cliente.nombre, Cliente.direccion, factura.refFactura, factura.cantidad, producto_factura.Marca, producto_factura.cantidad AS Expr1, producto_factura.precio
-FROM     Cliente CROSS JOIN
-                  factura CROSS JOIN
-                  producto_factura";
+            this._commandCollection[0].CommandText = @"SELECT Cliente.cif, Cliente.nombre, Cliente.direccion, factura.refFactura, factura.fecha, producto_factura.refProducto1, producto_factura.Marca, producto_factura.cantidad, producto_factura.precio
+FROM     Cliente INNER JOIN
+                  factura ON Cliente.cif = factura.cif1 INNER JOIN
+                  producto_factura ON factura.refFactura = producto_factura.refFactura1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT Cliente.cif, Cliente.nombre, Cliente.direccion, factura.refFactura, factura.fecha, producto_factura.refProducto1, producto_factura.Marca, producto_factura.cantidad, producto_factura.precio
+FROM     Cliente INNER JOIN
+                  factura ON Cliente.cif = factura.cif1 INNER JOIN
+                  producto_factura ON factura.refFactura = producto_factura.refFactura1
+WHERE  (factura.fecha BETWEEN @fecha1 AND @fecha2)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT Cliente.cif, Cliente.nombre, Cliente.direccion, factura.refFactura, factura.fecha, producto_factura.refProducto1, producto_factura.Marca, producto_factura.cantidad, producto_factura.precio
+FROM     Cliente INNER JOIN
+                  factura ON Cliente.cif = factura.cif1 INNER JOIN
+                  producto_factura ON factura.refFactura = producto_factura.refFactura1
+WHERE  (Cliente.cif = @cif)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cif", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "cif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FacturasDataSet.DataTable1DataTable dataTable) {
+        public virtual int Fill(FacturasDataSet.InformeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3654,9 +3805,74 @@ FROM     Cliente CROSS JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FacturasDataSet.DataTable1DataTable GetData() {
+        public virtual FacturasDataSet.InformeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FacturasDataSet.DataTable1DataTable dataTable = new FacturasDataSet.DataTable1DataTable();
+            FacturasDataSet.InformeDataTable dataTable = new FacturasDataSet.InformeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(FacturasDataSet.InformeDataTable dataTable, string fecha1, string fecha2) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((fecha1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fecha1));
+            }
+            if ((fecha2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(fecha2));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FacturasDataSet.InformeDataTable GetDataByFecha(string fecha1, string fecha2) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((fecha1 == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fecha1));
+            }
+            if ((fecha2 == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(fecha2));
+            }
+            FacturasDataSet.InformeDataTable dataTable = new FacturasDataSet.InformeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FacturasDataSet.InformeDataTable GetDataByCif(string cif) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((cif == null)) {
+                throw new global::System.ArgumentNullException("cif");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cif));
+            }
+            FacturasDataSet.InformeDataTable dataTable = new FacturasDataSet.InformeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
