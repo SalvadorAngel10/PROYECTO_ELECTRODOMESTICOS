@@ -16,6 +16,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
         public String Marca { set; get; }
         public String Clase { set; get; }
         public float Precio { set; get; }
+        public int Cantidad { set; get; }
         public int stock { set; get; }
         public DateTime fechaAlta { set; get; }
         public BitmapImage imagen { set; get; }
@@ -45,6 +46,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
             this.stock = 0;
             this.fechaAlta = DateTime.Now;
             this.publish = false;
+            this.Cantidad = 1;
         }
 
         public override string ToString()

@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -84,6 +84,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ProjectoDB\SQLData\Facturacion\FacturaDBHandler.cs" />
+    <Compile Include="ProjectoDB\SQLData\Facturacion\FacturaDS\FacturasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PAGINAS\Facturas.xaml.cs">
       <DependentUpon>Facturas.xaml</DependentUpon>
     </Compile>
@@ -118,6 +124,7 @@
       <DependentUpon>ProductoShow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProjectoDB\SQLData\LocalImages\LocalImageDBHandler.cs" />
+    <Compile Include="ReportsData\Cliente.cs" />
     <Compile Include="XML\Class1.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -176,6 +183,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ProjectoDB\SQLData\Facturacion\FacturaDS\FacturasDataSet.xsc">
+      <DependentUpon>FacturasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectoDB\SQLData\Facturacion\FacturaDS\FacturasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FacturasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectoDB\SQLData\Facturacion\FacturaDS\FacturasDataSet.xss">
+      <DependentUpon>FacturasDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ProjectoDB\MySQLData\pruebaDataSEt\mydbDataSet.xsc">
       <DependentUpon>mydbDataSet.xsd</DependentUpon>
     </None>
@@ -221,6 +239,13 @@
     <Resource Include="imagen\microondas.jpg" />
     <Resource Include="imagen\secador.jpg" />
     <Resource Include="imagen\tostadora.jpg" />
+    <Content Include="ProjectoDB\SQLData\Facturacion\FacturaDB\Facturas.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ProjectoDB\SQLData\Facturacion\FacturaDB\Facturas_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Facturas.mdf</DependentUpon>
+    </Content>
     <Content Include="ProjectoDB\SQLData\LocalImages\LoaclImagesDB\DB_Local_Images.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

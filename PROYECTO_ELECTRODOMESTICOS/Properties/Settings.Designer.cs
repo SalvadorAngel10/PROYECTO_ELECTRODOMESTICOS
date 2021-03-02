@@ -39,8 +39,19 @@ namespace PROYECTO_ELECTRODOMESTICOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=1234;persistsecurityinfo=True;database=myd" +
-            "b")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;persistsecurityinfo=True;database=mydb;allowuservar" +
+            "iables=True")]
+        public string mydbConnectionString1 {
+            get {
+                return ((string)(this["mydbConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=infsalinas.sytes.net;user id=root;password=dam1234;port=5306;persistsecuri" +
+            "tyinfo=True;database=projectdb")]
         public string mydbConnectionString {
             get {
                 return ((string)(this["mydbConnectionString"]));
@@ -50,11 +61,11 @@ namespace PROYECTO_ELECTRODOMESTICOS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;persistsecurityinfo=True;database=mydb;allowuservar" +
-            "iables=True")]
-        public string mydbConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ProjectoDB\\SQ" +
+            "LData\\Facturacion\\FacturaDB\\Facturas.mdf;Integrated Security=True")]
+        public string FacturasDataSet {
             get {
-                return ((string)(this["mydbConnectionString1"]));
+                return ((string)(this["FacturasDataSet"]));
             }
         }
     }

@@ -23,7 +23,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
     public partial class Facturas : Page
     {
         ProductoHandler productoHandler;
-        public Producto producto;
+        Producto producto;
         ObservableCollection<Producto> listaproductosF;
 
         public Facturas(ProductoHandler productoHandler)
@@ -41,13 +41,14 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void productosCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            producto = (Producto)comboProductos.SelectedItem;
+            cantidad.DataContext = producto;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Producto producto = (Producto)comboProductos.SelectedItem;
             listaproductosF.Add(producto);
+            comboProductos.SelectedIndex = -1;
 
         }
 
