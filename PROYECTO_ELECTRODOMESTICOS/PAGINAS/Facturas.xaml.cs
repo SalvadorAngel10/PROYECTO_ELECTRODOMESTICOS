@@ -87,7 +87,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                 FacturaDBHandler.AddCliente(cliente);
                 FacturaDBHandler.AddFactura(cliente,listaproductosF,nfactura.Text);
                 MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
+               
             }
-        }
+        }      
     }
 }

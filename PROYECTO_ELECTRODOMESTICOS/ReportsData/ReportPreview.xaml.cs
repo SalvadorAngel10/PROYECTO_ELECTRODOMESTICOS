@@ -41,11 +41,45 @@ namespace PROYECTO_ELECTRODOMESTICOS.ReportsData
             {
                 okConsulta = true;
             }
-            else
-            {
+          
 
+            return okConsulta;
+        }
+
+        public bool GetFacturaByFactura(string factura)
+        {
+            bool okConsulta = false;
+            DataTable tablaInforme = FacturaDBHandler.GetFacturaByFactura(factura);
+            ReportDataSource rds = new ReportDataSource();
+            rds.Name = "DataSet3";
+            rds.Value = tablaInforme;
+            myReportView.LocalReport.ReportPath = "../../ReportsData/FacturaN.rdlc";
+            myReportView.LocalReport.DataSources.Add(rds);
+            myReportView.RefreshReport();
+            if (tablaInforme.Rows.Count > 0)
+            {
+                okConsulta = true;
             }
 
+
+            return okConsulta;
+        }
+
+        public bool MostrarInformeFecha(String fecha1, String fecha2)
+        {
+            DataTable informe =FacturaDBHandler.GetDataFechas(fecha1, fecha2);
+            ReportDataSource rds = new ReportDataSource();
+            rds.Name = "DataSet2";
+            rds.Value = informe;
+            myReportView.LocalReport.ReportPath = "../../ReportsData/FacturasFechas.rdlc";
+            myReportView.LocalReport.DataSources.Add(rds);
+            myReportView.RefreshReport();
+
+            bool okConsulta = false;
+            if (informe.Rows.Count > 0)
+            {
+                okConsulta = true;
+            }
             return okConsulta;
         }
     }

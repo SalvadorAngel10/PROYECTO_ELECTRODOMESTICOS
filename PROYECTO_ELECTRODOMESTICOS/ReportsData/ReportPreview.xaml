@@ -6,9 +6,9 @@
         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
         xmlns:local="clr-namespace:PROYECTO_ELECTRODOMESTICOS.ReportsData"
         mc:Ignorable="d"
-        Title="ReportPreview" Height="450" Width="800">
+        Title="ReportPreview" Height="800" Width="800">
     <Grid>
-        <WindowsFormsHost HorizontalAlignment="Left" Height="417" Margin="1,2,-0.4,0" VerticalAlignment="Top" Width="793">
+        <WindowsFormsHost HorizontalAlignment="Left" Height="768" Margin="1,2,-0.4,0" VerticalAlignment="Top" Width="793">
             <rv:ReportViewer x:Name="myReportView"/>
         </WindowsFormsHost>
 

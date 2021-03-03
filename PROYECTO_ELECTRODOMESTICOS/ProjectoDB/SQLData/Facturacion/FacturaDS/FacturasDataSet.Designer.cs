@@ -1484,15 +1484,6 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InformeRow FindBycifrefFacturarefProducto1(string cif, string refFactura, string refProducto1) {
-                return ((InformeRow)(this.Rows.Find(new object[] {
-                            cif,
-                            refFactura,
-                            refProducto1})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 InformeDataTable cln = ((InformeDataTable)(base.Clone()));
                 cln.InitVars();
@@ -1540,10 +1531,6 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion.FacturaDS {
                 base.Columns.Add(this.columncantidad);
                 this.columnprecio = new global::System.Data.DataColumn("precio", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprecio);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columncif,
-                                this.columnrefFactura,
-                                this.columnrefProducto1}, true));
                 this.columncif.AllowDBNull = false;
                 this.columncif.MaxLength = 100;
                 this.columnnombre.MaxLength = 200;

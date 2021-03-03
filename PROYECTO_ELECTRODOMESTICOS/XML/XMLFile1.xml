@@ -2,17 +2,16 @@
 <Almacen>
   <Categoria idCategoria="Lavadora">
     <Marca nombre="bosh">
-      <Electrodomestico Referencia="333333" Precio="1222222" Clase="A++" Stock="23" Fecha="2021-02-09T20:01:31.0636973+01:00" publish="true" />
-      <Electrodomestico Referencia="123" Precio="0" Clase="A++" Stock="0" Fecha="2021-02-09T19:36:00.244929+01:00" publish="true" />
+      <Electrodomestico Referencia="1" Precio="250" Clase="A+" Stock="100" Fecha="2021-03-03T20:52:52.576779+01:00" publish="false" />
     </Marca>
     <Marca nombre="balay" />
     <Marca nombre="fagor" />
-    <Marca nombre="siemens">
-      <Electrodomestico Referencia="33" Precio="10" Clase="A++" Stock="20" Fecha="2021-03-03T12:49:51.5906395+01:00" publish="false" />
-    </Marca>
+    <Marca nombre="siemens" />
   </Categoria>
-  <Categoria idCategoria="Lavabajillas">
-    <Marca nombre="LG"></Marca>
+  <Categoria idCategoria="Lavavajillas">
+    <Marca nombre="LG">
+      <Electrodomestico Referencia="2" Precio="150" Clase="A++" Stock="100" Fecha="2021-03-03T20:50:35.3541075+01:00" publish="false" />
+    </Marca>
     <Marca nombre="samsung" />
     <Marca nombre="philips" />
     <Marca nombre="siemens" />
@@ -21,15 +20,17 @@
   <Categoria idCategoria="Microhondas">
     <Marca nombre="samsung" />
     <Marca nombre="LG" />
-    <Marca nombre="balay" />
-    <Marca nombre="fagor">
-      <Electrodomestico Referencia="55555555" Precio="3333333" Clase="B" Stock="4444" Fecha="2021-02-09T20:02:38.6599705+01:00" publish="true" />
+    <Marca nombre="balay">
+      <Electrodomestico Referencia="3" Precio="50" Clase="A" Stock="100" Fecha="2021-03-03T20:51:09.5554554+01:00" publish="false" />
     </Marca>
+    <Marca nombre="fagor" />
   </Categoria>
   <Categoria idCategoria="Secador">
     <Marca nombre="samsung" />
     <Marca nombre="bosh" />
-    <Marca nombre="philips" />
+    <Marca nombre="philips">
+      <Electrodomestico Referencia="4" Precio="100" Clase="B" Stock="100" Fecha="2021-03-03T20:51:34.5547675+01:00" publish="false" />
+    </Marca>
     <Marca nombre="balay" />
   </Categoria>
 </Almacen>

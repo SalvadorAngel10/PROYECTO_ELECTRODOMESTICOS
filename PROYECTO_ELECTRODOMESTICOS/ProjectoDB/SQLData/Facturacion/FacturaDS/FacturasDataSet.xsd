@@ -271,7 +271,7 @@ WHERE  (factura.refFactura = @refFactura)</CommandText>
   <xs:element name="FacturasDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FacturasDataSet" msprop:Generator_UserDSName="FacturasDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Cliente" msprop:Generator_TableClassName="ClienteDataTable" msprop:Generator_TableVarName="tableCliente" msprop:Generator_TablePropName="Cliente" msprop:Generator_RowDeletingName="ClienteRowDeleting" msprop:Generator_RowChangingName="ClienteRowChanging" msprop:Generator_RowEvHandlerName="ClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="ClienteRowDeleted" msprop:Generator_UserTableName="Cliente" msprop:Generator_RowChangedName="ClienteRowChanged" msprop:Generator_RowEvArgName="ClienteRowChangeEvent" msprop:Generator_RowClassName="ClienteRow">
+        <xs:element name="Cliente" msprop:Generator_TableClassName="ClienteDataTable" msprop:Generator_TableVarName="tableCliente" msprop:Generator_RowChangedName="ClienteRowChanged" msprop:Generator_TablePropName="Cliente" msprop:Generator_RowDeletingName="ClienteRowDeleting" msprop:Generator_RowChangingName="ClienteRowChanging" msprop:Generator_RowEvHandlerName="ClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="ClienteRowDeleted" msprop:Generator_RowClassName="ClienteRow" msprop:Generator_UserTableName="Cliente" msprop:Generator_RowEvArgName="ClienteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cif" msprop:Generator_ColumnVarNameInTable="columncif" msprop:Generator_ColumnPropNameInRow="cif" msprop:Generator_ColumnPropNameInTable="cifColumn" msprop:Generator_UserColumnName="cif">
@@ -298,7 +298,7 @@ WHERE  (factura.refFactura = @refFactura)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="factura" msprop:Generator_TableClassName="facturaDataTable" msprop:Generator_TableVarName="tablefactura" msprop:Generator_TablePropName="factura" msprop:Generator_RowDeletingName="facturaRowDeleting" msprop:Generator_RowChangingName="facturaRowChanging" msprop:Generator_RowEvHandlerName="facturaRowChangeEventHandler" msprop:Generator_RowDeletedName="facturaRowDeleted" msprop:Generator_UserTableName="factura" msprop:Generator_RowChangedName="facturaRowChanged" msprop:Generator_RowEvArgName="facturaRowChangeEvent" msprop:Generator_RowClassName="facturaRow">
+        <xs:element name="factura" msprop:Generator_TableClassName="facturaDataTable" msprop:Generator_TableVarName="tablefactura" msprop:Generator_RowChangedName="facturaRowChanged" msprop:Generator_TablePropName="factura" msprop:Generator_RowDeletingName="facturaRowDeleting" msprop:Generator_RowChangingName="facturaRowChanging" msprop:Generator_RowEvHandlerName="facturaRowChangeEventHandler" msprop:Generator_RowDeletedName="facturaRowDeleted" msprop:Generator_RowClassName="facturaRow" msprop:Generator_UserTableName="factura" msprop:Generator_RowEvArgName="facturaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="refFactura" msprop:Generator_ColumnVarNameInTable="columnrefFactura" msprop:Generator_ColumnPropNameInRow="refFactura" msprop:Generator_ColumnPropNameInTable="refFacturaColumn" msprop:Generator_UserColumnName="refFactura">
@@ -319,7 +319,7 @@ WHERE  (factura.refFactura = @refFactura)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="producto_factura" msprop:Generator_TableClassName="producto_facturaDataTable" msprop:Generator_TableVarName="tableproducto_factura" msprop:Generator_TablePropName="producto_factura" msprop:Generator_RowDeletingName="producto_facturaRowDeleting" msprop:Generator_RowChangingName="producto_facturaRowChanging" msprop:Generator_RowEvHandlerName="producto_facturaRowChangeEventHandler" msprop:Generator_RowDeletedName="producto_facturaRowDeleted" msprop:Generator_UserTableName="producto_factura" msprop:Generator_RowChangedName="producto_facturaRowChanged" msprop:Generator_RowEvArgName="producto_facturaRowChangeEvent" msprop:Generator_RowClassName="producto_facturaRow">
+        <xs:element name="producto_factura" msprop:Generator_TableClassName="producto_facturaDataTable" msprop:Generator_TableVarName="tableproducto_factura" msprop:Generator_RowChangedName="producto_facturaRowChanged" msprop:Generator_TablePropName="producto_factura" msprop:Generator_RowDeletingName="producto_facturaRowDeleting" msprop:Generator_RowChangingName="producto_facturaRowChanging" msprop:Generator_RowEvHandlerName="producto_facturaRowChangeEventHandler" msprop:Generator_RowDeletedName="producto_facturaRowDeleted" msprop:Generator_RowClassName="producto_facturaRow" msprop:Generator_UserTableName="producto_factura" msprop:Generator_RowEvArgName="producto_facturaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="refProducto1" msprop:Generator_ColumnVarNameInTable="columnrefProducto1" msprop:Generator_ColumnPropNameInRow="refProducto1" msprop:Generator_ColumnPropNameInTable="refProducto1Column" msprop:Generator_UserColumnName="refProducto1">
@@ -348,7 +348,7 @@ WHERE  (factura.refFactura = @refFactura)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Informe" msprop:Generator_TableClassName="InformeDataTable" msprop:Generator_TableVarName="tableInforme" msprop:Generator_RowChangedName="InformeRowChanged" msprop:Generator_TablePropName="Informe" msprop:Generator_RowDeletingName="InformeRowDeleting" msprop:Generator_RowChangingName="InformeRowChanging" msprop:Generator_RowEvHandlerName="InformeRowChangeEventHandler" msprop:Generator_RowDeletedName="InformeRowDeleted" msprop:Generator_RowClassName="InformeRow" msprop:Generator_UserTableName="Informe" msprop:Generator_RowEvArgName="InformeRowChangeEvent">
+        <xs:element name="Informe" msprop:Generator_TableClassName="InformeDataTable" msprop:Generator_TableVarName="tableInforme" msprop:Generator_TablePropName="Informe" msprop:Generator_RowDeletingName="InformeRowDeleting" msprop:Generator_RowChangingName="InformeRowChanging" msprop:Generator_RowEvHandlerName="InformeRowChangeEventHandler" msprop:Generator_RowDeletedName="InformeRowDeleted" msprop:Generator_UserTableName="Informe" msprop:Generator_RowChangedName="InformeRowChanged" msprop:Generator_RowEvArgName="InformeRowChangeEvent" msprop:Generator_RowClassName="InformeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cif" msprop:Generator_ColumnVarNameInTable="columncif" msprop:Generator_ColumnPropNameInRow="cif" msprop:Generator_ColumnPropNameInTable="cifColumn" msprop:Generator_UserColumnName="cif">
@@ -413,18 +413,12 @@ WHERE  (factura.refFactura = @refFactura)</CommandText>
       <xs:selector xpath=".//mstns:producto_factura" />
       <xs:field xpath="mstns:refProducto1" />
     </xs:unique>
-    <xs:unique name="Informe_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Informe" />
-      <xs:field xpath="mstns:cif" />
-      <xs:field xpath="mstns:refFactura" />
-      <xs:field xpath="mstns:refProducto1" />
-    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_factura_Cliente" msdata:parent="Cliente" msdata:child="factura" msdata:parentkey="cif" msdata:childkey="cif1" msprop:Generator_UserChildTable="factura" msprop:Generator_ChildPropName="GetfacturaRows" msprop:Generator_UserRelationName="FK_factura_Cliente" msprop:Generator_ParentPropName="ClienteRow" msprop:Generator_RelationVarName="relationFK_factura_Cliente" msprop:Generator_UserParentTable="Cliente" />
-      <msdata:Relationship name="FK_producto_factura_Factura" msdata:parent="factura" msdata:child="producto_factura" msdata:parentkey="refFactura" msdata:childkey="refFactura1" msprop:Generator_UserChildTable="producto_factura" msprop:Generator_ChildPropName="Getproducto_facturaRows" msprop:Generator_UserRelationName="FK_producto_factura_Factura" msprop:Generator_ParentPropName="facturaRow" msprop:Generator_RelationVarName="relationFK_producto_factura_Factura" msprop:Generator_UserParentTable="factura" />
-      <msdata:Relationship name="FK_factura_Cliente1" msdata:parent="Informe" msdata:child="factura" msdata:parentkey="cif" msdata:childkey="cif1" msprop:Generator_UserChildTable="factura" msprop:Generator_ChildPropName="GetfacturaRows" msprop:Generator_UserRelationName="FK_factura_Cliente1" msprop:Generator_ParentPropName="InformeRow" msprop:Generator_RelationVarName="relationFK_factura_Cliente1" msprop:Generator_UserParentTable="Informe" />
+      <msdata:Relationship name="FK_factura_Cliente" msdata:parent="Cliente" msdata:child="factura" msdata:parentkey="cif" msdata:childkey="cif1" msprop:Generator_UserChildTable="factura" msprop:Generator_ChildPropName="GetfacturaRows" msprop:Generator_UserRelationName="FK_factura_Cliente" msprop:Generator_RelationVarName="relationFK_factura_Cliente" msprop:Generator_UserParentTable="Cliente" msprop:Generator_ParentPropName="ClienteRow" />
+      <msdata:Relationship name="FK_producto_factura_Factura" msdata:parent="factura" msdata:child="producto_factura" msdata:parentkey="refFactura" msdata:childkey="refFactura1" msprop:Generator_UserChildTable="producto_factura" msprop:Generator_ChildPropName="Getproducto_facturaRows" msprop:Generator_UserRelationName="FK_producto_factura_Factura" msprop:Generator_RelationVarName="relationFK_producto_factura_Factura" msprop:Generator_UserParentTable="factura" msprop:Generator_ParentPropName="facturaRow" />
+      <msdata:Relationship name="FK_factura_Cliente1" msdata:parent="Informe" msdata:child="factura" msdata:parentkey="cif" msdata:childkey="cif1" msprop:Generator_UserChildTable="factura" msprop:Generator_ChildPropName="GetfacturaRows" msprop:Generator_UserRelationName="FK_factura_Cliente1" msprop:Generator_RelationVarName="relationFK_factura_Cliente1" msprop:Generator_UserParentTable="Informe" msprop:Generator_ParentPropName="InformeRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

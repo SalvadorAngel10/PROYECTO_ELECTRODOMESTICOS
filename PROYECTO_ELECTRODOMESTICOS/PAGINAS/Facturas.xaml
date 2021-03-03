@@ -21,7 +21,7 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="20" Margin="0,10,0,0">
             <TextBlock Text="CANTIDAD: "/>
-            <TextBox x:Name="cantidad" Text="{Binding Path=Cantidad}" Width="150"/>
+            <TextBox x:Name="cantidad" Text="{Binding Path=Cantidad}" Width="150" />
             <TextBlock Text="PRODUCTOS: "/>
             <ComboBox x:Name="comboProductos" Width="200" SelectionChanged="productosCombo_SelectionChanged" Height="20" VerticalAlignment="Top"/>
             <Button Content="CREAR" Click="Button_Click" Height="20" VerticalAlignment="Top"/>

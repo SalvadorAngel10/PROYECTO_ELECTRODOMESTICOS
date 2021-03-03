@@ -213,6 +213,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsData\Factura.rdlc" />
+    <EmbeddedResource Include="ReportsData\FacturaN.rdlc" />
+    <EmbeddedResource Include="ReportsData\FacturasFechas.rdlc" />
     <None Include="ProjectoDB\SQLData\Facturacion\FacturaDS\FacturasDataSet.xsc">
       <DependentUpon>FacturasDataSet.xsd</DependentUpon>
     </None>

@@ -12,9 +12,9 @@
         <Label  Content="FACTURAS" HorizontalAlignment="Center" FontSize="36" FontStyle="Italic" FontWeight="Bold"/>
         <Button HorizontalAlignment="Left" Content="CREAR FACTURA" Click="Button_Click_4" Margin="10,0,0,10" Width="140" Height="40"  Foreground="LightBlue"  Background="Black"  />
         <Button HorizontalAlignment="Left" Content="CONSULTAR FACTURAS" Click="Button_Click" Margin="10,0,0,0" Width="140" Height="40"  Foreground="LightBlue"  Background="Black" />
-        <StackPanel x:Name="Butons" Orientation="Vertical" Visibility="Visible" >
+        <StackPanel x:Name="Butons" Orientation="Vertical" Visibility="Hidden" >
             <Button Content="POR CIF/DNI"  Click="Button_Click_1" Margin="10,0,5,10"  Foreground="LightBlue"  Background="Black" Width="100" Height="25"/>
-            <Grid x:Name="dni" Width="500" Visibility="Visible">
+            <Grid x:Name="dni" Width="500" Visibility="Hidden">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -31,7 +31,7 @@
 
             </Grid>
             <Button Content="POR FECHAS" Click="Button_Click_2"  Margin="10,10,5,10"  Foreground="LightBlue"  Background="Black" Width="100" Height="25"/>
-            <Grid x:Name="fechas" Width="700" Visibility="Visible">
+            <Grid x:Name="fechas" Width="700" Visibility="Hidden">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="72*"/>
                     <ColumnDefinition Width="188*"/>
@@ -61,7 +61,7 @@
 
             </Grid>
             <Button Content="POR NºFACTURAS" Click="Button_Click_3" Margin="10,10,5,10" Foreground="LightBlue"  Background="Black" Width="100" Height="25"/>
-            <Grid x:Name="factura" Width="500" Visibility="Visible">
+            <Grid x:Name="factura" Width="500" Visibility="Hidden">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -74,7 +74,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Nº de factura:" HorizontalAlignment="Right" Margin="0,0,10,0"/>
                 <TextBox x:Name="Nfacturas" Grid.Row="0" Grid.Column="1"/>
-                <Button Grid.Column="2" Grid.Row="0" Margin="0,0,30,0" Width="80" Foreground="LightBlue"  Background="Black" Content="BUSCAR" Click="Button_Click_7"/>
+                <Button Grid.Column="2" Grid.Row="0" Margin="28.4,0,58,0" Width="80" Foreground="LightBlue"  Background="Black" Content="BUSCAR" Click="Button_Click_7" Height="19" VerticalAlignment="Top"/>
 
             </Grid>
         </StackPanel>

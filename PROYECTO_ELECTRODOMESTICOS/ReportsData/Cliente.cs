@@ -13,10 +13,14 @@ namespace PROYECTO_ELECTRODOMESTICOS.ReportsData
         public String direccion { set; get; }
 
 
-        public Cliente() 
+        public Cliente(string cif, string nombre, string direccion)
         {
-
+            this.cif = cif;
+            this.nombre = nombre;
+            this.direccion = direccion;
         }
+
+        public Cliente() { }
 
     }
 }
