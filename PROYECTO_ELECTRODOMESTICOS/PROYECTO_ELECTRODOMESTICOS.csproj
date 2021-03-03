@@ -212,6 +212,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportsData\Factura.rdlc" />
     <None Include="ProjectoDB\SQLData\Facturacion\FacturaDS\FacturasDataSet.xsc">
       <DependentUpon>FacturasDataSet.xsd</DependentUpon>
     </None>

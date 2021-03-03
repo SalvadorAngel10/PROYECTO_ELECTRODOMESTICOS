@@ -1,4 +1,5 @@
 ﻿using PROYECTO_ELECTRODOMESTICOS.Productos;
+using PROYECTO_ELECTRODOMESTICOS.ReportsData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -46,6 +48,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                 dni.Visibility = Visibility.Hidden;
             }
             else { dni.Visibility = Visibility.Visible; }
+
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -73,7 +77,18 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
+            ReportPreview report = new ReportPreview();
+            string cif = nif.Text;
+            if (nif.Text != "")
+            {
+                bool okConsulta = report.GetFacturaCif(cif);
+                if (okConsulta) { report.Show(); } else { System.Windows.MessageBox.Show("no se ha encontrado el registro por cif"); }
 
+            }
+            else 
+            {
+                System.Windows.MessageBox.Show("es necesario insrtar por cif");
+            }
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)

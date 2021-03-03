@@ -3759,7 +3759,7 @@ SELECT refProducto1, refFactura1, Marca, cantidad, precio FROM producto_factura 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT Cliente.cif, Cliente.nombre, Cliente.direccion, factura.refFactura, factura.fecha, producto_factura.refProducto1, producto_factura.Marca, producto_factura.cantidad, producto_factura.precio
@@ -3773,19 +3773,28 @@ FROM     Cliente INNER JOIN
 FROM     Cliente INNER JOIN
                   factura ON Cliente.cif = factura.cif1 INNER JOIN
                   producto_factura ON factura.refFactura = producto_factura.refFactura1
-WHERE  (factura.fecha BETWEEN @fecha1 AND @fecha2)";
+WHERE  (Cliente.cif = @cif)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cif", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "cif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT Cliente.cif, Cliente.nombre, Cliente.direccion, factura.refFactura, factura.fecha, producto_factura.refProducto1, producto_factura.Marca, producto_factura.cantidad, producto_factura.precio
 FROM     Cliente INNER JOIN
                   factura ON Cliente.cif = factura.cif1 INNER JOIN
                   producto_factura ON factura.refFactura = producto_factura.refFactura1
-WHERE  (Cliente.cif = @cif)";
+WHERE  (factura.fecha BETWEEN @fecha1 AND @fecha2)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cif", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "cif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha1", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecha2", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT Cliente.cif, Cliente.nombre, Cliente.direccion, factura.refFactura, factura.fecha, producto_factura.refProducto1, producto_factura.Marca, producto_factura.cantidad, producto_factura.precio
+FROM     Cliente INNER JOIN
+                  factura ON Cliente.cif = factura.cif1 INNER JOIN
+                  producto_factura ON factura.refFactura = producto_factura.refFactura1
+WHERE  (factura.refFactura = @refFactura)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@refFactura", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "refFactura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3815,26 +3824,18 @@ WHERE  (Cliente.cif = @cif)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(FacturasDataSet.InformeDataTable dataTable, string fecha1, string fecha2) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FacturasDataSet.InformeDataTable GetDataByCif(string cif) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((fecha1 == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            if ((cif == null)) {
+                throw new global::System.ArgumentNullException("cif");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fecha1));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cif));
             }
-            if ((fecha2 == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(fecha2));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
+            FacturasDataSet.InformeDataTable dataTable = new FacturasDataSet.InformeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3842,7 +3843,7 @@ WHERE  (Cliente.cif = @cif)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual FacturasDataSet.InformeDataTable GetDataByFecha(string fecha1, string fecha2) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((fecha1 == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3864,13 +3865,13 @@ WHERE  (Cliente.cif = @cif)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual FacturasDataSet.InformeDataTable GetDataByCif(string cif) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((cif == null)) {
-                throw new global::System.ArgumentNullException("cif");
+        public virtual FacturasDataSet.InformeDataTable GetDataByRefFactura(string refFactura) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((refFactura == null)) {
+                throw new global::System.ArgumentNullException("refFactura");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cif));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(refFactura));
             }
             FacturasDataSet.InformeDataTable dataTable = new FacturasDataSet.InformeDataTable();
             this.Adapter.Fill(dataTable);

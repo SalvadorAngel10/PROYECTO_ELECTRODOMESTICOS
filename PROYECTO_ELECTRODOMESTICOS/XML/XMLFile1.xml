@@ -7,7 +7,9 @@
     </Marca>
     <Marca nombre="balay" />
     <Marca nombre="fagor" />
-    <Marca nombre="siemens" />
+    <Marca nombre="siemens">
+      <Electrodomestico Referencia="33" Precio="10" Clase="A++" Stock="20" Fecha="2021-03-03T12:49:51.5906395+01:00" publish="false" />
+    </Marca>
   </Categoria>
   <Categoria idCategoria="Lavabajillas">
     <Marca nombre="LG"></Marca>

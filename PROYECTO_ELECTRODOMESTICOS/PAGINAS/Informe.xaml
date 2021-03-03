@@ -10,27 +10,58 @@
 
     <StackPanel>
         <Label  Content="FACTURAS" HorizontalAlignment="Center" FontSize="36" FontStyle="Italic" FontWeight="Bold"/>
+        <Button HorizontalAlignment="Left" Content="CREAR FACTURA" Click="Button_Click_4" Margin="10,0,0,10" Width="140" Height="40"  Foreground="LightBlue"  Background="Black"  />
         <Button HorizontalAlignment="Left" Content="CONSULTAR FACTURAS" Click="Button_Click" Margin="10,0,0,0" Width="140" Height="40"  Foreground="LightBlue"  Background="Black" />
-        <StackPanel x:Name="Butons" Orientation="Vertical" Visibility="Hidden" >
-            <Button Content="POR CIF/DNI"  Click="Button_Click_1" Margin="10,0,5,0"  Foreground="LightBlue"  Background="Black" Width="100" Height="50"/>
-            <Grid x:Name="dni" Width="500" Visibility="Hidden">
+        <StackPanel x:Name="Butons" Orientation="Vertical" Visibility="Visible" >
+            <Button Content="POR CIF/DNI"  Click="Button_Click_1" Margin="10,0,5,10"  Foreground="LightBlue"  Background="Black" Width="100" Height="25"/>
+            <Grid x:Name="dni" Width="500" Visibility="Visible">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    
+
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
-                   
+
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="DNI:" HorizontalAlignment="Right"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="DNI:" HorizontalAlignment="Right" Margin="0,0,20,0"/>
                 <TextBox x:Name="nif" Grid.Row="0" Grid.Column="1"/>
-                <Button Grid.Column="2" Grid.Row="0" Margin="10,0,5,0"  Foreground="LightBlue"  Background="Black" Content="BUSCAR" Click="Button_Click_5"/>
+                <Button Grid.Column="2" Grid.Row="0" Margin="0,0,30,0"  Foreground="LightBlue"  Width="80" Background="Black" Content="BUSCAR" Click="Button_Click_5"/>
 
             </Grid>
-            <Button Content="POR FECHAS" Click="Button_Click_2"  Margin="10,0,5,0"  Foreground="LightBlue"  Background="Black" Width="100" Height="50"/>
-            <Grid x:Name="fechas" Width="500" Visibility="Hidden">
+            <Button Content="POR FECHAS" Click="Button_Click_2"  Margin="10,10,5,10"  Foreground="LightBlue"  Background="Black" Width="100" Height="25"/>
+            <Grid x:Name="fechas" Width="700" Visibility="Visible">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="72*"/>
+                    <ColumnDefinition Width="188*"/>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="249*"/>
+                    <ColumnDefinition Width="151*"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="DESDE:" HorizontalAlignment="Right" Margin="0,0,154,0.2" Width="45" Grid.ColumnSpan="2"/>
+                <DatePicker x:Name="startDate" Grid.Row="0" Grid.Column="1" Margin="34,0,8,0.2"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="HASTA:" HorizontalAlignment="Right" Margin="0,0,246.8,0.2" Width="42" Grid.ColumnSpan="2"/>
+                <DatePicker x:Name="endDate" Grid.Row="0" Grid.Column="3" Margin="5,0,100.8,0.2" RenderTransformOrigin="0.5,0.5">
+                    <DatePicker.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.163"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </DatePicker.RenderTransform>
+                </DatePicker>
+                <Button Grid.Column="3" Grid.Row="0" Margin="160,0,0,0.2" HorizontalAlignment="Left" Foreground="LightBlue" Width="80"  Background="Black" Content="BUSCAR" Click="Button_Click_6"/>
+
+            </Grid>
+            <Button Content="POR NºFACTURAS" Click="Button_Click_3" Margin="10,10,5,10" Foreground="LightBlue"  Background="Black" Width="100" Height="25"/>
+            <Grid x:Name="factura" Width="500" Visibility="Visible">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -41,30 +72,12 @@
                     <RowDefinition/>
 
                 </Grid.RowDefinitions>
-                <DatePicker Grid.Row="0" Grid.Column="0"/>
-                <DatePicker Grid.Row="0" Grid.Column="1"/>
-                <Button Grid.Column="2" Grid.Row="0" Margin="10,0,5,0"  Foreground="LightBlue"  Background="Black" Content="BUSCAR" Click="Button_Click_6"/>
-
-            </Grid>
-            <Button Content="POR NºFACTURAS" Click="Button_Click_3" Margin="10,0,5,0" Foreground="LightBlue"  Background="Black" Width="100" Height="50"/>
-            <Grid x:Name="factura" Width="500" Visibility="Hidden">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Nº de factura:" HorizontalAlignment="Right"/>
-                <TextBox x:Name="facturas" Grid.Row="0" Grid.Column="1"/>
-                <Button Grid.Column="2" Grid.Row="0" Margin="10,0,5,0"  Foreground="LightBlue"  Background="Black" Content="BUSCAR" Click="Button_Click_7"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Nº de factura:" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                <TextBox x:Name="Nfacturas" Grid.Row="0" Grid.Column="1"/>
+                <Button Grid.Column="2" Grid.Row="0" Margin="0,0,30,0" Width="80" Foreground="LightBlue"  Background="Black" Content="BUSCAR" Click="Button_Click_7"/>
 
             </Grid>
         </StackPanel>
-        <Button HorizontalAlignment="Left" Content="CREAR FACTURA" Click="Button_Click_4" Margin="10,0,0,40" Width="140" Height="40"  Foreground="LightBlue"  Background="Black" />
 
     </StackPanel>
 </Page>

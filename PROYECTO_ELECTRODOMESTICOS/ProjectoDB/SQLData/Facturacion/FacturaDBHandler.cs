@@ -37,7 +37,14 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion
 
         public static DataTable GetFacturaByCif(string cif) 
         {
+            return InformeTableAdapter.GetDataByCif(cif);
+        }
 
+
+        public static DataTable GetDataFechas(String fecha1, String fecha2)
+        {
+
+            return InformeTableAdapter.GetDataByFecha(fecha1, fecha2);
         }
 
 
