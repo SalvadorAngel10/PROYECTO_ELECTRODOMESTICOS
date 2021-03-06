@@ -30,7 +30,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion
             facturaTableAdapter.Insert(refFactura,cliente.cif,DateTime.Today.Date);
             foreach (Producto producto in listaProducto) 
             {
-                producto_FacturaTable.Insert(producto.Referencia, refFactura,producto.Marca, producto.Cantidad, producto.Precio);
+                producto_FacturaTable.Insert(producto.Referencia, refFactura,producto.Categoria, producto.Cantidad, producto.Precio);
             }
             
         }

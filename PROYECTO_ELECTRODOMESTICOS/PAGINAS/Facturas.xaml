@@ -8,10 +8,10 @@
       d:DesignHeight="360" d:DesignWidth="800" Background="LightBlue"
       Title="Facturas">
     <StackPanel>
-        <TextBlock Text="CREAR FACTURA" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="22" FontWeight="Bold"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" x:Name="datosCliente">
+        <TextBlock Text="CREAR FACTURA" HorizontalAlignment="Center" Margin="0,0,0,10" FontSize="22" FontWeight="Bold"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" x:Name="datosCliente" Margin="0,0,0,10">
             <TextBlock Text="Nº FACTURA: "/>
-            <TextBox x:Name="nfactura"  Width="100"/>
+            <TextBox x:Name="nfactura"  Width="100" />
             <TextBlock Text="CIF: "/>
             <TextBox x:Name="cif"  Width="100" Text="{Binding Path=cif}"/>
             <TextBlock Text="  NOMBRE: "/>
@@ -19,25 +19,25 @@
             <TextBlock Text="  DIRECCION: "/>
             <TextBox x:Name="direccion" Width="200" Text="{Binding Path=direccion}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="20" Margin="0,10,0,0">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30" Margin="0,10,0,0">
             <TextBlock Text="CANTIDAD: "/>
-            <TextBox x:Name="cantidad" Text="{Binding Path=Cantidad}" Width="150" />
+            <TextBox x:Name="cantidad" Text="{Binding Path=Cantidad}" Width="150" Height="20" Margin="0,0,5,10"/>
             <TextBlock Text="PRODUCTOS: "/>
-            <ComboBox x:Name="comboProductos" Width="200" SelectionChanged="productosCombo_SelectionChanged" Height="20" VerticalAlignment="Top"/>
-            <Button Content="CREAR" Click="Button_Click" Height="20" VerticalAlignment="Top"/>
+            <ComboBox x:Name="comboProductos" Width="200" SelectionChanged="productosCombo_SelectionChanged" Height="20" VerticalAlignment="Top" Background="LightBlue"/>
+            <Button Content="CREAR" Click="Button_Click" VerticalAlignment="Top" Margin="20,0,0,0" Width="100" Height="20"  Foreground="LightBlue"  Background="Black"/>
         </StackPanel>
-        <DataGrid x:Name="tablaProductos" Margin="5,20,5,0" Height="178" Width="790" ColumnWidth="*" IsReadOnly="True"
+        <DataGrid x:Name="tablaProductos" Margin="5,5,5,0" Height="178" Width="790" ColumnWidth="*" IsReadOnly="True"
                   CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="tablaProductos_SelectionChanged">
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectionChanged="tablaProductos_SelectionChanged" Background="LightBlue">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding Path=Cantidad}"/>
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding Path=Cantidad}" />
                 <DataGridTextColumn Header="Referencia" Binding="{Binding Path=Referencia}" />
-                <DataGridTextColumn Header="Marca" Binding="{Binding Path=Marca}"/>
+                <DataGridTextColumn Header="Producto" Binding="{Binding Path=Categoria}"/>
                 <DataGridTextColumn Header="Precio" Binding="{Binding Path=Precio}"/>
 
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button Content="CREAR" Click="Button_Click_1" HorizontalAlignment="Center" Margin="0,20,0,0" Width="140" Height="40"  Foreground="LightBlue"  Background="Black" />
+        <Button Content="CREAR" Click="Button_Click_1" HorizontalAlignment="Center" Margin="0,10,0,0" Width="140" Height="40"  Foreground="LightBlue"  Background="Black" />
     </StackPanel>
 </Page>

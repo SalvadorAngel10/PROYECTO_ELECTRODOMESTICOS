@@ -105,6 +105,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ProjectoDB\SQLData\Facturacion\FacturaDS\FacturasDataSet.cs">
+      <DependentUpon>FacturasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProjectoDB\SQLData\Facturacion\FacturaDS\FacturasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -87,7 +87,19 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                 FacturaDBHandler.AddCliente(cliente);
                 FacturaDBHandler.AddFactura(cliente,listaproductosF,nfactura.Text);
                 MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
-               
+                ReportPreview report = new ReportPreview();
+                string factura = nfactura.Text;
+                if (nfactura.Text != "")
+                {
+                    bool okConsulta = report.GetFacturaByFactura(factura);
+                    if (okConsulta) { report.Show(); } else { System.Windows.MessageBox.Show("no se ha encontrado el registro por factura"); }
+
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("es necesario insertar por una factura");
+                }
+
             }
         }      
     }

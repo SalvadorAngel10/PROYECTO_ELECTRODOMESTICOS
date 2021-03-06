@@ -10,16 +10,16 @@
 
     <StackPanel>
         <TextBlock Text="CONSULTA PRODUCTOS" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="22" FontWeight="Bold"/>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="Categoria: "/>
             <ComboBox x:Name="categoryCombo" Width="200" SelectionChanged="categoryCombo_SelectionChanged"/>
             <TextBlock Text="  Busqueda: "/>
             <TextBox x:Name="busquedaTextBox" Width="171" TextChanged="TextBox_TextChanged"/>
-            <Button Content="Actualizar" Click="Button_Click_2"/>
+            <Button Content="ACTUALIZAR" Click="Button_Click_2" Margin="10,0,0,0" Foreground="LightBlue" Background="Black" Width="100"/>
         </StackPanel>
         <DataGrid x:Name="myDataGrid" Margin="0,20,0,0" Height="270" Width="790" ColumnWidth="*" IsReadOnly="True"
                   CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="LightBlue">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Imagen"  >
                     <DataGridTemplateColumn.CellTemplate>

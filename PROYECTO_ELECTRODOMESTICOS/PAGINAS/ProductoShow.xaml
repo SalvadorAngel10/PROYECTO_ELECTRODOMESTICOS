@@ -11,7 +11,7 @@
     <StackPanel>
 
         <TextBlock Text="CONSULTAR ELECTRODOMÉSTICOS" HorizontalAlignment="Center"  FontSize="22" FontWeight="Bold"/>
-        <ComboBox x:Name="comboProduct" ItemsSource="{Binding Path=ProductList}" Margin="0,5" Width="150" SelectionChanged="comboProduct_SelectionChanged" />
+        <ComboBox x:Name="comboProduct" ItemsSource="{Binding Path=ProductList}" Margin="0,5" Width="350" SelectionChanged="comboProduct_SelectionChanged" HorizontalAlignment="Center"/>
 
         <Grid x:Name="ProductoDataGrid" Margin="0,0,0,0" Width="350" Background="LightBlue">
             <Grid.ColumnDefinitions>

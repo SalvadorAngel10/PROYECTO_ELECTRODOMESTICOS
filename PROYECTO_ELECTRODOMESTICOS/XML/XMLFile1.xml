@@ -2,7 +2,7 @@
 <Almacen>
   <Categoria idCategoria="Lavadora">
     <Marca nombre="bosh">
-      <Electrodomestico Referencia="1" Precio="250" Clase="A+" Stock="100" Fecha="2021-03-03T20:52:52.576779+01:00" publish="false" />
+      <Electrodomestico Referencia="1" Precio="250" Clase="A+" Stock="100" Fecha="2021-03-03T20:52:52.576779+01:00" publish="true" />
     </Marca>
     <Marca nombre="balay" />
     <Marca nombre="fagor" />
@@ -10,7 +10,7 @@
   </Categoria>
   <Categoria idCategoria="Lavavajillas">
     <Marca nombre="LG">
-      <Electrodomestico Referencia="2" Precio="150" Clase="A++" Stock="100" Fecha="2021-03-03T20:50:35.3541075+01:00" publish="false" />
+      <Electrodomestico Referencia="2" Precio="150" Clase="A++" Stock="100" Fecha="2021-03-03T20:50:35.3541075+01:00" publish="true" />
     </Marca>
     <Marca nombre="samsung" />
     <Marca nombre="philips" />
@@ -21,7 +21,7 @@
     <Marca nombre="samsung" />
     <Marca nombre="LG" />
     <Marca nombre="balay">
-      <Electrodomestico Referencia="3" Precio="50" Clase="A" Stock="100" Fecha="2021-03-03T20:51:09.5554554+01:00" publish="false" />
+      <Electrodomestico Referencia="3" Precio="50" Clase="A" Stock="100" Fecha="2021-03-03T20:51:09.5554554+01:00" publish="true" />
     </Marca>
     <Marca nombre="fagor" />
   </Categoria>
@@ -29,7 +29,7 @@
     <Marca nombre="samsung" />
     <Marca nombre="bosh" />
     <Marca nombre="philips">
-      <Electrodomestico Referencia="4" Precio="100" Clase="B" Stock="100" Fecha="2021-03-03T20:51:34.5547675+01:00" publish="false" />
+      <Electrodomestico Referencia="4" Precio="100" Clase="B" Stock="100" Fecha="2021-03-03T20:51:34.5547675+01:00" publish="true" />
     </Marca>
     <Marca nombre="balay" />
   </Categoria>

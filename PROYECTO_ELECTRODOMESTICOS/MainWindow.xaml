@@ -17,7 +17,7 @@
     <StackPanel>
         <Label Content="ELECTRODOMÉSTICOS SALVADOR" HorizontalAlignment="Center" FontSize="36" FontStyle="Italic" FontWeight="Bold"/>
 
-        <StackPanel  Orientation="Horizontal" Margin="5,10,0,20" HorizontalAlignment="Center" Width="850">
+        <StackPanel  Orientation="Horizontal" Margin="80,10,0,20" HorizontalAlignment="Center" Width="800">
             <Button Content="ELECTRODOMÉSTICOS" Click="Button_Click" Margin="0,0,5,0" Width="140" Height="50"  Foreground="LightBlue"  Background="Black" />
             <StackPanel x:Name="Botones" Orientation="Horizontal" Visibility="Hidden">
                 <Button Content="NUEVO"  Click="Button_Click_1" Margin="0,0,5,0"  Foreground="LightBlue"  Background="Black" Width="140" Height="50"/>
