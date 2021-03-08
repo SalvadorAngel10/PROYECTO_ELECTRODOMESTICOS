@@ -1,7 +1,9 @@
 ﻿using PROYECTO_ELECTRODOMESTICOS.Productos;
+using PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion;
 using PROYECTO_ELECTRODOMESTICOS.ReportsData;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,6 +95,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
+           
             if (startDate.Text != "" && endDate.Text != "")
             {
                 string fechainicio = startDate.Text;
@@ -118,18 +121,21 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            ReportPreview report = new ReportPreview();
-            string factura = Nfacturas.Text;
-            if (Nfacturas.Text != "")
-            {
-                bool okConsulta = report.GetFacturaByFactura(factura);
-                if (okConsulta) { report.Show(); } else { System.Windows.MessageBox.Show("no se ha encontrado el registro por factura"); }
+            
+            
+                ReportPreview report = new ReportPreview();
+                string factura = Nfacturas.Text;
+                if (Nfacturas.Text != "")
+                {
+                    bool okConsulta = report.GetFacturaByFactura(factura);
+                    if (okConsulta) { report.Show(); } else { System.Windows.MessageBox.Show("no se ha encontrado el registro por factura"); }
 
-            }
-            else
-            {
-                System.Windows.MessageBox.Show("es necesario insertar por una factura");
-            }
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("es necesario insertar por una factura");
+                }
+           
         }
     }
 }

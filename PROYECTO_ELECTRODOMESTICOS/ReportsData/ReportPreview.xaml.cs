@@ -30,7 +30,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ReportsData
         public bool GetFacturaCif(string cif) 
         {
             bool okConsulta = false;
-            DataTable tablaInforme = FacturaDBHandler.GetFacturaByCif(cif);
+            DataTable tablaInforme = FacturaDBHandler.PorCif(cif);
             ReportDataSource rds = new ReportDataSource();
             rds.Name = "DataSet1";
             rds.Value = tablaInforme;
@@ -67,7 +67,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ReportsData
 
         public bool MostrarInformeFecha(String fecha1, String fecha2)
         {
-            DataTable informe =FacturaDBHandler.GetDataFechas(fecha1, fecha2);
+            DataTable informe =FacturaDBHandler.GetDataFechas1(fecha1, fecha2);
             ReportDataSource rds = new ReportDataSource();
             rds.Name = "DataSet2";
             rds.Value = informe;

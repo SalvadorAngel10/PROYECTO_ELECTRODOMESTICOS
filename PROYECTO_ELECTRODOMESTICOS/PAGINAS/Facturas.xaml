@@ -13,7 +13,7 @@
             <TextBlock Text="Nº FACTURA: "/>
             <TextBox x:Name="nfactura"  Width="100" />
             <TextBlock Text="CIF: "/>
-            <TextBox x:Name="cif"  Width="100" Text="{Binding Path=cif}"/>
+            <TextBox x:Name="cif"  Width="100" Text="{Binding Path=cif}" LostFocus="cif_LostFocus" LostMouseCapture="cif_LostMouseCapture"/>
             <TextBlock Text="  NOMBRE: "/>
             <TextBox x:Name="nombre" Width="100" Text="{Binding Path=nombre}"/>
             <TextBlock Text="  DIRECCION: "/>

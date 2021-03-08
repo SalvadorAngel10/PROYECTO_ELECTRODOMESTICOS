@@ -4,6 +4,7 @@ using PROYECTO_ELECTRODOMESTICOS.ReportsData;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,9 +83,25 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (listaproductosF.Count > 0 && nfactura.Text != "" && cliente != null) 
+
+            DataTable error = FacturaDBHandler.GetFacturaByFactura(nfactura.Text);
+            bool facturaExiste=false;
+            if (error.Rows.Count > 0)
             {
-                FacturaDBHandler.AddCliente(cliente);
+                facturaExiste = true;
+                System.Windows.MessageBox.Show("ya existe este numero de factura,pon otro distinto");
+            }
+
+
+            
+            if ((listaproductosF.Count > 0) && (nfactura.Text != "") && (cliente != null) && !facturaExiste) 
+            {
+                Cliente cliente = new Cliente(cif.Text,nombre.Text,direccion.Text);
+                if (!FacturaDBHandler.ClienteRepetido(cif.Text)) 
+                {
+                    FacturaDBHandler.AddCliente(cliente);
+                }
+                   
                 FacturaDBHandler.AddFactura(cliente,listaproductosF,nfactura.Text);
                 MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
                 ReportPreview report = new ReportPreview();
@@ -101,6 +118,37 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
                 }
 
             }
-        }      
+        }
+
+        private void cif_LostFocus(object sender, RoutedEventArgs e)
+        {
+            DataTable repetido = FacturaDBHandler.repetido(this.cif.Text);
+            if (repetido.Rows.Count>0) 
+            {
+                this.nombre.Text = repetido.Rows[0]["nombre"].ToString();
+                this.direccion.Text = repetido.Rows[0]["direccion"].ToString();
+
+            }
+
+        }
+
+        private void cif_LostMouseCapture(object sender, MouseEventArgs e)
+        {
+           /* var clienteTabla = FacturaDBHandler.ClienteRepetido(cif.Text)
+
+
+            if (clienteTabla.Rows.Count > 0)
+            {
+                foreach (DataRow cliente in clienteTabla.Rows)
+                {
+                    //Cliente c = new Cliente();
+                    cliente. = cliente["cif"].ToString();
+                    cliente.nombre = cliente["nombre"].ToString();
+                    cliente.direccion = cliente["direccion"].ToString();
+                }
+                datosCliente.DataContext = cliente;
+            }
+            else { }*/
+        }
     }
 }

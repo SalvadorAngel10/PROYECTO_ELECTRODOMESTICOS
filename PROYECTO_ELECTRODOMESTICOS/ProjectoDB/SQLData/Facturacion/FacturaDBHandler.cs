@@ -19,6 +19,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion
         public static producto_facturaTableAdapter producto_FacturaTable = new producto_facturaTableAdapter();
         public static FacturasDataSet facturasDataSet = new FacturasDataSet();
         public static InformeTableAdapter InformeTableAdapter = new InformeTableAdapter();
+        public static DataTable1TableAdapter DataTable1TableAdapter = new DataTable1TableAdapter();
 
         public static void AddCliente(Cliente cliente) 
         {
@@ -35,6 +36,23 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion
             
         }
 
+        public static bool ClienteRepetido(string cif) 
+        {
+            DataTable dataTable = clienteTableAdapter.GetDataRepetido(cif);
+            if (dataTable.Rows.Count > 0)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
+        public static DataTable repetido(string cif) 
+        {
+            return clienteTableAdapter.GetDataRepetido(cif);
+        }
+
         public static DataTable GetFacturaByCif(string cif) 
         {
             return InformeTableAdapter.GetDataByCif(cif);
@@ -45,11 +63,19 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.SQLData.Facturacion
             return InformeTableAdapter.GetDataByRefFactura(factura);
         }
 
-
+        public static DataTable PorCif(string cif) 
+        {
+            return DataTable1TableAdapter.GetDataByCif1(cif);
+        }
         public static DataTable GetDataFechas(String fecha1, String fecha2)
         {
 
             return InformeTableAdapter.GetDataByFecha(fecha1, fecha2);
+        }
+        public static DataTable GetDataFechas1(String fecha1, String fecha2)
+        {
+
+            return DataTable1TableAdapter.GetDataByFecha1(fecha1, fecha2);
         }
 
 

@@ -15,7 +15,7 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.5795cm</Width>
+              <Width>4.20983cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -323,7 +323,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=fields!cantidad.Value * fields!precio.Value</Value>
+                              <Value>=Fields!cantidad.Value * Fields!precio.Value</Value>
                               <Style>
                                 <Format>0.00'€'</Format>
                               </Style>
@@ -446,7 +446,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>Total productos=</Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Sum(Fields!cantidad.Value)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -527,7 +531,7 @@
         <Top>5.30565cm</Top>
         <Left>0.44333cm</Left>
         <Height>1.8cm</Height>
-        <Width>13.5795cm</Width>
+        <Width>14.20983cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -781,6 +785,7 @@
                 <Value>=Fields!fecha.Value</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
+                  <Format>D</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -791,50 +796,8 @@
         <Top>1.28496cm</Top>
         <Left>0.44333cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.95017cm</Width>
+        <Width>11.70983cm</Width>
         <ZIndex>7</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox13">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Total de Productos: </Value>
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=CountRows()</Value>
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>7.58516cm</Top>
-        <Left>6.52283cm</Left>
-        <Height>0.6cm</Height>
-        <Width>5cm</Width>
-        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -878,7 +841,7 @@
         <Left>0.44333cm</Left>
         <Height>0.6cm</Height>
         <Width>6.73567cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
