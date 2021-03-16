@@ -35,12 +35,12 @@
             <TextBlock Grid.Row="5" Grid.Column="0" Text="stock:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,8.8,11.2,4" Height="16" Width="30"/>
             <TextBlock Grid.Row="6" Grid.Column="0" Text="Fecha de alta:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,11.2,14.6" Height="16" Width="72"/>
 
-            <TextBox x:Name="tReferencia" Text="{Binding Path=Referencia}" Margin="9.8,5,1.6,5" Grid.Row="0"  Grid.Column="1" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="tReferencia" Text="{Binding Path=Referencia}" Margin="9.8,5,1.6,5" Grid.Row="0"  Grid.Column="1" VerticalContentAlignment="Center" LostFocus="tReferencia_LostFocus"/>
             <ComboBox x:Name="ComboCategoria" Text="{Binding Path=Categoria}" Margin="9.8,5,5.6,0" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" Height="22" VerticalAlignment="Top" SelectionChanged="txt_tipo_SelectionChanged"/>
             <TextBox x:Name="tCategoria" Text="{Binding Path=Categoria}" Margin="9.8,5,4.6,5" Grid.Row="1" Grid.Column="1" Visibility="Hidden" VerticalContentAlignment="Center"/>
             <ComboBox x:Name="ComboMarca" Text="{Binding Path=Marca}" Margin="9.8,5,4.6,5" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"/>
             <TextBox x:Name="tMarca" Text="{Binding Path=Marca}" Margin="9.8,5,4.6,5" Grid.Row="2" Visibility="Hidden" Grid.Column="1" VerticalContentAlignment="Center"/>
-            <ComboBox x:Name="ComboClase" Grid.Row="3" Grid.Column="1" Margin="9.8,5,4.6,5" Text="{Binding Path=Clase}">
+            <ComboBox x:Name="ComboClase" Grid.Row="3" Grid.Column="1" Margin="9.8,5,4.6,5" Text="{Binding Clase}">
                 <ComboBoxItem Content="A++" IsSelected="True"/>
                 <ComboBoxItem Content="A+" />
                 <ComboBoxItem Content="A" />

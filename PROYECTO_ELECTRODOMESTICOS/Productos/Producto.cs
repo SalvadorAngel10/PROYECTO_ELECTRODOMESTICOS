@@ -42,7 +42,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.Productos
             this.Categoria = "";
             this.Marca = "";
             this.Clase = "";
-            this.Precio = 0;
+            this.Precio =0;
             this.stock = 0;
             this.fechaAlta = DateTime.Now;
             this.publish = false;

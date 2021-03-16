@@ -45,11 +45,11 @@ namespace PROYECTO_ELECTRODOMESTICOS
             myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("NUEVO ELECTRODOMÉSTICO",productoHandler));
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+       /* private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             productoHandler.Actualizarxml();
             myNavigationFrame.NavigationService.Navigate(new ProductoShow(productoHandler));
-        }
+        }*/
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
@@ -70,6 +70,11 @@ namespace PROYECTO_ELECTRODOMESTICOS
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             myNavigationFrame.NavigationService.Navigate(new Informe(productoHandler));
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

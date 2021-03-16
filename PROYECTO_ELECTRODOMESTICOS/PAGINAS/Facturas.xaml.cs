@@ -53,26 +53,30 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            bool productoR = false;
-            if (producto != null) 
+            if (comboProductos.SelectedItem != null)
             {
-                foreach (Producto p in listaproductosF) 
+                bool productoR = false;
+                if (producto != null)
                 {
-                    if (p.Referencia == producto.Referencia) 
+                    foreach (Producto p in listaproductosF)
                     {
-                        productoR = true;
-                        p.Cantidad = p.Cantidad + int.Parse(cantidad.Text);
+                        if (p.Referencia == producto.Referencia)
+                        {
+                            productoR = true;
+                            p.Cantidad = p.Cantidad + int.Parse(cantidad.Text);
+                        }
                     }
                 }
-            }
-            if (!productoR) 
-            {
-                listaproductosF.Add(producto);
+                if (!productoR)
+                {
+                    listaproductosF.Add(producto);
+
+                }
+                comboProductos.SelectedIndex = -1;
+                tablaProductos.Items.Refresh();
 
             }
-            comboProductos.SelectedIndex = -1;
-            tablaProductos.Items.Refresh();
+            else { MessageBox.Show("Selecciona un producto antes de introducirlo"); }
 
         }
 
@@ -84,40 +88,52 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
-            DataTable error = FacturaDBHandler.GetFacturaByFactura(nfactura.Text);
-            bool facturaExiste=false;
-            if (error.Rows.Count > 0)
+            if (nfactura.Text != "" && cif.Text!="" && nombre.Text!="" && direccion.Text!="")
             {
-                facturaExiste = true;
-                System.Windows.MessageBox.Show("ya existe este numero de factura,pon otro distinto");
+                DataTable error = FacturaDBHandler.GetFacturaByFactura(nfactura.Text);
+                bool facturaExiste = false;
+                if (error.Rows.Count > 0)
+                {
+                    facturaExiste = true;
+                    System.Windows.MessageBox.Show("ya existe este numero de factura,pon otro distinto");
+                }
+
+
+
+                if ((listaproductosF.Count > 0) && (nfactura.Text != "") && (cliente != null) && !facturaExiste)
+                {
+                    Cliente cliente = new Cliente(cif.Text, nombre.Text, direccion.Text);
+                    if (!FacturaDBHandler.ClienteRepetido(cif.Text))
+                    {
+                        FacturaDBHandler.AddCliente(cliente);
+                    }
+
+                    FacturaDBHandler.AddFactura(cliente, listaproductosF, nfactura.Text);
+                    MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
+                    ReportPreview report = new ReportPreview();
+                    string factura = nfactura.Text;
+                    if (nfactura.Text != "")
+                    {
+                        bool okConsulta = report.GetFacturaByFactura(factura);
+                        if (okConsulta)
+                        {
+                            report.Show();
+                        }
+                        else
+                        {
+                            System.Windows.MessageBox.Show("no se ha encontrado el registro por factura");
+                        }
+
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("es necesario insertar por una factura");
+                    }
+
+                }
             }
-
-
-            
-            if ((listaproductosF.Count > 0) && (nfactura.Text != "") && (cliente != null) && !facturaExiste) 
-            {
-                Cliente cliente = new Cliente(cif.Text,nombre.Text,direccion.Text);
-                if (!FacturaDBHandler.ClienteRepetido(cif.Text)) 
-                {
-                    FacturaDBHandler.AddCliente(cliente);
-                }
-                   
-                FacturaDBHandler.AddFactura(cliente,listaproductosF,nfactura.Text);
-                MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
-                ReportPreview report = new ReportPreview();
-                string factura = nfactura.Text;
-                if (nfactura.Text != "")
-                {
-                    bool okConsulta = report.GetFacturaByFactura(factura);
-                    if (okConsulta) { report.Show(); } else { System.Windows.MessageBox.Show("no se ha encontrado el registro por factura"); }
-
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show("es necesario insertar por una factura");
-                }
-
-            }
+            else { MessageBox.Show("INTRODUZCA TODOS LOS DATOS DEL CLIENTE"); }
+          
         }
 
         private void cif_LostFocus(object sender, RoutedEventArgs e)

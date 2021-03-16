@@ -17,13 +17,13 @@
     <StackPanel>
         <Label Content="ELECTRODOMÉSTICOS SALVADOR" HorizontalAlignment="Center" FontSize="36" FontStyle="Italic" FontWeight="Bold"/>
 
-        <StackPanel  Orientation="Horizontal" Margin="80,10,0,20" HorizontalAlignment="Center" Width="800">
-            <Button Content="ELECTRODOMÉSTICOS" Click="Button_Click" Margin="0,0,5,0" Width="140" Height="50"  Foreground="LightBlue"  Background="Black" />
-            <StackPanel x:Name="Botones" Orientation="Horizontal" Visibility="Hidden">
+        <StackPanel  Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" Width="800">
+            <Button Content="ELECTRODOMÉSTICOS" Click="Button_Click" Margin="20,0,5,0" Width="140" Height="50"  Foreground="LightBlue"  Background="Black" />
+            <StackPanel x:Name="Botones" Orientation="Horizontal" Visibility="Hidden" Margin="30,0,0,0">
                 <Button Content="NUEVO"  Click="Button_Click_1" Margin="0,0,5,0"  Foreground="LightBlue"  Background="Black" Width="140" Height="50"/>
-                <Button Content="BUSCAR" Click="Button_Click_2"  Margin="0,0,5,0"  Foreground="LightBlue"  Background="Black" Width="140" Height="50"/>
                 <Button Content="REGISTRO" Click="Button_Click_3" Margin="0,0,5,0" Foreground="LightBlue"  Background="Black" Width="140" Height="50"/>
                 <Button Content="INFORMES" Click="Button_Click_6" Margin="0,0,5,0" Foreground="LightBlue"  Background="Black" Width="140" Height="50"/>
+                <Button Content="AYUDA" Click="Button_Click_7" Margin="0,0,5,0" Foreground="LightBlue"  Background="Black" Width="140" Height="50"/>
 
             </StackPanel>
         </StackPanel>

@@ -114,78 +114,88 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (verify)
+            if (ComboCategoria.SelectedItem != null && ComboMarca.SelectedItem != null && ComboClase != null )
             {
-
-                if (producto.publish)
+                if (verify)
                 {
-                    producto.imagen = (BitmapImage)myImage.Source;
-                    ImageDBHandler.updateElectrodomestico(producto);
-                }
 
-                Class1.editarProducto(producto);
-                MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
-                if (nuevaImagen) 
-                {
-                    imagenHandler.modifyImage(producto.Referencia,(BitmapImage)myImage.Source);
-                }
+                        Class1.editarProducto(producto);
+                        producto.imagen = (BitmapImage)myImage.Source;
+                        ImageDBHandler.updateElectrodomestico(producto);
 
-            }
-            else
-            {
-
-                String Referencia = tReferencia.Text;
-                String Categoria = tCategoria.Text;
-                String Marca = tMarca.Text;
-                String Clase = ComboClase.Text;
-                float Precio =float.Parse(tPrecio.Text);
-                int stock =int.Parse( tStock.Text);
-                DateTime fechaAlta = (DateTime)tFecha.SelectedDate;
-               
-
-
-                if (Validation())
-                {
-                    MessageBoxResult resultado = MessageBox.Show(
-                    "Referencia: " + Referencia + "\n" +
-                    "Categoria: " + Categoria + "\n" +
-                    "Marca:" +Marca + "\n" +
-                    "Clase: " + Clase + "\n" +
-                    "Precio:" +Precio + "\n" +
-                    "Stock: " + stock + "\n" +
-                    "Fecha de alta: " + fechaAlta + "\n\n" +
-                    "¿ESTE ES SU ELECTRODOMÉSTICO?",
-                    "registro usuarios",
-                    MessageBoxButton.YesNoCancel,
-                    MessageBoxImage.Question);
-
-                    switch (resultado)
+                    
+                    if (Validation()) 
                     {
-                        case MessageBoxResult.Yes:
-                            MessageBox.Show("Se ha registrado bien.");
-                            Producto producto = new Producto(Referencia,Categoria ,Marca,Clase ,Precio, stock, fechaAlta);
-                            Class1.addXMLProduct(producto);
-                            if (nuevaImagen)
-                            {
-                                imagenHandler.AddImage(producto.Referencia, (BitmapImage)myImage.Source);
-                            }
-                            MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
-                           
-                            break;
-                        case MessageBoxResult.No:
-                            break;
-                        case MessageBoxResult.Cancel:
-                            break;
+                       
+                        MainWindow.myNavigationFrame.NavigationService.Navigate(new ProductoGrid(productoHandler));
+                    }
+                    
+                    if (nuevaImagen)
+                    {
+                        imagenHandler.modifyImage(producto.Referencia, (BitmapImage)myImage.Source);
 
                     }
+
                 }
                 else
                 {
-                    label.Content = "INTRODUZCA BIEN LA INFORMACION DEL PRODUCTO";
-                    label.Visibility = Visibility.Visible;
-                   
+
+                    String Referencia = tReferencia.Text;
+                    String Categoria = tCategoria.Text;
+                    String Marca = tMarca.Text;
+                    String Clase = ComboClase.Text;
+                    float Precio = float.Parse(tPrecio.Text);
+                    int stock = int.Parse(tStock.Text);
+                    DateTime fechaAlta = (DateTime)tFecha.SelectedDate;
+
+
+
+                    if (Validation())
+                    {
+                        MessageBoxResult resultado = MessageBox.Show(
+                        "Referencia: " + Referencia + "\n" +
+                        "Categoria: " + Categoria + "\n" +
+                        "Marca:" + Marca + "\n" +
+                        "Clase: " + Clase + "\n" +
+                        "Precio:" + Precio + "\n" +
+                        "Stock: " + stock + "\n" +
+                        "Fecha de alta: " + fechaAlta + "\n\n" +
+                        "¿ESTE ES SU ELECTRODOMÉSTICO?",
+                        "REGISTRO ELECTRODOMÉSTICO",
+                        MessageBoxButton.YesNoCancel,
+                        MessageBoxImage.Question);
+
+                        switch (resultado)
+                        {
+                            case MessageBoxResult.Yes:
+                                MessageBox.Show("Se ha registrado bien.");
+                                Producto producto = new Producto(Referencia, Categoria, Marca, Clase, Precio, stock, fechaAlta);
+                                Class1.addXMLProduct(producto);
+                                if (nuevaImagen)
+                                {
+                                    imagenHandler.AddImage(producto.Referencia, (BitmapImage)myImage.Source);
+
+                                }
+                                MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
+
+                                break;
+                            case MessageBoxResult.No:
+                                break;
+                            case MessageBoxResult.Cancel:
+                                break;
+
+                        }
+                    }
+                    else
+                    {
+                        label.Content = "INTRODUZCA BIEN LA INFORMACION DEL PRODUCTO";
+                        label.Visibility = Visibility.Visible;
+
+                    }
+
                 }
             }
+            else { MessageBox.Show("Selecciona  algo en los campos de los combos"); }
         }
 
         private void checkCategoria_Click(object sender, RoutedEventArgs e)
@@ -238,6 +248,15 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
             {
                 myImage.Source = bitmapImage;
                 nuevaImagen = true;
+            }
+        }
+
+        private void tReferencia_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Class1.existsRef(tReferencia.Text))
+            {
+                MessageBox.Show("Esa referencia de producto ya existe, pon otro");
+                tReferencia.Text = "";
             }
         }
     }

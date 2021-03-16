@@ -2,7 +2,7 @@
 <Almacen>
   <Categoria idCategoria="Lavadora">
     <Marca nombre="bosh">
-      <Electrodomestico Referencia="1" Precio="250" Clase="A+" Stock="100" Fecha="2021-03-03T20:52:52.576779+01:00" publish="true" />
+      <Electrodomestico Referencia="1" Precio="200" Clase="A++" Stock="20" Fecha="2021-03-15T00:00:00" publish="true" />
     </Marca>
     <Marca nombre="balay" />
     <Marca nombre="fagor" />

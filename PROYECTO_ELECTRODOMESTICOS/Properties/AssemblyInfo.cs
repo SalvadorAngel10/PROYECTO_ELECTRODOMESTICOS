@@ -8,9 +8,9 @@ using System.Windows;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("PROYECTO_ELECTRODOMESTICOS")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("ORGANIZACION DE ELECTRODOMESTICOS Y FACTURAS DE CLIENTES")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ELECTRODOMESTICOS SALVADOR S.A.")]
 [assembly: AssemblyProduct("PROYECTO_ELECTRODOMESTICOS")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]

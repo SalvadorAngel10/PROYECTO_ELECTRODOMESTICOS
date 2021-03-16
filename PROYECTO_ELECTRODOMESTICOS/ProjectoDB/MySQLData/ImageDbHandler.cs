@@ -28,13 +28,16 @@ namespace PROYECTO_ELECTRODOMESTICOS.ProjectoDB.MySQLData
             imagenesTableAdapter.Update(dataset);
 
         }
-        public static void updateElectrodomestico(Producto productos) 
+        public static bool updateElectrodomestico(Producto productos) 
         {
-            byte[] imagen = imagenHandler.EncodeImage(productos.imagen);
-            float precio = productos.Precio;
-            decimal Precio = Convert.ToDecimal(precio);
-            imagenesTableAdapter.ActualizarElectrodomesticos(productos.Referencia,productos.Categoria,productos.Marca,productos.Clase,Precio,productos.stock,productos.fechaAlta,imagenHandler.EncodeImage(productos.imagen));
-            
+            bool borrar = false;
+            if (productos!=null) {
+                byte[] imagen = imagenHandler.EncodeImage(productos.imagen);
+                float precio = productos.Precio;
+                decimal Precio = Convert.ToDecimal(precio);
+                imagenesTableAdapter.ActualizarElectrodomesticos(productos.Referencia, productos.Categoria, productos.Marca, productos.Clase, Precio, productos.stock, productos.fechaAlta, imagenHandler.EncodeImage(productos.imagen));
+            }
+            return borrar;
         }
 
 

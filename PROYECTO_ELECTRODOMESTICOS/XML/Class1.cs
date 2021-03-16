@@ -16,12 +16,32 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
         private static XElement xmlCategoria;
         private static XElement xmlModelo;
 
-        private static void LoadXMl() { xml = XDocument.Load("../../XML/XMLFile1.xml"); }
+        public static void LoadXMl() { xml = XDocument.Load("../../XML/XMLFile1.xml"); }
         private static void saveXML()
         {
             xml.Save("../../XML/XMLFile1.xml");
         }
 
+        public static bool existsRef(string referencia)
+        {
+            LoadXMl();
+            bool exists = false;
+
+            foreach (var referenciaXML in xml.Root.Elements("Categoria").Elements("Marca").Elements("Electrodomestico").Attributes("Referencia"))
+            {
+                if (referenciaXML.Value==referencia)
+                {
+                    exists = true;
+                    break;
+                }
+                else
+                {
+                    exists = false;
+                }
+
+            }
+            return exists;
+        }
 
 
         private static void AddCategoria(Producto p)
