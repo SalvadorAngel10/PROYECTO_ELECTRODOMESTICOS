@@ -13,7 +13,7 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
     public class Class1
     {
         private static string XMLpath = Environment.CurrentDirectory;
-        private static string XMLname = "../../XML/XMLFile1.xml";
+        private static string XMLname = "XML/XMLFile1.xml";
         private static string documentoXML = Path.Combine(XMLpath, XMLname);
         private static XDocument xml;
         public static Producto producto;
