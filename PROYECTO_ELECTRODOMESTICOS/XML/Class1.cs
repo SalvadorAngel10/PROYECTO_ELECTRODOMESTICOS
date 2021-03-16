@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,15 +12,22 @@ namespace PROYECTO_ELECTRODOMESTICOS.XML
 { 
     public class Class1
     {
+        private static string XMLpath = Environment.CurrentDirectory;
+        private static string XMLname = "../../XML/XMLFile1.xml";
+        private static string documentoXML = Path.Combine(XMLpath, XMLname);
         private static XDocument xml;
         public static Producto producto;
         private static XElement xmlCategoria;
         private static XElement xmlModelo;
 
-        public static void LoadXMl() { xml = XDocument.Load("../../XML/XMLFile1.xml"); }
+        public static void LoadXMl() { xml = XDocument.Load(documentoXML/*"../../XML/XMLFile1.xml"*/); }
         private static void saveXML()
         {
-            xml.Save("../../XML/XMLFile1.xml");
+            xml.Save(documentoXML/*"../../XML/XMLFile1.xml"*/);
+        }
+        public static XDocument ReturnXDocument()
+        {
+            return XDocument.Load(documentoXML);
         }
 
         public static bool existsRef(string referencia)

@@ -23,8 +23,8 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
    
     public partial class NewOrModifyProducto : Page
     {
-
-        private XDocument xml = XDocument.Load("../../XML/XMLFile1.xml");
+        private XDocument xml = Class1.ReturnXDocument();
+       // private XDocument xml = XDocument.Load("../../XML/XMLFile1.xml");
         public ProductoHandler productoHandler;
         public Producto producto;
         public bool verify;

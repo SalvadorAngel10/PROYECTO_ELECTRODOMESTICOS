@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Almacen>
   <Categoria idCategoria="Lavadora">
-    <Marca nombre="bosh">
-      <Electrodomestico Referencia="1" Precio="200" Clase="A++" Stock="20" Fecha="2021-03-15T00:00:00" publish="true" />
+    <Marca nombre="bosh" />
+    <Marca nombre="balay">
+      <Electrodomestico Referencia="1" Precio="200" Clase="A++" Stock="200" Fecha="2021-03-15T00:00:00" publish="true" />
     </Marca>
-    <Marca nombre="balay" />
     <Marca nombre="fagor" />
     <Marca nombre="siemens" />
   </Categoria>
