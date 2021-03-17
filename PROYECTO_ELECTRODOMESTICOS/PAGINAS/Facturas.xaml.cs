@@ -102,33 +102,46 @@ namespace PROYECTO_ELECTRODOMESTICOS.PAGINAS
 
                 if ((listaproductosF.Count > 0) && (nfactura.Text != "") && (cliente != null) && !facturaExiste)
                 {
-                    Cliente cliente = new Cliente(cif.Text, nombre.Text, direccion.Text);
-                    if (!FacturaDBHandler.ClienteRepetido(cif.Text))
-                    {
-                        FacturaDBHandler.AddCliente(cliente);
-                    }
+                    MessageBoxResult resultado = System.Windows.MessageBox.Show("¿Desea crear la factura?", "Factura", MessageBoxButton.YesNo, MessageBoxImage.Information);
 
-                    FacturaDBHandler.AddFactura(cliente, listaproductosF, nfactura.Text);
-                    MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
-                    ReportPreview report = new ReportPreview();
-                    string factura = nfactura.Text;
-                    if (nfactura.Text != "")
+                    switch (resultado)
                     {
-                        bool okConsulta = report.GetFacturaByFactura(factura);
-                        if (okConsulta)
-                        {
-                            report.Show();
-                        }
-                        else
-                        {
-                            System.Windows.MessageBox.Show("no se ha encontrado el registro por factura");
-                        }
+                        case MessageBoxResult.Yes:
+                            Cliente cliente = new Cliente(cif.Text, nombre.Text, direccion.Text);
+                            if (!FacturaDBHandler.ClienteRepetido(cif.Text))
+                            {
+                                FacturaDBHandler.AddCliente(cliente);
+                            }
+
+                            FacturaDBHandler.AddFactura(cliente, listaproductosF, nfactura.Text);
+                            MainWindow.myNavigationFrame.NavigationService.Navigate(new MainPage());
+                            ReportPreview report = new ReportPreview();
+                            string factura = nfactura.Text;
+                            if (nfactura.Text != "")
+                            {
+                                bool okConsulta = report.GetFacturaByFactura(factura);
+                                if (okConsulta)
+                                {
+                                    report.Show();
+                                }
+                                else
+                                {
+                                    System.Windows.MessageBox.Show("no se ha encontrado el registro por factura");
+                                }
+
+                            }
+                            else
+                            {
+                                System.Windows.MessageBox.Show("es necesario insertar por una factura");
+                            }
+
+                            break;
+                        case MessageBoxResult.No:
+                            break;
+
 
                     }
-                    else
-                    {
-                        System.Windows.MessageBox.Show("es necesario insertar por una factura");
-                    }
+                   
 
                 }
             }

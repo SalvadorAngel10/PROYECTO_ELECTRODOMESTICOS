@@ -24,7 +24,7 @@
             <TextBox x:Name="cantidad" Text="{Binding Path=Cantidad}" Width="150" Height="20" Margin="0,0,5,10"/>
             <TextBlock Text="PRODUCTOS: "/>
             <ComboBox x:Name="comboProductos" Width="200" SelectionChanged="productosCombo_SelectionChanged" Height="20" VerticalAlignment="Top" Background="LightBlue"/>
-            <Button Content="CREAR" Click="Button_Click" VerticalAlignment="Top" Margin="20,0,0,0" Width="100" Height="20"  Foreground="LightBlue"  Background="Black"/>
+            <Button Content="AÑADIR" Click="Button_Click" VerticalAlignment="Top" Margin="20,0,0,0" Width="100" Height="20"  Foreground="LightBlue"  Background="Black"/>
         </StackPanel>
         <DataGrid x:Name="tablaProductos" Margin="5,5,5,0" Height="178" Width="790" ColumnWidth="*" IsReadOnly="True"
                   CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"

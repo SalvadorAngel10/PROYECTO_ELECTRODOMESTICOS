@@ -43,44 +43,22 @@ namespace PROYECTO_ELECTRODOMESTICOS
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult resultado = System.Windows.MessageBox.Show("¿Desea crear un nuevo producto?", "Nuevo", MessageBoxButton.YesNo, MessageBoxImage.Information);
+           
+            myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("NUEVO ELECTRODOMÉSTICO", productoHandler));
 
-            switch (resultado)
-            {
-                case MessageBoxResult.Yes:
-
-                    myNavigationFrame.NavigationService.Navigate(new NewOrModifyProducto("NUEVO ELECTRODOMÉSTICO", productoHandler));
-
-                    break;
-                case MessageBoxResult.No:
-                    break;
-
-
-            }
         }
 
-       /* private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            productoHandler.Actualizarxml();
-            myNavigationFrame.NavigationService.Navigate(new ProductoShow(productoHandler));
-        }*/
+        /* private void Button_Click_2(object sender, RoutedEventArgs e)
+         {
+             productoHandler.Actualizarxml();
+             myNavigationFrame.NavigationService.Navigate(new ProductoShow(productoHandler));
+         }*/
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult resultado = System.Windows.MessageBox.Show("¿Desea ver los productos?", "Productos", MessageBoxButton.YesNo, MessageBoxImage.Information);
+            
+            myNavigationFrame.NavigationService.Navigate(new ProductoGrid(productoHandler));
 
-            switch (resultado)
-            {
-                case MessageBoxResult.Yes:
-
-                    myNavigationFrame.NavigationService.Navigate(new ProductoGrid(productoHandler));
-
-                    break;
-                case MessageBoxResult.No:
-                    break;
-
-
-            }
 
         }
 
@@ -123,27 +101,15 @@ namespace PROYECTO_ELECTRODOMESTICOS
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult resultado = System.Windows.MessageBox.Show("¿Desea ir a los informes?", "Informes", MessageBoxButton.YesNo, MessageBoxImage.Information);
+            
+            myNavigationFrame.NavigationService.Navigate(new Informe(productoHandler));
 
-            switch (resultado)
-            {
-                case MessageBoxResult.Yes:
-
-                    myNavigationFrame.NavigationService.Navigate(new Informe(productoHandler));
-
-
-                    break;
-                case MessageBoxResult.No:
-                    break;
-
-
-            }
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
            
-           Help.ShowHelp(null,"help/help.chm");
+           Help.ShowHelp(null,"help/help1.chm");
         }
     }
 }
